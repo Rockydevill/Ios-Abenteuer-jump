@@ -1,0 +1,7 @@
+Abenteuer Jump iOS CURRENT package
+
+File: Abenteuer-Jump-iOS-V1.39-CURRENT.zip
+SHA-256: 4d9dd01673b725c89d639c4a01255dada9654bbce92dc12218b5cdd2482aae09
+Staging download (owner access): https://drive.google.com/file/d/1wxb1L0qi2wdU-Q2jgc3hWBgfPI1QZqIV/view?usp=drivesdk
+
+This pointer exists because the connected GitHub write API in this session accepts UTF-8 repository files but does not expose binary file upload. The ZIP itself is an exact copy of the current V1.39 WORLD-TRANSITION-FIX web assets.
