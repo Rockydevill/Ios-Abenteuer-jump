@@ -1,0 +1,10 @@
+Abenteuer Jump iOS TEMPORARY MOON TEST package
+
+File: Abenteuer-Jump-iOS-V1.39-MOON-TEST.zip
+SHA-256: 18a85ee0172049f18b9b3f8aa99768b7770977b695eff4f57ba4708be53e425a
+Staging download (owner access): https://drive.google.com/file/d/1DMM_S7mk2YPwIXmGK3bkk2O-82Nc9pHx/view?usp=drivesdk
+
+TEST ONLY. Delete this moon-test folder/package after the Moon transition checks are complete.
+Starts at 4,700 points in Moon (world index 8). Production leaderboard/cloud sync is disabled in this test copy.
+
+This pointer exists because the connected GitHub write API in this session accepts UTF-8 repository files but does not expose binary file upload.
