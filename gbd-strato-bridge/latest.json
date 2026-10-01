@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-01T17:18:00Z",
+  "published_at": "2026-10-01T18:20:30Z",
   "work_order": {
-    "id": "GBD-2026-10-01-003",
-    "description": "Staging umfassend synchronisieren und den serverseitigen Android-Paketweg installieren: private ZIP/HTML-Prüfung, nativer ARM64-Webgame-APK-Build/Signaturweg ohne Gradle/Java sowie native Signatur-/Identitätsprüfung für hochgeladene APKs. Keine Veröffentlichung, keine Freigabegates.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-003/bundle.json",
-    "bundle_sha256": "fff0e1dd07b0c547358949dc889588729d58a45ca38b5cce81d0b3973b500f9e",
+    "id": "GBD-2026-10-01-005",
+    "description": "Nur das bestehende STRATO Storage-Gateway auf den bereits vorbereiteten serverseitigen Package-Processor-Stand aktualisieren. Keine Veröffentlichung, keine Freigabegates, kein PayPal, keine Werbung.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-005/bundle.json",
+    "bundle_sha256": "bdf7858f9c7049cda388adae28cc2d48eb09454cf4dea33b7950e4d03b36bba9",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "9d64dffa12c91eb195fc600c5d96eceb2bb1a1c75d5c59bf86eab454a96f3fd2"
+    "hmac_sha256": "3662d7226e94f7dda3619609b223e085da975d3d75880b727b7860adcf9cec2a"
   }
 }
