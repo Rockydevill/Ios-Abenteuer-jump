@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-01T17:08:00Z",
+  "published_at": "2026-10-01T17:18:00Z",
   "work_order": {
     "id": "GBD-2026-10-01-003",
-    "description": "Staging umfassend synchronisieren: Entwickler-/Admin-Workflow, DE/EN-Noindex, .de-Links, sicherer Katalog ohne Direktdownload, Routing/Robots/Sitemap und gehärtetes Storage-Gateway mit privater Paketprüfung. Keine Veröffentlichung, keine Freigabegates.",
+    "description": "Staging umfassend synchronisieren: Entwickler-/Admin-Workflow, DE/EN-Noindex, .de-Links, sicherer Katalog ohne Direktdownload, Routing/Robots/Sitemap, gehärtetes Storage-Gateway mit privater Paketprüfung sowie Noindex für bestehende Rechtsseiten. Keine Veröffentlichung, keine Freigabegates.",
     "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-003/bundle.json",
-    "bundle_sha256": "bc729bb58fd2c2eb90b048325b0baac44fd78079868c4661260972166ea9da19",
+    "bundle_sha256": "bfc6f9182ae6aa85ac3bae95826381f5cafbb41da5732f60be7fdfa4dec4f50c",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "f668fab4dce63edf0cb562dcd15b1394bce71d0672ff409a79e3c461ddcbdfe7"
+    "hmac_sha256": "b812bb288ea2d04e75acf0e743ffeb5a45e872e70c87ad97e270aea7033524b2"
   }
 }
