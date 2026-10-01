@@ -1,16 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-01T15:30:00Z",
-  "transport": "github-public-encrypted",
+  "published_at": "2026-10-01T15:46:00Z",
   "work_order": {
-    "id": "GBD-2026-10-01-001",
-    "blob_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-001.zip.aes256gcm.b64",
-    "cipher": "aes-256-gcm",
-    "iv_b64": "jdGwGq+vdDPgnQJW",
-    "tag_b64": "vOlN+WSpRwV56UOgkfHkzg==",
-    "ciphertext_sha256": "2c25f68d1d7bb2d85f4746a462915d47c582caf2dcfedd90d7f00a1f6ce267ce",
-    "plaintext_sha256": "a5eb70b394d580c5444656fc48927d59e28497aa87def16ddc15d11976e5b9ab",
-    "plaintext_size": 5206,
-    "maintenance_min_version": "1.2.0"
+    "id": "GBD-2026-10-01-002",
+    "description": "Staging noindex + Accessibility + Storage-Testdatei entfernen",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-002/bundle.json",
+    "bundle_sha256": "77d75b97181835d0f5e92f273edd39c695e87b2a41e5dd8c0731e85b70f6b596",
+    "maintenance_min_version": "1.2.0",
+    "hmac_sha256": "91f911d167c65aed31b861a9ee5651b096974e96d45f446541bd02a2f8672706"
   }
 }
