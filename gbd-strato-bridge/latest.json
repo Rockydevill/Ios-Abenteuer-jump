@@ -7,6 +7,6 @@
     "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-002/bundle.json",
     "bundle_sha256": "77d75b97181835d0f5e92f273edd39c695e87b2a41e5dd8c0731e85b70f6b596",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "91f911d167c65aed31b861a9ee5651b096974e96d45f446541bd02a2f8672706"
+    "hmac_sha256": "2b54f9eb213f83fad0d793576c811eebfbf5ecfcd2a21a69ac6ef28a4f15c77e"
   }
 }
