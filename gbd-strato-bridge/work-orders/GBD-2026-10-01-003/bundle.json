@@ -4,7 +4,7 @@
     "format": "gbd-maintenance-work-order/v1",
     "id": "GBD-2026-10-01-003",
     "created_at": "2026-10-01T16:05:00Z",
-    "description": "Staging umfassend synchronisieren: Entwickler-/Admin-Workflow, DE/EN-Noindex, .de-Links, sicherer Katalog ohne Direktdownload, Routing/Robots/Sitemap und gehärtetes Storage-Gateway mit privater Paketprüfung. Keine Veröffentlichung, keine Freigabegates.",
+    "description": "Staging umfassend synchronisieren: Entwickler-/Admin-Workflow, DE/EN-Noindex, .de-Links, sicherer Katalog ohne Direktdownload, Routing/Robots/Sitemap, gehärtetes Storage-Gateway mit privater Paketprüfung sowie Noindex für bestehende Rechtsseiten. Keine Veröffentlichung, keine Freigabegates.",
     "operations": [
       {
         "op": "write",
@@ -187,6 +187,58 @@
         "source": "payload/gbd-storage-gateway.php",
         "sha256": "74ccef70e30b44e2687854b11844ba736c458ddc61948e82fac4c0861be3e4c3",
         "expected_sha256": "02951bbe0491ef1a55227fd2f603b3ec26a11438afea62dbf0f934d0e744bee9"
+      },
+      {
+        "op": "replace_text",
+        "path": "staging/legal/developer-terms.html",
+        "expected_sha256": "e6cc5de811a1ff6aeac8a44e6220d710ec0029477f8c0bcc0b478a68f7b80c50",
+        "result_sha256": "f9182b3748c6ff0678514b9aba6f707a62e4b8daf0a8740cf96d57144a4e3ed1",
+        "replacements": [
+          {
+            "search": "<meta name=\"robots\" content=\"index,follow\">",
+            "replace": "<meta name=\"robots\" content=\"noindex,nofollow,noarchive\">"
+          }
+        ]
+      },
+      {
+        "op": "replace_text",
+        "path": "staging/legal/imprint.html",
+        "expected_sha256": "d5f40350fc0f1cee2e32f688a30e51c01f6de24d544cc4369054a33651d2bd55",
+        "result_sha256": "f0127cc484a3b20d005668989f1ecb6b0419d44bb964984e08b84f6f556ae277",
+        "replacements": [
+          {
+            "search": "<meta name=\"robots\" content=\"index,follow\">",
+            "replace": "<meta name=\"robots\" content=\"noindex,nofollow,noarchive\">"
+          }
+        ]
+      },
+      {
+        "op": "replace_text",
+        "path": "staging/legal/privacy.html",
+        "expected_sha256": "b6b1399eb34e38a5a41174d247eaa7a864091ac190fc443c10934e319460e5ef",
+        "result_sha256": "eb19a93161561fcaa3bfe7d9c33f7e1fff2da6ef52bff3667139b6c30c330098",
+        "replacements": [
+          {
+            "search": "<meta name=\"robots\" content=\"index,follow\">",
+            "replace": "<meta name=\"robots\" content=\"noindex,nofollow,noarchive\">"
+          },
+          {
+            "search": "Nach dem geplanten Hosting-Umzug wird die öffentliche Website über STRATO bereitgestellt.",
+            "replace": "Die Website-Infrastruktur wird über STRATO bereitgestellt."
+          }
+        ]
+      },
+      {
+        "op": "replace_text",
+        "path": "staging/legal/terms.html",
+        "expected_sha256": "78558d979967b8611227d4623c796a196ae4c1dc539c7f3a08cd5aa5e4fe3c62",
+        "result_sha256": "31ac15edcdfb5a275538bc19fc2122e7ca6355e1f86e261469f71c9b7edcc8b2",
+        "replacements": [
+          {
+            "search": "<meta name=\"robots\" content=\"index,follow\">",
+            "replace": "<meta name=\"robots\" content=\"noindex,nofollow,noarchive\">"
+          }
+        ]
       }
     ]
   },
