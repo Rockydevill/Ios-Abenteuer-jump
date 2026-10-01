@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06141b">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="/gbd-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <title>Games Behind Doors – Prüfung</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="admin-page">
+<header class="site-header admin-header">
+  <a class="brand" href="../"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>Admin</small></span></a>
+  <nav><a href="../">Store ansehen</a><a href="../developers/">Einreichungsformular</a><button id="logoutButton" class="nav-button" type="button" hidden>Abmelden</button></nav>
+</header>
+
+<main>
+  <section id="adminLogin" class="admin-login">
+    <div class="panel admin-login-card">
+      <span class="eyebrow">GESCHÜTZTER BEREICH</span>
+      <h1>Admin-Anmeldung</h1>
+      <p>Nur freigegebene Admin-Adressen erhalten Zugriff auf die Prüfzentrale.</p>
+      <form id="loginForm">
+        <label><span>Admin-E-Mail</span><input id="loginEmail" type="email" required autocomplete="email" placeholder="admin@…"></label>
+        <label><span>Passwort</span><input id="loginPassword" type="password" required minlength="10" autocomplete="current-password" placeholder="Mindestens 10 Zeichen"></label>
+        <div class="login-actions">
+          <button class="button primary" type="submit">Anmelden</button>
+        </div>
+      </form>
+      <p class="field-hint">Admin-Konten werden nicht öffentlich registriert. Für freigeschaltete Konten ist zusätzlich ein Authenticator-Code Pflicht.</p>
+      <div id="loginMessage" class="form-message" hidden></div>
+    </div>
+  </section>
+
+  <section id="adminMfa" class="admin-login" hidden>
+    <div class="panel admin-login-card">
+      <span class="eyebrow">ZWEITER FAKTOR</span>
+      <h1>Admin bestätigen.</h1>
+      <p id="mfaIntro">Für die Prüfzentrale ist zusätzlich ein Einmalcode aus einer Authenticator-App erforderlich.</p>
+      <div id="mfaEnrollBlock" hidden>
+        <div class="mfa-qr-wrap"><img id="mfaQr" alt="QR-Code für Zwei-Faktor-Authentifizierung"></div>
+        <p class="field-hint">Scanne den QR-Code mit einer Authenticator-App. Falls das nicht geht, kannst du den Schlüssel manuell eintragen:</p>
+        <code id="mfaSecret" class="mfa-secret"></code>
+      </div>
+      <form id="mfaForm">
+        <label><span>6-stelliger Code</span><input id="mfaCode" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required></label>
+        <div class="login-actions">
+          <button class="button primary" type="submit">Bestätigen</button>
+          <button class="button secondary" id="mfaCancel" type="button">Abbrechen</button>
+        </div>
+      </form>
+      <div id="mfaMessage" class="form-message" hidden></div>
+    </div>
+  </section>
+
+  <div id="adminApp" hidden>
+    <section class="admin-hero">
+      <div><span class="eyebrow">INTERN • LIVE BACKEND</span><h1>Prüfzentrale</h1><p id="adminIdentity">Einreichungen prüfen und freigeben.</p></div>
+      <div class="admin-security"><strong>✓ Servergeschützt + 2FA</strong><span>Freigabe und private Dateien sind nur für freigeschaltete Admins mit bestätigtem zweiten Faktor erreichbar.</span></div>
+    </section>
+
+    <section class="admin-stats">
+      <div><span>Eingereicht</span><strong id="statSubmitted">0</strong></div>
+      <div><span>In Prüfung</span><strong id="statReview">0</strong></div>
+      <div><span>Korrektur erforderlich</span><strong id="statCorrection">0</strong></div>
+      <div><span>Freigegeben</span><strong id="statApproved">0</strong></div>
+      <div><span>Abgelehnt</span><strong id="statRejected">0</strong></div>
+    </section>
+
+    <section class="admin-toolbar">
+      <div class="admin-tabs">
+        <button class="active" type="button" data-admin-filter="all">Alle</button>
+        <button type="button" data-admin-filter="submitted">Eingereicht</button>
+        <button type="button" data-admin-filter="review">In Prüfung</button>
+        <button type="button" data-admin-filter="correction_required">Korrektur erforderlich</button>
+        <button type="button" data-admin-filter="approved">Freigegeben</button>
+        <button type="button" data-admin-filter="rejected">Abgelehnt</button>
+      </div>
+      <div class="admin-tools"><button class="button secondary small-button" id="refreshAdmin" type="button">Aktualisieren</button><button class="button secondary small-button" id="exportSubmissions" type="button">JSON exportieren</button></div>
+    </section>
+
+    <section class="admin-content">
+      <div class="admin-list"><div id="dynamicSubmissions"></div></div>
+      <aside class="admin-side">
+        <div class="panel compact-panel">
+          <span class="eyebrow">PRÜFCHECKLISTE</span>
+          <ul class="admin-checklist"><li>Dateiformat und technische Metadaten prüfen</li><li>Malware-/Dateiprüfung durchführen</li><li>Bei APK: Paketname, Signatur, SDK und Berechtigungen kontrollieren</li><li>Bei ZIP/HTML/HTM: Inhalte, Skripte und externe Netzwerkziele prüfen</li><li>Spiel starten bzw. Datei in geeigneter Testumgebung prüfen</li><li>Screenshots und Beschreibung mit dem Spiel abgleichen</li><li>Shop, Käufe, In-App-Käufe, Abos, Pässe, Werbung und Zahlungswege kontrollieren</li><li>Bei Käufen/In-App-Käufen/Abos/Pässen: ausschließlich PayPal, 10-%-Provisionszustimmung und aktive Verkäuferanbindung prüfen</li><li>Datenschutzangaben und Datenschutzerklärung des Spiels prüfen</li><li>Bei falschen Angaben zuerst „Korrektur erforderlich“ setzen</li><li>Erst danach freigeben</li></ul>
+        </div>
+      </aside>
+    </section>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./admin.js"></script>
+</body>
+</html>
