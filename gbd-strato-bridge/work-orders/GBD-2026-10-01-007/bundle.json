@@ -1,0 +1,83 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-01-007",
+    "created_at": "2026-10-01T21:10:00Z",
+    "description": "EU-Länderprüfung vorbereiten: verpflichtendes ISO-Land bei Einreichung, Admin-Länderstatus und Datenschutzhinweise. Keine öffentliche Freigabe und keine Aktivierung von Zahlungen.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/developers/portal/index.html",
+        "source": "payload/developers/portal/index.html",
+        "sha256": "343778d42d839a346a115091cef6222cea88aa9edf0dd587d42ab4bcd62e3afe",
+        "expected_sha256": "fa65a6b09d2ec89f62bcb6933a7d78306aa45443e564a26e141333d4d3040414"
+      },
+      {
+        "op": "write",
+        "path": "staging/developers/submission.js",
+        "source": "payload/developers/submission.js",
+        "sha256": "5f94b7a1c958fc22ccba4e1db7ef6f1de8c7642c2d5ece5e17b75dd89263ccd9",
+        "expected_sha256": "eb65cb0bc943d8e3e266d5318f59afbef98880c28dda04720c8253d63aae1f36"
+      },
+      {
+        "op": "write",
+        "path": "staging/admin/admin.js",
+        "source": "payload/admin/admin.js",
+        "sha256": "d1f82717162807ef82f6133560d09f88bcb18f6cb7aca41995ab53825a8dbe26",
+        "expected_sha256": "bb818b1a66dde17659c8fcbd620af621e2c31454c7483d680b57bb6b564b29cf"
+      },
+      {
+        "op": "write",
+        "path": "staging/legal/privacy.html",
+        "source": "payload/legal/privacy.html",
+        "sha256": "d421aabfcc5b7a4f4c98e80410fa5761a80d1359a13e757378cd4cce5e119fe2",
+        "expected_sha256": "b6b1399eb34e38a5a41174d247eaa7a864091ac190fc443c10934e319460e5ef"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/legal/privacy.html",
+        "source": "payload/en/legal/privacy.html",
+        "sha256": "c21cb904548cab68b4ad435d25dd498cd565b16f3988b5cdeb49a92792b886db",
+        "create_only": true
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/developers/portal/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-007/payload/developers/portal/index.html",
+      "encoding": "raw",
+      "size": 22056,
+      "sha256": "343778d42d839a346a115091cef6222cea88aa9edf0dd587d42ab4bcd62e3afe"
+    },
+    {
+      "source": "payload/developers/submission.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-007/payload/developers/submission.js",
+      "encoding": "raw",
+      "size": 37023,
+      "sha256": "5f94b7a1c958fc22ccba4e1db7ef6f1de8c7642c2d5ece5e17b75dd89263ccd9"
+    },
+    {
+      "source": "payload/admin/admin.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-007/payload/admin/admin.js",
+      "encoding": "raw",
+      "size": 24203,
+      "sha256": "d1f82717162807ef82f6133560d09f88bcb18f6cb7aca41995ab53825a8dbe26"
+    },
+    {
+      "source": "payload/legal/privacy.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-007/payload/legal/privacy.html",
+      "encoding": "raw",
+      "size": 12662,
+      "sha256": "d421aabfcc5b7a4f4c98e80410fa5761a80d1359a13e757378cd4cce5e119fe2"
+    },
+    {
+      "source": "payload/en/legal/privacy.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-007/payload/en/legal/privacy.html",
+      "encoding": "raw",
+      "size": 10382,
+      "sha256": "c21cb904548cab68b4ad435d25dd498cd565b16f3988b5cdeb49a92792b886db"
+    }
+  ]
+}
