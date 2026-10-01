@@ -1,0 +1,27 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-01-004",
+    "created_at": "2026-10-01T16:20:00Z",
+    "description": "Storage-Gateway um signierte serverseitige Paketprüfung erweitern: ZIP/APK/HTML validieren, Traversal/Symlink/Zip-Bomb/verschlüsselte ZIP-Einträge blockieren. Secret bleibt außerhalb des Webroots; keine Veröffentlichung und keine Freigabegates.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/gbd-storage-gateway.php",
+        "source": "payload/gbd-storage-gateway.php",
+        "sha256": "8060156b83d2dfccddc70f8e7a7c56391e71f39afa920e4538c505bc9ce408d7",
+        "expected_sha256": "02951bbe0491ef1a55227fd2f603b3ec26a11438afea62dbf0f934d0e744bee9"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/gbd-storage-gateway.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-004/payload/gbd-storage-gateway.php",
+      "encoding": "raw",
+      "size": 15378,
+      "sha256": "8060156b83d2dfccddc70f8e7a7c56391e71f39afa920e4538c505bc9ce408d7"
+    }
+  ]
+}
