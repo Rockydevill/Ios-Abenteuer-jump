@@ -451,8 +451,9 @@ function gbd_ensure_apksig_tools(): array {
     $root = '/home/www/gamesbehinddoors-tools/apksig-go-v1.1.0';
     $sign = $root.'/apksign';
     $verify = $root.'/apksigverify';
-    if (is_file($sign) && is_executable($sign) && is_file($verify) && is_executable($verify)) {
-        return [$sign, $verify];
+    $certinfo = $root.'/certinfo';
+    if (is_file($sign) && is_executable($sign) && is_file($verify) && is_executable($verify) && is_file($certinfo) && is_executable($certinfo)) {
+        return [$sign, $verify, $certinfo];
     }
     if (!is_dir($root) && !@mkdir($root, 0750, true)) throw new RuntimeException('tools_mkdir_failed');
     $tmp = $root.'/.install-'.bin2hex(random_bytes(8));
@@ -468,21 +469,22 @@ function gbd_ensure_apksig_tools(): array {
         if (!hash_equals($want, hash_file('sha256', $archive))) throw new RuntimeException('tools_checksum_mismatch');
         $run = gbd_run(['tar','-xzf',$archive,'-C',$tmp]);
         if ($run['code'] !== 0) throw new RuntimeException('tools_extract_failed');
-        $foundSign = null; $foundVerify = null;
+        $foundSign = null; $foundVerify = null; $foundCertinfo = null;
         $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($tmp, FilesystemIterator::SKIP_DOTS));
         foreach ($it as $item) {
             if (!$item->isFile()) continue;
             if ($item->getFilename() === 'apksign') $foundSign = $item->getPathname();
             if ($item->getFilename() === 'apksigverify') $foundVerify = $item->getPathname();
+            if ($item->getFilename() === 'certinfo') $foundCertinfo = $item->getPathname();
         }
-        if (!$foundSign || !$foundVerify) throw new RuntimeException('tools_binaries_missing');
-        if (!@copy($foundSign, $sign) || !@copy($foundVerify, $verify)) throw new RuntimeException('tools_copy_failed');
-        @chmod($sign, 0750); @chmod($verify, 0750);
-        if (!is_executable($sign) || !is_executable($verify)) throw new RuntimeException('tools_not_executable');
+        if (!$foundSign || !$foundVerify || !$foundCertinfo) throw new RuntimeException('tools_binaries_missing');
+        if (!@copy($foundSign, $sign) || !@copy($foundVerify, $verify) || !@copy($foundCertinfo, $certinfo)) throw new RuntimeException('tools_copy_failed');
+        @chmod($sign, 0750); @chmod($verify, 0750); @chmod($certinfo, 0750);
+        if (!is_executable($sign) || !is_executable($verify) || !is_executable($certinfo)) throw new RuntimeException('tools_not_executable');
     } finally {
         gbd_rm_tree($tmp);
     }
-    return [$sign, $verify];
+    return [$sign, $verify, $certinfo];
 }
 
 function gbd_fetch_wrapper_template(string $dest): void {
@@ -534,6 +536,108 @@ function gbd_signing_material(string $ref): array {
     return [$keyFile, $certFile, strtolower(str_replace(':','',$fp))];
 }
 
+
+function gbd_manifest_identity(string $xml): array {
+    if (strlen($xml) < 16 || gbd_u16($xml, 0) !== 0x0003) throw new RuntimeException('manifest_not_binary_axml');
+    $sp = 8;
+    if (gbd_u16($xml, $sp) !== 0x0001) throw new RuntimeException('manifest_string_pool_missing');
+    $poolSize = gbd_u32($xml, $sp + 4);
+    $count = gbd_u32($xml, $sp + 8);
+    $styleCount = gbd_u32($xml, $sp + 12);
+    $flags = gbd_u32($xml, $sp + 16);
+    $stringsStart = gbd_u32($xml, $sp + 20);
+    if ($styleCount !== 0 || ($flags & 0x100) !== 0 || $count < 5 || $count > 5000) throw new RuntimeException('manifest_pool_unsupported');
+    $base = $sp + $stringsStart;
+    $strings = [];
+    for ($i=0; $i<$count; $i++) {
+        $off = gbd_u32($xml, $sp + 28 + $i * 4);
+        $strings[] = gbd_axml_read_utf16($xml, $base + $off);
+    }
+    $out = ['packageName'=>null,'versionName'=>null,'versionCode'=>null,'minSdk'=>null,'targetSdk'=>null];
+    $pos = $sp + $poolSize;
+    while ($pos < strlen($xml)) {
+        $type = gbd_u16($xml, $pos);
+        $size = gbd_u32($xml, $pos + 4);
+        if ($size < 8 || $pos + $size > strlen($xml)) throw new RuntimeException('manifest_chunk_invalid');
+        if ($type === 0x0102) {
+            $nameIdx = gbd_u32($xml, $pos + 20);
+            $element = $strings[$nameIdx] ?? '';
+            if ($element === 'manifest' || $element === 'uses-sdk') {
+                $attrStart = gbd_u16($xml, $pos + 24);
+                $attrSize = gbd_u16($xml, $pos + 26);
+                $attrCount = gbd_u16($xml, $pos + 28);
+                $ap = $pos + 16 + $attrStart;
+                for ($i=0; $i<$attrCount; $i++) {
+                    $a = $ap + $i * $attrSize;
+                    $name = $strings[gbd_u32($xml, $a + 4)] ?? '';
+                    $raw = gbd_u32($xml, $a + 8);
+                    $dtype = ord($xml[$a + 15]);
+                    $data = gbd_u32($xml, $a + 16);
+                    $stringValue = null;
+                    if ($raw !== 0xffffffff && isset($strings[$raw])) $stringValue = $strings[$raw];
+                    elseif ($dtype === 0x03 && isset($strings[$data])) $stringValue = $strings[$data];
+
+                    if ($element === 'manifest' && $name === 'package') $out['packageName'] = $stringValue;
+                    if ($element === 'manifest' && $name === 'versionName') $out['versionName'] = $stringValue;
+                    if ($element === 'manifest' && $name === 'versionCode') $out['versionCode'] = $data;
+                    if ($element === 'uses-sdk' && $name === 'minSdkVersion') $out['minSdk'] = $data;
+                    if ($element === 'uses-sdk' && $name === 'targetSdkVersion') $out['targetSdk'] = $data;
+                }
+            }
+        }
+        $pos += $size;
+    }
+    if (!is_string($out['packageName']) || $out['packageName'] === '' || !is_int($out['versionCode'])) throw new RuntimeException('manifest_identity_missing');
+    return $out;
+}
+
+function gbd_verify_apk_source(string $sourceKey): never {
+    if (!str_starts_with($sourceKey, 'incoming/')) j(403, ['ok'=>false,'error'=>'verify_source_only']);
+    $path = read_path($sourceKey);
+    if (!is_file($path)) j(404, ['ok'=>false,'error'=>'not_found']);
+    $size = filesize($path);
+    if ($size === false || $size <= 0 || $size > GBD_MAX) j(422, ['ok'=>false,'error'=>'invalid_source_size']);
+
+    $zip = new ZipArchive();
+    if ($zip->open($path, ZipArchive::RDONLY) !== true) j(415, ['ok'=>false,'error'=>'apk_zip_invalid']);
+    $manifest = $zip->getFromName('AndroidManifest.xml');
+    $dex = $zip->locateName('classes.dex', ZipArchive::FL_NOCASE);
+    $zip->close();
+    if (!is_string($manifest) || $dex === false) j(415, ['ok'=>false,'error'=>'apk_structure_invalid']);
+
+    try {
+        $identity = gbd_manifest_identity($manifest);
+        [$apksign, $verify, $certinfo] = gbd_ensure_apksig_tools();
+        $verifyRun = gbd_run([$verify, '-v', $path]);
+        $combined = strtolower($verifyRun['stdout'].$verifyRun['stderr']);
+        if ($verifyRun['code'] !== 0 || !str_contains($combined, 'verified: true')) throw new RuntimeException('apk_signature_invalid');
+        $certRun = gbd_run([$certinfo, $path]);
+        if ($certRun['code'] !== 0) throw new RuntimeException('apk_certinfo_failed');
+        if (!preg_match('/Signer #1 cert SHA-256:\s*([a-fA-F0-9]{64})/', $certRun['stdout'].$certRun['stderr'], $m)) {
+            throw new RuntimeException('apk_signer_cert_missing');
+        }
+        j(200, [
+            'ok'=>true,
+            'kind'=>'apk',
+            'bytes'=>$size,
+            'sha256'=>hash_file('sha256', $path),
+            'packageName'=>$identity['packageName'],
+            'versionName'=>$identity['versionName'],
+            'versionCode'=>$identity['versionCode'],
+            'minSdk'=>$identity['minSdk'],
+            'targetSdk'=>$identity['targetSdk'],
+            'signingCertSha256'=>strtolower($m[1]),
+            'signatureVerified'=>true,
+            'sourcePrivate'=>true,
+            'directSourceDownload'=>false,
+            'verifier'=>'apksig-go-v1.1.0',
+        ]);
+    } catch (Throwable $e) {
+        error_log('GBD APK verify failed: '.$e->getMessage());
+        j(422, ['ok'=>false,'error'=>'apk_verification_failed','detail'=>$e->getMessage()]);
+    }
+}
+
 function gbd_web_asset_rel(string $name): string {
     $name = ltrim(str_replace('\\','/',$name), '/');
     if ($name === '' || strlen($name) > 500 || str_contains($name, '..') || str_contains($name, "\0")) throw new RuntimeException('web_asset_path_invalid');
@@ -574,7 +678,7 @@ function gbd_build_web_wrapper(string $sourceKey, array $body): never {
     $result = null;
     $buildError = null;
     try {
-        [$apksign, $apksigverify] = gbd_ensure_apksig_tools();
+        [$apksign, $apksigverify, $certinfo] = gbd_ensure_apksig_tools();
         [$keyFile, $certFile, $certSha] = gbd_signing_material($signingRef);
 
         $unsigned = $work.'/unsigned.apk';
@@ -732,6 +836,9 @@ if ($method === 'POST') {
         $body = json_decode($rawBody, true);
         if (!is_array($body)) j(400, ['ok'=>false,'error'=>'invalid_builder_json']);
         gbd_build_web_wrapper($key, $body);
+    }
+    if ($action === 'verify_apk') {
+        gbd_verify_apk_source($key);
     }
     j(400, ['ok'=>false,'error'=>'unsupported_action']);
 }
