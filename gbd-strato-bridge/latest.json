@@ -1,0 +1,16 @@
+{
+  "format": "gbd-maintenance-public-bridge/v1",
+  "published_at": "2026-10-01T15:30:00Z",
+  "transport": "github-public-encrypted",
+  "work_order": {
+    "id": "GBD-2026-10-01-001",
+    "blob_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-001.zip.aes256gcm.b64",
+    "cipher": "aes-256-gcm",
+    "iv_b64": "jdGwGq+vdDPgnQJW",
+    "tag_b64": "vOlN+WSpRwV56UOgkfHkzg==",
+    "ciphertext_sha256": "2c25f68d1d7bb2d85f4746a462915d47c582caf2dcfedd90d7f00a1f6ce267ce",
+    "plaintext_sha256": "a5eb70b394d580c5444656fc48927d59e28497aa87def16ddc15d11976e5b9ab",
+    "plaintext_size": 5206,
+    "maintenance_min_version": "1.2.0"
+  }
+}
