@@ -1,0 +1,25 @@
+DirectoryIndex index.html index.php
+
+# BEGIN WordPress
+# Die Direktiven (Zeilen) zwischen „BEGIN WordPress“ und „END WordPress“ sind
+# dynamisch generiert und sollten nur über WordPress-Filter geändert werden.
+# Alle Änderungen an den Direktiven zwischen diesen Markierungen werden überschrieben.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /staging/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /staging/index.php [L]
+</IfModule>
+
+# END WordPress
+
+# BEGIN GBD CHATGPT MAINTENANCE: STAGING-NOINDEX
+Options -Indexes
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+  Header always set Cache-Control "no-store, max-age=0"
+</IfModule>
+# END GBD CHATGPT MAINTENANCE: STAGING-NOINDEX
