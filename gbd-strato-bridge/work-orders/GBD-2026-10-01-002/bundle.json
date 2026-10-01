@@ -19,10 +19,22 @@
         "expected_sha256": "86e32038f7f6414ef490506a88ee6156b52b6d2be05842fca158baded9efb1e3",
         "result_sha256": "425696be07bedc1e3fde3834d4a772258cba62f6d4cb8108c4429932df8c8111",
         "replacements": [
-          {"search":"<meta name=\"robots\" content=\"index,follow\">","replace":"<meta name=\"robots\" content=\"noindex,nofollow,noarchive\">"},
-          {"search":"<a class=\"brand\" href=\"./\" aria-label=\"Games Behind Doors Startseite\">","replace":"<a class=\"brand\" href=\"./\">"},
-          {"search":"<button class=\"menu-button\" id=\"menuButton\" type=\"button\" aria-expanded=\"false\" aria-controls=\"mainNav\" aria-label=\"Menü öffnen\">☰</button>","replace":"<button class=\"menu-button\" id=\"menuButton\" type=\"button\" aria-expanded=\"false\" aria-controls=\"mainNav\" aria-label=\"Menü öffnen\"><span aria-hidden=\"true\">☰</span></button>"},
-          {"search":"<button id=\"clearSearch\" type=\"button\" aria-label=\"Suche löschen\">×</button>","replace":"<button id=\"clearSearch\" type=\"button\" aria-label=\"Suche löschen\"><span aria-hidden=\"true\">×</span></button>"}
+          {
+            "search": "<meta name=\"robots\" content=\"index,follow\">",
+            "replace": "<meta name=\"robots\" content=\"noindex,nofollow,noarchive\">"
+          },
+          {
+            "search": "<a class=\"brand\" href=\"./\" aria-label=\"Games Behind Doors Startseite\">",
+            "replace": "<a class=\"brand\" href=\"./\">"
+          },
+          {
+            "search": "<button class=\"menu-button\" id=\"menuButton\" type=\"button\" aria-expanded=\"false\" aria-controls=\"mainNav\" aria-label=\"Menü öffnen\">☰</button>",
+            "replace": "<button class=\"menu-button\" id=\"menuButton\" type=\"button\" aria-expanded=\"false\" aria-controls=\"mainNav\" aria-label=\"Menü öffnen\"><span aria-hidden=\"true\">☰</span></button>"
+          },
+          {
+            "search": "<button id=\"clearSearch\" type=\"button\" aria-label=\"Suche löschen\">×</button>",
+            "replace": "<button id=\"clearSearch\" type=\"button\" aria-label=\"Suche löschen\"><span aria-hidden=\"true\">×</span></button>"
+          }
         ]
       },
       {
