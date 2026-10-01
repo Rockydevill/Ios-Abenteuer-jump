@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-01T18:20:30Z",
+  "published_at": "2026-10-01T20:20:00Z",
   "work_order": {
-    "id": "GBD-2026-10-01-005",
-    "description": "Nur das bestehende STRATO Storage-Gateway auf den bereits vorbereiteten serverseitigen Package-Processor-Stand aktualisieren. Keine Veröffentlichung, keine Freigabegates, kein PayPal, keine Werbung.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-005/bundle.json",
-    "bundle_sha256": "bdf7858f9c7049cda388adae28cc2d48eb09454cf4dea33b7950e4d03b36bba9",
+    "id": "GBD-2026-10-01-006",
+    "description": "Admin-Freigabe an den validierten Package-Processor/Release-Pfad anbinden. Keine öffentliche Freigabe, keine Gate-Aktivierung.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-006/bundle.json",
+    "bundle_sha256": "8f5347157708c4fb6bbd78dc1d23939d6c805e92709f1fff6a891e633ba29388",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "3662d7226e94f7dda3619609b223e085da975d3d75880b727b7860adcf9cec2a"
+    "hmac_sha256": "d66a31067d312ceabd74aed8960572f9b92ce05585e29e554442a5e1861ea715"
   }
 }
