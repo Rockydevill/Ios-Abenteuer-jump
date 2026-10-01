@@ -3,10 +3,10 @@
   "published_at": "2026-10-01T17:18:00Z",
   "work_order": {
     "id": "GBD-2026-10-01-003",
-    "description": "Staging umfassend synchronisieren und den serverseitigen Android-Webgame-Builder installieren: Entwickler-/Admin-Workflow, DE/EN-Noindex, .de-Links, sicherer Katalog ohne Direktdownload, Routing/Robots/Sitemap, private Paketprüfung sowie nativer ARM64-APK-Build/Signaturweg ohne Gradle/Java. Keine Veröffentlichung, keine Freigabegates.",
+    "description": "Staging umfassend synchronisieren und den serverseitigen Android-Paketweg installieren: private ZIP/HTML-Prüfung, nativer ARM64-Webgame-APK-Build/Signaturweg ohne Gradle/Java sowie native Signatur-/Identitätsprüfung für hochgeladene APKs. Keine Veröffentlichung, keine Freigabegates.",
     "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-003/bundle.json",
-    "bundle_sha256": "153ed799829a5d9abda79d8ce258225cbaa419a0de954d4bf447ec8cba566f77",
+    "bundle_sha256": "fff0e1dd07b0c547358949dc889588729d58a45ca38b5cce81d0b3973b500f9e",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "c78863399b6524b86734cf93776305832e28463b3940668813d157408779ba68"
+    "hmac_sha256": "9d64dffa12c91eb195fc600c5d96eceb2bb1a1c75d5c59bf86eab454a96f3fd2"
   }
 }
