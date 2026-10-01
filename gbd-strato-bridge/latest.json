@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-01T20:20:00Z",
+  "published_at": "2026-10-01T21:10:30Z",
   "work_order": {
-    "id": "GBD-2026-10-01-006",
-    "description": "Admin-Freigabe an den validierten Package-Processor/Release-Pfad anbinden. Keine öffentliche Freigabe, keine Gate-Aktivierung.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-006/bundle.json",
-    "bundle_sha256": "8f5347157708c4fb6bbd78dc1d23939d6c805e92709f1fff6a891e633ba29388",
+    "id": "GBD-2026-10-01-007",
+    "description": "EU-Länderprüfung vorbereiten: verpflichtendes ISO-Land bei Einreichung, Admin-Länderstatus und Datenschutzhinweise. Keine öffentliche Freigabe und keine Aktivierung von Zahlungen.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-007/bundle.json",
+    "bundle_sha256": "98aa667e8fe2e98fd76ddc94286f6670af5f55e8cb85c474a7d7b148752cb069",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "d66a31067d312ceabd74aed8960572f9b92ce05585e29e554442a5e1861ea715"
+    "hmac_sha256": "440c806dd9ee9e2fce9697be08fd7b1d0471a6604be484a9f49ce82264d0c3ee"
   }
 }
