@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# PRIVATE PRE-LAUNCH STATE.
+# Replace with the public robots.txt only after the site is intentionally launched.
