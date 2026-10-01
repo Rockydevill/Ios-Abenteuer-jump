@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06141b">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../gbd-icon.svg" type="image/svg+xml">
+  <title>Games Behind Doors – Passwort</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../developer-redesign.css">
+</head>
+<body class="developer-page login-only-page">
+  <header class="site-header login-only-header">
+    <a class="brand" href="../login/"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>Kontosicherheit</small></span></a>
+  </header>
+  <main>
+    <section class="developer-access">
+      <div class="developer-access-card">
+        <span class="eyebrow">KONTOSICHERHEIT</span>
+        <h1>Passwort ändern.</h1>
+        <p id="passwordIntro">Wähle ein neues Passwort mit mindestens 12 Zeichen.</p>
+        <form id="passwordForm">
+          <label id="currentPasswordRow" hidden>
+            <span>Aktuelles Passwort</span>
+            <input id="currentPassword" type="password" autocomplete="current-password" minlength="10">
+          </label>
+          <label>
+            <span>Neues Passwort</span>
+            <input id="newPassword" type="password" autocomplete="new-password" minlength="12" required placeholder="Mindestens 12 Zeichen">
+          </label>
+          <label>
+            <span>Neues Passwort wiederholen</span>
+            <input id="newPasswordRepeat" type="password" autocomplete="new-password" minlength="12" required>
+          </label>
+          <div class="developer-access-actions">
+            <button class="button primary" type="submit">Passwort speichern</button>
+            <a class="button secondary" href="./">Zurück zum Login</a>
+          </div>
+        </form>
+        <div id="passwordMessage" class="form-message" hidden></div>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../reset-password.js"></script>
+</body>
+</html>
