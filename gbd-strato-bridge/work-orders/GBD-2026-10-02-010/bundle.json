@@ -4,7 +4,7 @@
     "format": "gbd-maintenance-work-order/v1",
     "id": "GBD-2026-10-02-010",
     "created_at": "2026-10-02T09:58:00Z",
-    "description": "EU-Safe-Launch Staging vollständig synchronisieren: EU-Konten, kommerzielle Verifizierung, privater Identitätsworkflow, Support, Checkout, serverseitige Kaufbestätigungen und aktualisierte DE/EN-Rechtstexte. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Freigabegates.",
+    "description": "EU-Safe-Launch Staging vollständig synchronisieren: EU-Konten, kommerzielle Verifizierung, privater Identitätsworkflow, Support, Checkout, Kaufbestätigungen, ausdrückliche Admin-Prüfbestätigungen und aktualisierte DE/EN-Rechtstexte. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Freigabegates.",
     "operations": [
       {
         "op": "write",
@@ -80,7 +80,7 @@
         "op": "write",
         "path": "staging/admin/admin.js",
         "source": "payload/admin/admin.js",
-        "sha256": "12821a2eaf0e7c53d53cafdcf714816329b3fa607a78a6e0e5e99a187c9c7647",
+        "sha256": "e39a1e4fafc1746cd2cc0538cf552f429e19dae54177fec6ffb5c1bc11d75737",
         "expected_sha256": "bb818b1a66dde17659c8fcbd620af621e2c31454c7483d680b57bb6b564b29cf"
       },
       {
@@ -293,8 +293,8 @@
       "source": "payload/admin/admin.js",
       "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/admin/admin.js",
       "encoding": "raw",
-      "size": 30249,
-      "sha256": "12821a2eaf0e7c53d53cafdcf714816329b3fa607a78a6e0e5e99a187c9c7647"
+      "size": 31611,
+      "sha256": "e39a1e4fafc1746cd2cc0538cf552f429e19dae54177fec6ffb5c1bc11d75737"
     },
     {
       "source": "payload/account/index.html",
