@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#06141b">
+<link rel="canonical" href="https://gamesbehinddoors.de/en/support/"><link rel="alternate" hreflang="de" href="https://gamesbehinddoors.de/support/"><link rel="alternate" hreflang="en" href="https://gamesbehinddoors.de/en/support/">
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../developer-redesign.css"><title>Support | Games Behind Doors</title></head>
+<body class="developer-page login-only-page" data-support-lang="en">
+<header class="site-header login-only-header"><a class="brand" href="../"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>Support</small></span></a></header>
+<main><section class="developer-access"><div class="developer-access-card">
+<span class="eyebrow">SUPPORT & COMPLAINTS</span><h1>Request help</h1>
+<p>Support is prepared for payments, refunds, accounts, developer/identity verification, country-detection errors, rights reports and security reports.</p>
+<div id="supportClosed" class="notice">The support form is not enabled yet. For urgent rights or security reports use <a href="mailto:rockydevgames@gmail.com">rockydevgames@gmail.com</a>. Do not send identity documents as normal email attachments.</div>
+<form id="supportForm" hidden>
+<label><span>Category *</span><select id="supportCategory" required>
+<option value="">Choose</option><option value="payment">Payment problem</option><option value="refund">Refund</option><option value="account">Account</option><option value="developer_verification">Developer verification</option><option value="identity_verification">Identity verification</option><option value="country_error">Country / geolocation error</option><option value="rights_infringement">Rights infringement</option><option value="security_report">Security report</option><option value="general">General request</option>
+</select></label>
+<label><span>Email *</span><input id="supportEmail" type="email" maxlength="254" required></label>
+<label><span>Subject *</span><input id="supportSubject" type="text" minlength="3" maxlength="160" required></label>
+<label><span>Message *</span><textarea id="supportMessageText" minlength="10" maxlength="5000" rows="7" required></textarea></label>
+<p class="field-hint">Do not include passwords, credentials or identity-document copies in the message. Identity documents are processed only through the dedicated private upload workflow.</p>
+<button class="button primary" id="supportSubmit" type="submit">Send request</button>
+</form><div id="supportMessage" class="form-message" hidden></div>
+</div></section></main>
+<footer class="store-footer"><strong>Games Behind Doors</strong><div class="footer-links"><a href="../legal/privacy">Privacy</a><a href="../legal/terms">Terms</a></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../support/support.js"></script>
+</body></html>
