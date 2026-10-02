@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06141b">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../gbd-icon.svg" type="image/svg+xml">
+  <title>Entwickler Login | Games Behind Doors</title>
+  <link rel="canonical" href="https://gamesbehinddoors.de/developers/login/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../developer-redesign.css">
+</head>
+<body class="developer-page login-only-page">
+  <header class="site-header login-only-header">
+    <div class="brand">
+      <span class="brand-mark">GBD</span>
+      <span class="brand-copy"><strong>Games Behind Doors</strong><small>Entwickler</small></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="developer-access">
+      <div class="developer-access-card">
+        <span class="eyebrow">ENTWICKLER-ZUGANG</span>
+        <h1>Anmelden.</h1>
+        <p>Bestehende freigeschaltete Entwicklerkonten können sich derzeit mit E-Mail und Passwort anmelden. Neue Registrierungen bleiben geschlossen.</p>
+
+        <div class="developer-access-actions" hidden>
+          <button class="button secondary" id="developerGoogleLogin" type="button" disabled>Mit Google anmelden</button>
+        </div>
+        <p class="field-hint">Google-Anmeldung ist vorbereitet, bleibt während der geschlossenen Registrierung aber deaktiviert.</p>
+
+        <form id="developerLoginForm">
+          <label>
+            <span>E-Mail</span>
+            <input id="developerLoginEmail" type="email" autocomplete="email" required placeholder="entwickler@beispiel.de">
+          </label>
+          <label>
+            <span>Passwort</span>
+            <input id="developerLoginPassword" type="password" autocomplete="current-password" minlength="10" required placeholder="Mindestens 10 Zeichen">
+          </label>
+          <div class="developer-access-actions">
+            <button class="button primary" type="submit">Anmelden</button>
+            <button class="button secondary" id="developerForgotPassword" type="button">Passwort vergessen</button>
+            <button class="button secondary" id="developerResendConfirmation" type="button">Bestätigungs-Mail erneut senden</button>
+          </div>
+        </form>
+
+        <p class="field-hint" id="developerRegistrationState">Neue Entwicklerregistrierungen sind derzeit geschlossen. Bereits freigeschaltete Konten können sich weiterhin anmelden.</p>
+        <div class="notice" style="margin-top:16px"><strong>Spiele einreichen bleibt dauerhaft kostenlos.</strong><br>Eine Plattformprovision fällt nur bei von Games Behind Doors abgewickelten Verkäufen oder In-App-Käufen an.</div>
+        <div id="developerLoginMessage" class="form-message" hidden></div>
+
+        <section id="developerRegistrationCard" class="developer-registration-card" hidden style="margin-top:24px">
+          <span class="eyebrow">EU-ENTWICKLERKONTO</span>
+          <h2>Registrieren</h2>
+          <p>Die funktionalen Entwicklerdienste starten ausschließlich für EU-Wohn- oder Unternehmenssitze. Die Länderprüfung erfolgt serverseitig; Sprache oder Währung gelten nicht als Länderbeweis.</p>
+          <form id="developerRegistrationForm">
+            <label><span>Entwicklername / Studio *</span><input id="developerRegisterUsername" type="text" minlength="2" maxlength="60" autocomplete="organization" required></label>
+            <label><span>E-Mail *</span><input id="developerRegisterEmail" type="email" maxlength="254" autocomplete="email" required></label>
+            <label><span>Passwort *</span><input id="developerRegisterPassword" type="password" minlength="10" maxlength="128" autocomplete="new-password" required></label>
+            <label>
+              <span>Wohnsitz / Unternehmenssitz *</span>
+              <select id="developerRegisterCountry" required><option value="">Bitte EU-Land wählen</option></select>
+            </label>
+            <label class="check-row"><input id="developerRegisterCountryConfirm" type="checkbox" required><span>Ich bestätige, dass die Länderangabe wahrheitsgemäß ist.</span></label>
+            <label class="check-row"><input id="developerRegisterTerms" type="checkbox" required><span>Ich akzeptiere die <a href="../../legal/developer-terms" target="_blank" rel="noopener">Entwicklerbedingungen</a>.</span></label>
+            <button class="button primary" id="developerRegisterButton" type="submit">EU-Entwicklerkonto anlegen</button>
+          </form>
+          <div id="developerRegistrationMessage" class="form-message" hidden></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="store-footer">
+    <strong>Games Behind Doors</strong>
+    <div class="footer-links">
+      <a href="../../legal/imprint">Impressum</a>
+      <a href="../../legal/privacy">Datenschutz</a>
+      <a href="../../legal/terms">Nutzungsbedingungen</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../login.js"></script>
+</body>
+</html>
