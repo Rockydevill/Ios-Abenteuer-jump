@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T14:58:00Z",
+  "published_at": "2026-10-02T15:38:30Z",
   "work_order": {
-    "id": "GBD-2026-10-02-014",
-    "description": "EU-Safe-Launch Staging vollständig synchronisieren und bis zur kontrollierten Test-/Freigabephase zusätzlich per HTTP-404 gegen normale Besucher sperren. Maintenance sowie die bereits HMAC-/Proxy-geschützten Serverendpunkte bleiben erreichbar. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Änderung der 0/3-Freigaben.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-014/bundle.json",
-    "bundle_sha256": "2d22ff4b4eba10b040227f71460ea4ad6bf4ebc6f0f1050f0a2732b526870996",
+    "id": "GBD-2026-10-02-015",
+    "description": "EU-Safe-Launch Staging vollständig synchronisieren, normale Besucher weiter per HTTP-404 sperren und das private Storage-Gateway um bounded statische Sicherheitsindikatoren für HTML/ZIP/PWA erweitern. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Änderung der 0/3-Freigaben.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-015/bundle.json",
+    "bundle_sha256": "7035388f136cf67643dc85348aac9ffb168d2f886c0e389150ea2dd67efd4e1e",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "ba32c9f7def2a9c538095619835c9e3c0dd83ed5958998a7705216e729f7d673"
+    "hmac_sha256": "3e7a07bf3a7e37ed832f1533f946c6bbf778de1f3b728a2aeec319b1cab7912f"
   }
 }
