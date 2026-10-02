@@ -105,6 +105,12 @@
         commercial_minors_review_required:tr('Der kommerzielle Minderjährigenprozess ist noch nicht freigegeben.','The commercial minors process has not yet been approved.'),
         refund_dispute_review_required:tr('Die finale Refund-/Dispute-Prüfung ist noch offen.','The final refund/dispute review is still pending.'),
         consumer_checkout_review_required:tr('Die finale Verbraucher-Checkout-Prüfung ist noch offen.','The final consumer checkout review is still pending.'),
+        identity_legal_basis_review_required:tr('Die Rechtsgrundlage für die kommerzielle Identitätsprüfung ist noch nicht final freigegeben.','The legal basis for commercial identity verification is not finally approved yet.'),
+        identity_country_rules_review_required:tr('Die länderspezifischen Regeln für Identitätsdokumente sind noch nicht final freigegeben.','Country-specific identity document rules are not finally approved yet.'),
+        p2b_terms_review_required:tr('Die finale P2B-Prüfung der Entwicklerbedingungen ist noch offen.','The final P2B review of developer terms is still pending.'),
+        dsa_trader_traceability_review_required:tr('Die finale DSA-Prüfung zur Händlernachverfolgbarkeit ist noch offen.','The final DSA trader-traceability review is still pending.'),
+        geo_blocking_review_required:tr('Die finale Geo-Blocking-Prüfung ist noch offen.','The final geo-blocking review is still pending.'),
+        legal_texts_final_review_required:tr('Die finalen Rechtstexte sind noch nicht freigegeben.','The final legal texts have not yet been approved.'),
         checkout_request_id_required:tr('Der sichere Kaufvorgang konnte nicht initialisiert werden.','The secure checkout request could not be initialized.'),
         checkout_idempotency_conflict:tr('Dieser Kaufvorgang passt nicht mehr zum ausgewählten Produkt. Bitte lade die Seite neu.','This checkout request no longer matches the selected product. Please reload the page.')
       };
