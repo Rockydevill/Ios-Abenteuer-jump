@@ -2,7 +2,8 @@ const PROJECT_URL = 'https://voldtqsdqcdexkexwerp.supabase.co';
 const PUBLISHABLE_KEY = ["sb_publish","able_2CqwT","ZnV0S35nNa","KyoEyxw_PS","Tw9_Pk"].join('');
 const client = window.supabase.createClient(PROJECT_URL, PUBLISHABLE_KEY);
 const PUBLIC_CONFIG_URL = PROJECT_URL + '/functions/v1/gbd-public-config';
-const DEVELOPER_SIGNUP_URL = PROJECT_URL + '/functions/v1/gbd-developer-signup';
+const SERVICE_PROXY_URL = (window.location.pathname.indexOf('/staging/') === 0 ? '/staging/_gbd_proxy.php' : '/_gbd_proxy.php');
+const DEVELOPER_SIGNUP_URL = SERVICE_PROXY_URL + '?service=developer_signup';
 
 const form = document.getElementById('developerLoginForm');
 const emailInput = document.getElementById('developerLoginEmail');
