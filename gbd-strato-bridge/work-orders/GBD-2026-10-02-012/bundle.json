@@ -1,0 +1,545 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-02-012",
+    "created_at": "2026-10-02T12:45:00Z",
+    "description": "EU-Safe-Launch Staging vollständig synchronisieren: Work-Order 011 plus vertrauenswürdige serverseitige Länderprüfung auch für Entwicklerportal und Nutzerkonto. Direkte Account-Service-Aufrufe ohne STRATO-Country-Assertion werden blockiert. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Freigabegates.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/index.html",
+        "source": "payload/index.html",
+        "sha256": "6693d557f43ea162abf93dab3a71338f3db06d356a0019135625a43abf9eea77",
+        "expected_sha256": "425696be07bedc1e3fde3834d4a772258cba62f6d4cb8108c4429932df8c8111"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/index.html",
+        "source": "payload/en/index.html",
+        "sha256": "73dcc2c4519aee4fce301de74551af3f3661f0148c8365452154664976f593fb",
+        "expected_sha256": "108f22cff06e75da3fb7ef8628b9c5f91d783bff2bb23152e83c97b514b868eb"
+      },
+      {
+        "op": "write",
+        "path": "staging/app.js",
+        "source": "payload/app.js",
+        "sha256": "3fcbd71893a490a250436ee1060bc96d267c4cd03dfdd843d5b0049ea33af8f6",
+        "expected_sha256": "47cb2cb9346b91145354d9ae0225486edf1bfd416725b5567fe14ec4bdb9430f"
+      },
+      {
+        "op": "write",
+        "path": "staging/live-games.js",
+        "source": "payload/live-games.js",
+        "sha256": "fe2dbe54dbf2e3ce1b7ac213a7b1581ee3e42d8d72706f411e36100efad842d9",
+        "expected_sha256": "c828a106ca38d4a3b2f3577fcdb636e58da422dedcae29f3dc0050e0c384a77a"
+      },
+      {
+        "op": "write",
+        "path": "staging/developers/index.html",
+        "source": "payload/developers/index.html",
+        "sha256": "7bccbd226319ec309e0f9d9ceffb99142538adc915116b194b7a2733b955379f",
+        "expected_sha256": "2d77666d6f6eb6a8e993ee7c8bb5da5c320a5d8f4fff500f93f9680781ebe6cb"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/developers/index.html",
+        "source": "payload/en/developers/index.html",
+        "sha256": "347c975e7adae072202b1c201d0b6f605e5c3ea5659cc6852b7cba9f169e2442",
+        "expected_sha256": "80afbff49dad629c30da676849edd927a248f30ba9835829f2e4237bdd9b3e0c"
+      },
+      {
+        "op": "write",
+        "path": "staging/developers/login/index.html",
+        "source": "payload/developers/login/index.html",
+        "sha256": "0db12ef040badf80775cb22fc6d3c596191eb4b59568c919634c0171ddbd7101",
+        "expected_sha256": "ceee24e8d9dd48b8541bb701477079f84de996b75d32c7a12377a9e46eeb2577"
+      },
+      {
+        "op": "write",
+        "path": "staging/developers/login.js",
+        "source": "payload/developers/login.js",
+        "sha256": "99021ab149f4e145173cd2537ec70fdaf46cda636834c94a59706c1e1853b690",
+        "expected_sha256": "0e0e6e5d1dc68bbaa4a4e374eec08b98e84ef6e200317c021975ce8e83b065fd"
+      },
+      {
+        "op": "write",
+        "path": "staging/developers/portal/index.html",
+        "source": "payload/developers/portal/index.html",
+        "sha256": "7df984c616f3cda5b49670522dc435a55f1fe113147f768c4ca402f9890ab98f",
+        "expected_sha256": "fa65a6b09d2ec89f62bcb6933a7d78306aa45443e564a26e141333d4d3040414"
+      },
+      {
+        "op": "write",
+        "path": "staging/developers/submission.js",
+        "source": "payload/developers/submission.js",
+        "sha256": "a76ba02941dddf17d422b5ed7ca4e67428b25d545f01869faa9a50cd416ccb1e",
+        "expected_sha256": "eb65cb0bc943d8e3e266d5318f59afbef98880c28dda04720c8253d63aae1f36"
+      },
+      {
+        "op": "write",
+        "path": "staging/admin/admin.js",
+        "source": "payload/admin/admin.js",
+        "sha256": "e39a1e4fafc1746cd2cc0538cf552f429e19dae54177fec6ffb5c1bc11d75737",
+        "expected_sha256": "bb818b1a66dde17659c8fcbd620af621e2c31454c7483d680b57bb6b564b29cf"
+      },
+      {
+        "op": "write",
+        "path": "staging/account/index.html",
+        "source": "payload/account/index.html",
+        "sha256": "67cb72fef7e8f3dd84efe85c5ee970321e9b48c62c617917adf781c2fb506fdb",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/account/account.js",
+        "source": "payload/account/account.js",
+        "sha256": "6eb1c339acd09bdd022ca9ef07f711668b2532b9e22142012ce289aa810237bc",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/en/account/index.html",
+        "source": "payload/en/account/index.html",
+        "sha256": "0479838428bf500a21aad6cb5d36b681b1b4f69f0a6dd8e6e845b7bb5e94c210",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/games/checkout.js",
+        "source": "payload/games/checkout.js",
+        "sha256": "e6f101e3ec5fee3aa836ec1126e081422aba7e50ef5d8c6f9aeeb08646215c1c",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/support/index.html",
+        "source": "payload/support/index.html",
+        "sha256": "e6e4bc6d22756899a9bff42b30ccd95c724b7c3169fbb8bc44bd29b00771666c",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/support/support.js",
+        "source": "payload/support/support.js",
+        "sha256": "740d62f96e3cabdaadeb5ce82c7237d9dcf3a340a3b274fc457e756717ca932c",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/en/support/index.html",
+        "source": "payload/en/support/index.html",
+        "sha256": "ce35f19eec0748812c398d693f9764ea12b5e4612886022b0e7bd15d8c6292b3",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/legal/developer-terms.html",
+        "source": "payload/legal/developer-terms.html",
+        "sha256": "76ea30bf82748d1be06528e4d152650fa87a3068185f237843a31ccf5eb71b84",
+        "expected_sha256": "e6cc5de811a1ff6aeac8a44e6220d710ec0029477f8c0bcc0b478a68f7b80c50"
+      },
+      {
+        "op": "write",
+        "path": "staging/legal/privacy.html",
+        "source": "payload/legal/privacy.html",
+        "sha256": "6ef653a027fc70d0ce5a99c78bb34d9ff65e104e625d07a363f4f11b39e03103",
+        "expected_sha256": "b6b1399eb34e38a5a41174d247eaa7a864091ac190fc443c10934e319460e5ef"
+      },
+      {
+        "op": "write",
+        "path": "staging/legal/terms.html",
+        "source": "payload/legal/terms.html",
+        "sha256": "1ab60ab81ff5dcd0b6478cfe7a9277327612b6aded9f361f4a148ae24d1e7ab5",
+        "expected_sha256": "78558d979967b8611227d4623c796a196ae4c1dc539c7f3a08cd5aa5e4fe3c62"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/legal/developer-terms.html",
+        "source": "payload/en/legal/developer-terms.html",
+        "sha256": "2d34f9fde9469acf58db354dc5452e2611610c8fc1e1277ff83950908369485e",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/en/legal/privacy.html",
+        "source": "payload/en/legal/privacy.html",
+        "sha256": "fefb2745e2916ab623b161407dd6b0b28a088c82ee3c4bd6987998f7221a117b",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/en/legal/terms.html",
+        "source": "payload/en/legal/terms.html",
+        "sha256": "f976b0b8b931b6a7b9fdb3e05276b21c4c914a230ab8db1f532136e984753a8f",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/review-process/index.html",
+        "source": "payload/review-process/index.html",
+        "sha256": "45a4e36654346ac287d89f6a4aff17cfcdee42e5ded3a1031d93dc38766c5d55",
+        "expected_sha256": "4421da85b9136adc9acb45262f08407a5005c3d5adef16b7134557cc7d8f740d"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/review-process/index.html",
+        "source": "payload/en/review-process/index.html",
+        "sha256": "3e4e16c2d72cc3977c8012435594338f6cf7f9d3dbe5946eeab1d2de680ffb00",
+        "expected_sha256": "113a4eed17283f442d0cc36b16bcf7321256632bf4de1132a1b0d8a09887ef9c"
+      },
+      {
+        "op": "write",
+        "path": "staging/about/index.html",
+        "source": "payload/about/index.html",
+        "sha256": "12d7bc718403b913bd6aa775c9d029e246c28030634993e23112049d2334a682",
+        "expected_sha256": "cbce6cf57a14defbf9e7112ada1f882bc65a214e08de68033767e1d3a53fb38b"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/about/index.html",
+        "source": "payload/en/about/index.html",
+        "sha256": "f03024efc5151b9e909f14263121c6d420acc75e5dbb12bb3a9df40b366c1fda",
+        "expected_sha256": "d46e0dea78e1714310f1bca7666487a53b8b85ccd339acffb1e56a184499b795"
+      },
+      {
+        "op": "write",
+        "path": "staging/games/index.html",
+        "source": "payload/games/index.html",
+        "sha256": "3602e90956489f72b27c08f163a15871aaf09e1d8565896eb85f80076b30496a",
+        "expected_sha256": "31e9d50a967b81a16d175def52c156f97ec257d56c19cef183ef38e45300dec0"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/games/index.html",
+        "source": "payload/en/games/index.html",
+        "sha256": "04032b08b63c7645bec22aed2b0d045f5f6edec8bf33d8a3065d99cfcc6d7f69",
+        "expected_sha256": "2dc251ec4cfa63405c26b13f8f459eba5f9894d5c867659816557a31d2e5ff75"
+      },
+      {
+        "op": "write",
+        "path": "staging/_gbd_proxy.php",
+        "source": "payload/_gbd_proxy.php",
+        "sha256": "3853603dac3093a6593eacac1feb1ecf07b07963dd21b53116a670e6f8c64c2d",
+        "expected_sha256": "16f16d116d2cb2237cc12c2bc9fc1efd45b8eb8561d7bd88b96f9ac5a8d56ec1"
+      },
+      {
+        "op": "write",
+        "path": "staging/games/install.js",
+        "source": "payload/games/install.js",
+        "sha256": "550686f3232b64e9867964448cb51571f59bb777257a5c2a13da9c2607d7c545",
+        "expected_sha256": "521e2b1f6121520edce89e343a8c9ca1131d3a13c26c15fde7721ed39bdf1638"
+      },
+      {
+        "op": "write",
+        "path": "staging/ranking/index.html",
+        "source": "payload/ranking/index.html",
+        "sha256": "190299dd0dee2ec22d160b2f27b6de4ef501b87c55415c2f57d64e3720557c32",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/en/ranking/index.html",
+        "source": "payload/en/ranking/index.html",
+        "sha256": "02450468e5e4d3d385603a921229981ac95062dca310d0c1243e36a35b13952d",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/ranking/ranking.js",
+        "source": "payload/ranking/ranking.js",
+        "sha256": "94295081f07b70c223490fcfdeeaffc2a4914421ab6ff46d99ca07f5db7b34ec",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/report-game/index.html",
+        "source": "payload/report-game/index.html",
+        "sha256": "ef9001fdca2abfbd9af3fc506b2ac3370123c280de01ceeaed044515a40db685",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/en/report-game/index.html",
+        "source": "payload/en/report-game/index.html",
+        "sha256": "695f7d823aa932fe5fa8deca45959be2984763828302f7e4b6bd59075bb4f754",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/report-game/report.js",
+        "source": "payload/report-game/report.js",
+        "sha256": "2d5ce9cfcc1919e2bdd14e9bdbe5a8b5b71f3a30b1fc1f2bb9d7033607d0afec",
+        "create_only": true
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/index.html",
+      "encoding": "raw",
+      "size": 12531,
+      "sha256": "6693d557f43ea162abf93dab3a71338f3db06d356a0019135625a43abf9eea77"
+    },
+    {
+      "source": "payload/en/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/en/index.html",
+      "encoding": "raw",
+      "size": 12068,
+      "sha256": "73dcc2c4519aee4fce301de74551af3f3661f0148c8365452154664976f593fb"
+    },
+    {
+      "source": "payload/app.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/app.js",
+      "encoding": "raw",
+      "size": 3033,
+      "sha256": "3fcbd71893a490a250436ee1060bc96d267c4cd03dfdd843d5b0049ea33af8f6"
+    },
+    {
+      "source": "payload/live-games.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/live-games.js",
+      "encoding": "raw",
+      "size": 3643,
+      "sha256": "fe2dbe54dbf2e3ce1b7ac213a7b1581ee3e42d8d72706f411e36100efad842d9"
+    },
+    {
+      "source": "payload/developers/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/developers/index.html",
+      "encoding": "raw",
+      "size": 8056,
+      "sha256": "7bccbd226319ec309e0f9d9ceffb99142538adc915116b194b7a2733b955379f"
+    },
+    {
+      "source": "payload/en/developers/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/developers/index.html",
+      "encoding": "raw",
+      "size": 7369,
+      "sha256": "347c975e7adae072202b1c201d0b6f605e5c3ea5659cc6852b7cba9f169e2442"
+    },
+    {
+      "source": "payload/developers/login/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/developers/login/index.html",
+      "encoding": "raw",
+      "size": 5223,
+      "sha256": "0db12ef040badf80775cb22fc6d3c596191eb4b59568c919634c0171ddbd7101"
+    },
+    {
+      "source": "payload/developers/login.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/developers/login.js",
+      "encoding": "raw",
+      "size": 9238,
+      "sha256": "99021ab149f4e145173cd2537ec70fdaf46cda636834c94a59706c1e1853b690"
+    },
+    {
+      "source": "payload/developers/portal/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/developers/portal/index.html",
+      "encoding": "raw",
+      "size": 27450,
+      "sha256": "7df984c616f3cda5b49670522dc435a55f1fe113147f768c4ca402f9890ab98f"
+    },
+    {
+      "source": "payload/developers/submission.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-012/payload/developers/submission.js",
+      "encoding": "raw",
+      "size": 49062,
+      "sha256": "a76ba02941dddf17d422b5ed7ca4e67428b25d545f01869faa9a50cd416ccb1e"
+    },
+    {
+      "source": "payload/admin/admin.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/admin/admin.js",
+      "encoding": "raw",
+      "size": 31611,
+      "sha256": "e39a1e4fafc1746cd2cc0538cf552f429e19dae54177fec6ffb5c1bc11d75737"
+    },
+    {
+      "source": "payload/account/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/account/index.html",
+      "encoding": "raw",
+      "size": 3952,
+      "sha256": "67cb72fef7e8f3dd84efe85c5ee970321e9b48c62c617917adf781c2fb506fdb"
+    },
+    {
+      "source": "payload/account/account.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-012/payload/account/account.js",
+      "encoding": "raw",
+      "size": 8697,
+      "sha256": "6eb1c339acd09bdd022ca9ef07f711668b2532b9e22142012ce289aa810237bc"
+    },
+    {
+      "source": "payload/en/account/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/account/index.html",
+      "encoding": "raw",
+      "size": 3875,
+      "sha256": "0479838428bf500a21aad6cb5d36b681b1b4f69f0a6dd8e6e845b7bb5e94c210"
+    },
+    {
+      "source": "payload/games/checkout.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/games/checkout.js",
+      "encoding": "raw",
+      "size": 9561,
+      "sha256": "e6f101e3ec5fee3aa836ec1126e081422aba7e50ef5d8c6f9aeeb08646215c1c"
+    },
+    {
+      "source": "payload/support/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/support/index.html",
+      "encoding": "raw",
+      "size": 3249,
+      "sha256": "e6e4bc6d22756899a9bff42b30ccd95c724b7c3169fbb8bc44bd29b00771666c"
+    },
+    {
+      "source": "payload/support/support.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/support/support.js",
+      "encoding": "raw",
+      "size": 2502,
+      "sha256": "740d62f96e3cabdaadeb5ce82c7237d9dcf3a340a3b274fc457e756717ca932c"
+    },
+    {
+      "source": "payload/en/support/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/support/index.html",
+      "encoding": "raw",
+      "size": 3141,
+      "sha256": "ce35f19eec0748812c398d693f9764ea12b5e4612886022b0e7bd15d8c6292b3"
+    },
+    {
+      "source": "payload/legal/developer-terms.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/legal/developer-terms.html",
+      "encoding": "raw",
+      "size": 15400,
+      "sha256": "76ea30bf82748d1be06528e4d152650fa87a3068185f237843a31ccf5eb71b84"
+    },
+    {
+      "source": "payload/legal/privacy.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/legal/privacy.html",
+      "encoding": "raw",
+      "size": 16686,
+      "sha256": "6ef653a027fc70d0ce5a99c78bb34d9ff65e104e625d07a363f4f11b39e03103"
+    },
+    {
+      "source": "payload/legal/terms.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/legal/terms.html",
+      "encoding": "raw",
+      "size": 8725,
+      "sha256": "1ab60ab81ff5dcd0b6478cfe7a9277327612b6aded9f361f4a148ae24d1e7ab5"
+    },
+    {
+      "source": "payload/en/legal/developer-terms.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/legal/developer-terms.html",
+      "encoding": "raw",
+      "size": 13037,
+      "sha256": "2d34f9fde9469acf58db354dc5452e2611610c8fc1e1277ff83950908369485e"
+    },
+    {
+      "source": "payload/en/legal/privacy.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/legal/privacy.html",
+      "encoding": "raw",
+      "size": 13756,
+      "sha256": "fefb2745e2916ab623b161407dd6b0b28a088c82ee3c4bd6987998f7221a117b"
+    },
+    {
+      "source": "payload/en/legal/terms.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/legal/terms.html",
+      "encoding": "raw",
+      "size": 7286,
+      "sha256": "f976b0b8b931b6a7b9fdb3e05276b21c4c914a230ab8db1f532136e984753a8f"
+    },
+    {
+      "source": "payload/review-process/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/review-process/index.html",
+      "encoding": "raw",
+      "size": 8579,
+      "sha256": "45a4e36654346ac287d89f6a4aff17cfcdee42e5ded3a1031d93dc38766c5d55"
+    },
+    {
+      "source": "payload/en/review-process/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/review-process/index.html",
+      "encoding": "raw",
+      "size": 7738,
+      "sha256": "3e4e16c2d72cc3977c8012435594338f6cf7f9d3dbe5946eeab1d2de680ffb00"
+    },
+    {
+      "source": "payload/about/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/about/index.html",
+      "encoding": "raw",
+      "size": 4779,
+      "sha256": "12d7bc718403b913bd6aa775c9d029e246c28030634993e23112049d2334a682"
+    },
+    {
+      "source": "payload/en/about/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/about/index.html",
+      "encoding": "raw",
+      "size": 4107,
+      "sha256": "f03024efc5151b9e909f14263121c6d420acc75e5dbb12bb3a9df40b366c1fda"
+    },
+    {
+      "source": "payload/games/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/games/index.html",
+      "encoding": "raw",
+      "size": 5012,
+      "sha256": "3602e90956489f72b27c08f163a15871aaf09e1d8565896eb85f80076b30496a"
+    },
+    {
+      "source": "payload/en/games/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/en/games/index.html",
+      "encoding": "raw",
+      "size": 4937,
+      "sha256": "04032b08b63c7645bec22aed2b0d045f5f6edec8bf33d8a3065d99cfcc6d7f69"
+    },
+    {
+      "source": "payload/_gbd_proxy.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-012/payload/_gbd_proxy.php",
+      "encoding": "raw",
+      "size": 15928,
+      "sha256": "3853603dac3093a6593eacac1feb1ecf07b07963dd21b53116a670e6f8c64c2d"
+    },
+    {
+      "source": "payload/games/install.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/games/install.js",
+      "encoding": "raw",
+      "size": 1536,
+      "sha256": "550686f3232b64e9867964448cb51571f59bb777257a5c2a13da9c2607d7c545"
+    },
+    {
+      "source": "payload/ranking/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/ranking/index.html",
+      "encoding": "raw",
+      "size": 2214,
+      "sha256": "190299dd0dee2ec22d160b2f27b6de4ef501b87c55415c2f57d64e3720557c32"
+    },
+    {
+      "source": "payload/en/ranking/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/en/ranking/index.html",
+      "encoding": "raw",
+      "size": 2131,
+      "sha256": "02450468e5e4d3d385603a921229981ac95062dca310d0c1243e36a35b13952d"
+    },
+    {
+      "source": "payload/ranking/ranking.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/ranking/ranking.js",
+      "encoding": "raw",
+      "size": 1810,
+      "sha256": "94295081f07b70c223490fcfdeeaffc2a4914421ab6ff46d99ca07f5db7b34ec"
+    },
+    {
+      "source": "payload/report-game/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/report-game/index.html",
+      "encoding": "raw",
+      "size": 2799,
+      "sha256": "ef9001fdca2abfbd9af3fc506b2ac3370123c280de01ceeaed044515a40db685"
+    },
+    {
+      "source": "payload/en/report-game/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/en/report-game/index.html",
+      "encoding": "raw",
+      "size": 2705,
+      "sha256": "695f7d823aa932fe5fa8deca45959be2984763828302f7e4b6bd59075bb4f754"
+    },
+    {
+      "source": "payload/report-game/report.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/report-game/report.js",
+      "encoding": "raw",
+      "size": 2843,
+      "sha256": "2d5ce9cfcc1919e2bdd14e9bdbe5a8b5b71f3a30b1fc1f2bb9d7033607d0afec"
+    }
+  ]
+}
