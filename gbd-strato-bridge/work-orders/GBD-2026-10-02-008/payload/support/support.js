@@ -1,0 +1,12 @@
+const PROJECT_URL='https://voldtqsdqcdexkexwerp.supabase.co';
+const PUBLISHABLE_KEY='sb_publishable_2CqwTZnV0S35nNaKyoEyxw_PSTw9_Pk';
+const CONFIG_URL=PROJECT_URL+'/functions/v1/gbd-public-config';
+const SUPPORT_URL=PROJECT_URL+'/functions/v1/gbd-support';
+const client=window.supabase.createClient(PROJECT_URL,PUBLISHABLE_KEY);
+const lang=document.body.dataset.supportLang==='en'?'en':'de';
+const t=(de,en)=>lang==='en'?en:de;
+const form=document.getElementById('supportForm'),closed=document.getElementById('supportClosed'),message=document.getElementById('supportMessage'),button=document.getElementById('supportSubmit');
+function show(type,text){message.hidden=false;message.className='form-message '+type;message.textContent=text}
+async function load(){const r=await fetch(CONFIG_URL,{headers:{apikey:PUBLISHABLE_KEY},cache:'no-store'});const d=await r.json().catch(()=>({}));const enabled=r.ok&&d.supportRequestsEnabled===true;form.hidden=!enabled;closed.hidden=enabled}
+form?.addEventListener('submit',async e=>{e.preventDefault();message.hidden=true;if(!form.checkValidity()){form.reportValidity();return}button.disabled=true;try{const s=(await client.auth.getSession()).data.session;const headers={'Content-Type':'application/json',apikey:PUBLISHABLE_KEY};if(s)headers.Authorization='Bearer '+s.access_token;const r=await fetch(SUPPORT_URL,{method:'POST',headers,body:JSON.stringify({category:document.getElementById('supportCategory').value,email:document.getElementById('supportEmail').value.trim(),subject:document.getElementById('supportSubject').value.trim(),message:document.getElementById('supportMessageText').value.trim()})});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.error||'support_failed');form.reset();show('success',t('Supportanfrage wurde gespeichert. Referenz: ','Support request stored. Reference: ')+(d.requestId||''))}catch(e){const m={support_closed:t('Das Supportformular ist derzeit geschlossen.','The support form is currently closed.'),rate_limited:t('Zu viele Anfragen. Bitte später erneut versuchen.','Too many requests. Please try again later.'),identity_documents_not_allowed_by_email_support:t('Ausweisdokumente dürfen nicht über normalen Support gesendet werden.','Identity documents must not be sent through ordinary support.')};show('error',m[e.message]||t('Supportanfrage konnte nicht gesendet werden.','Support request could not be sent.'))}finally{button.disabled=false}});
+load().catch(()=>{form.hidden=true;closed.hidden=false});
