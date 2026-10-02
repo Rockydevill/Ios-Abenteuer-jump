@@ -238,7 +238,7 @@ function proxy_sensitive_service(string $service): never {
         'prepare_submission' => ['gbd-prepare-submission','prepare_submission'],
         'paypal_marketplace' => ['gbd-paypal-marketplace','paypal_marketplace'],
         'paypal_checkout' => ['gbd-paypal-checkout','paypal_checkout'],
-        'commercial_verification' => ['gbd-commercial-verification-entry','commercial_verification'],
+        'commercial_verification' => ['gbd-commercial-verification','commercial_verification'],
         'game_download' => ['gbd-game-download','game_download'],
     ];
     if (!isset($map[$service])) out_json(404, ['ok'=>false,'error'=>'service_not_found']);
