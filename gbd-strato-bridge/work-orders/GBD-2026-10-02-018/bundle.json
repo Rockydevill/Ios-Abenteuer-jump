@@ -1,0 +1,27 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-02-018",
+    "created_at": "2026-10-02T16:58:00Z",
+    "description": "Nur Diagnose des aktuellen STRATO-Dateistands nach Hash-Konflikt: SHA-256 von staging/.htaccess und staging/gbd-storage-gateway.php ausgeben. Keine bestehende Website-Datei überschreiben, keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/gbd-storage-test.php",
+        "source": "payload/gbd-storage-test.php",
+        "sha256": "3b4287db7a8eef4bd3f2ecfdf6dd23538172bfd64207ddba183750b25d9bc9a8",
+        "create_only": true
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/gbd-storage-test.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-018/payload/gbd-storage-test.php",
+      "encoding": "raw",
+      "size": 831,
+      "sha256": "3b4287db7a8eef4bd3f2ecfdf6dd23538172bfd64207ddba183750b25d9bc9a8"
+    }
+  ]
+}
