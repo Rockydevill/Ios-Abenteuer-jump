@@ -1,0 +1,27 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-02-016",
+    "created_at": "2026-10-02T16:18:00Z",
+    "description": "STRATO-Staging Prelaunch-Lock korrigieren: normale Staging-Seiten müssen echten HTTP 404 liefern; Maintenance und die abgesicherten Serverendpunkte bleiben erreichbar. Keine Veröffentlichung, keine Echtgeld-Aktivierung, 0/3 bleibt unverändert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/.htaccess",
+        "source": "payload/staging-htaccess",
+        "sha256": "fcdf7baea8ecca1a24b69f6008b068c7dd49c2d8469e1236f9141d07cad261a4",
+        "expected_sha256": "42e301fa49c23af513336aac7ec6f778815aea231559c95a52cb680589926da6"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/staging-htaccess",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-016/payload/staging-htaccess",
+      "encoding": "raw",
+      "size": 2034,
+      "sha256": "fcdf7baea8ecca1a24b69f6008b068c7dd49c2d8469e1236f9141d07cad261a4"
+    }
+  ]
+}
