@@ -190,6 +190,7 @@ registrationForm?.addEventListener('submit', async event => {
     if (!r.ok) {
       const messages = {
         developer_registration_closed: 'Neue Entwicklerregistrierungen sind derzeit geschlossen.',
+        developer_age_policy_review_required: 'Die Altersregel für kostenlose Entwicklerkonten ist noch nicht abschließend freigegeben. Die Registrierung bleibt bis dahin geschlossen.',
         country_not_supported: 'Für deinen Staat ist diese Funktion nicht verfügbar.',
         country_verification_required: 'Dein Land konnte für diese Funktion nicht eindeutig bestätigt werden. Bitte prüfe deine Angaben oder wende dich an den Support.',
         country_required: 'Bitte wähle ein EU-Land aus.',
