@@ -1,6 +1,7 @@
 const PROJECT_URL = 'https://voldtqsdqcdexkexwerp.supabase.co';
 const PUBLISHABLE_KEY = 'sb_publishable_2CqwTZnV0S35nNaKyoEyxw_PSTw9_Pk';
-const PREPARE_URL = PROJECT_URL + '/functions/v1/gbd-prepare-submission';
+const SERVICE_PROXY_URL = (window.location.pathname.indexOf('/staging/') === 0 ? '/staging/_gbd_proxy.php' : '/_gbd_proxy.php');
+const PREPARE_URL = SERVICE_PROXY_URL + '?service=prepare_submission';
 const FINALIZE_URL = PROJECT_URL + '/functions/v1/gbd-finalize-submission';
 const DEVELOPER_URL = PROJECT_URL + '/functions/v1/gbd-developer';
 const TUS_ENDPOINT =
@@ -25,8 +26,8 @@ const paypalConnectButton = document.getElementById('paypalConnectButton');
 const paypalRefreshButton = document.getElementById('paypalRefreshButton');
 const paypalConnectMessage = document.getElementById('paypalConnectMessage');
 const developerTermsVersionLabel = document.getElementById('developerTermsVersionLabel');
-const PAYPAL_MARKETPLACE_URL = PROJECT_URL + '/functions/v1/gbd-paypal-marketplace';
-const COMMERCIAL_VERIFICATION_URL = PROJECT_URL + '/functions/v1/gbd-commercial-verification';
+const PAYPAL_MARKETPLACE_URL = SERVICE_PROXY_URL + '?service=paypal_marketplace';
+const COMMERCIAL_VERIFICATION_URL = SERVICE_PROXY_URL + '?service=commercial_verification';
 
 const form = document.getElementById('submissionForm');
 const declaredCountrySelect = document.getElementById('declaredCountryCode');
