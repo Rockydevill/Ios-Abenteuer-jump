@@ -1,0 +1,46 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-02-020",
+    "created_at": "2026-10-02T17:39:00Z",
+    "description": "Korrigierte STRATO Prelaunch-Härtung: gültigen expected_sha256 für staging/.htaccess verwenden, echten HTTP-404-Lock anwenden, Static-Security-Scanner im bestehenden Storage-Gateway aktivieren und Diagnose-Datei entfernen. Keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/.htaccess",
+        "source": "payload/staging-htaccess",
+        "sha256": "fcdf7baea8ecca1a24b69f6008b068c7dd49c2d8469e1236f9141d07cad261a4",
+        "expected_sha256": "7dbee67a76cea5dd19ac85a3e548e7636e697025b9abe7154c048c345bdbc0a1"
+      },
+      {
+        "op": "write",
+        "path": "staging/gbd-storage-gateway.php",
+        "source": "payload/gbd-storage-gateway.php",
+        "sha256": "0218c03235778d918cf447de78e06bf5299c4bd0b1cf80b3937ae1c93751546d",
+        "expected_sha256": "531453990accd946d0cfc3445a843ce94c8e24c35b72965cee7ec9e1b25b64f1"
+      },
+      {
+        "op": "delete",
+        "path": "staging/gbd-storage-test.php",
+        "expected_sha256": "3b4287db7a8eef4bd3f2ecfdf6dd23538172bfd64207ddba183750b25d9bc9a8"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/staging-htaccess",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-020/payload/staging-htaccess",
+      "encoding": "raw",
+      "size": 2034,
+      "sha256": "fcdf7baea8ecca1a24b69f6008b068c7dd49c2d8469e1236f9141d07cad261a4"
+    },
+    {
+      "source": "payload/gbd-storage-gateway.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-020/payload/gbd-storage-gateway.php",
+      "encoding": "raw",
+      "size": 48178,
+      "sha256": "0218c03235778d918cf447de78e06bf5299c4bd0b1cf80b3937ae1c93751546d"
+    }
+  ]
+}
