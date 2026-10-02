@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T16:18:30Z",
+  "published_at": "2026-10-02T16:28:30Z",
   "work_order": {
-    "id": "GBD-2026-10-02-016",
-    "description": "STRATO-Staging Prelaunch-Lock korrigieren: normale Staging-Seiten müssen echten HTTP 404 liefern; Maintenance und die abgesicherten Serverendpunkte bleiben erreichbar. Keine Veröffentlichung, keine Echtgeld-Aktivierung, 0/3 bleibt unverändert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-016/bundle.json",
-    "bundle_sha256": "7268fe183d7b9deded50b106da8f296e296c7d0716dfcc8c25d87d5a09031d45",
+    "id": "GBD-2026-10-02-017",
+    "description": "STRATO Prelaunch-Härtung nach Live-Test: echten HTTP-404-Lock für normale Staging-Seiten korrigieren und das bestehende private Storage-Gateway auf den getesteten Static-Security-Scanner-Quellstand synchronisieren. Maintenance und abgesicherte Serverendpunkte bleiben erreichbar. Keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-017/bundle.json",
+    "bundle_sha256": "242aff547534018329972972d447c4d6262cd85a572646582f0c4e8bcaac5379",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "d9b114a1009e6fb90754895958f0682966c4244066b84d4d1de09a6c5f3c6057"
+    "hmac_sha256": "2629b889db9c4c7ac9be01d9016d101925b5f6c230c5ee6a01c2cce3ec03b6e1"
   }
 }
