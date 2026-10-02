@@ -1,0 +1,41 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-02-017",
+    "created_at": "2026-10-02T16:28:00Z",
+    "description": "STRATO Prelaunch-Härtung nach Live-Test: echten HTTP-404-Lock für normale Staging-Seiten korrigieren und das bestehende private Storage-Gateway auf den getesteten Static-Security-Scanner-Quellstand synchronisieren. Maintenance und abgesicherte Serverendpunkte bleiben erreichbar. Keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/.htaccess",
+        "source": "payload/staging-htaccess",
+        "sha256": "fcdf7baea8ecca1a24b69f6008b068c7dd49c2d8469e1236f9141d07cad261a4",
+        "expected_sha256": "42e301fa49c23af513336aac7ec6f778815aea231559c95a52cb680589926da6"
+      },
+      {
+        "op": "write",
+        "path": "staging/gbd-storage-gateway.php",
+        "source": "payload/gbd-storage-gateway.php",
+        "sha256": "0218c03235778d918cf447de78e06bf5299c4bd0b1cf80b3937ae1c93751546d",
+        "expected_sha256": "531453990accd946d0cfc3445a843ce94c8e24c35b72965cee7ec9e1b25b64f1"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/staging-htaccess",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-017/payload/staging-htaccess",
+      "encoding": "raw",
+      "size": 2034,
+      "sha256": "fcdf7baea8ecca1a24b69f6008b068c7dd49c2d8469e1236f9141d07cad261a4"
+    },
+    {
+      "source": "payload/gbd-storage-gateway.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-017/payload/gbd-storage-gateway.php",
+      "encoding": "raw",
+      "size": 48178,
+      "sha256": "0218c03235778d918cf447de78e06bf5299c4bd0b1cf80b3937ae1c93751546d"
+    }
+  ]
+}
