@@ -3,7 +3,7 @@
   "work_order_manifest": {
     "format": "gbd-maintenance-work-order/v1",
     "id": "GBD-2026-10-02-013",
-    "created_at": "2026-10-02T12:40:00Z",
+    "created_at": "2026-10-02T12:26:00Z",
     "description": "EU-Safe-Launch Staging vollständig synchronisieren: Work-Order 012 plus read-only Startbereitschaft im Adminbereich. Zeigt 0/3 Freigaben sowie Public-/Echtgeld-Blocker, kann aber keine Freigabe erteilen und keine Feature-Flags aktivieren. Keine Veröffentlichung und keine Echtgeld-Aktivierung.",
     "operations": [
       {
