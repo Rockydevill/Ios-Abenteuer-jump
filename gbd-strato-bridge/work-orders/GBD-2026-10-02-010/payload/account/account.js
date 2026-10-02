@@ -1,7 +1,8 @@
 const PROJECT_URL='https://voldtqsdqcdexkexwerp.supabase.co';
 const PUBLISHABLE_KEY='sb_publishable_2CqwTZnV0S35nNaKyoEyxw_PSTw9_Pk';
 const PUBLIC_CONFIG_URL=PROJECT_URL+'/functions/v1/gbd-public-config';
-const SIGNUP_URL=PROJECT_URL+'/functions/v1/gbd-player-signup';
+const SERVICE_PROXY_URL=(window.location.pathname.indexOf('/staging/')===0?'/staging/_gbd_proxy.php':'/_gbd_proxy.php');
+const SIGNUP_URL=SERVICE_PROXY_URL+'?service=player_signup';
 const ACCOUNT_URL=PROJECT_URL+'/functions/v1/gbd-player-account';
 const client=window.supabase.createClient(PROJECT_URL,PUBLISHABLE_KEY);
 const lang=document.body.dataset.accountLang==='en'?'en':'de';
