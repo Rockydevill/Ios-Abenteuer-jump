@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06141b">
+  <meta name="description" content="Entdecke manuell geprüfte Android-Indie-Games bei Games Behind Doors. Finde neue Spiele, entdecke Indie-Entwickler und reiche dein eigenes Android-Game kostenlos ein.">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="canonical" href="https://gamesbehinddoors.de/">
+  <link rel="alternate" hreflang="de" href="https://gamesbehinddoors.de/">
+  <link rel="alternate" hreflang="en" href="https://gamesbehinddoors.de/en/">
+  <link rel="alternate" hreflang="x-default" href="https://gamesbehinddoors.de/">
+  <meta property="og:title" content="Android Indie Games entdecken | Games Behind Doors">
+  <meta property="og:description" content="Entdecke manuell geprüfte Android-Indie-Games und unabhängige Entwickler bei Games Behind Doors.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gamesbehinddoors.de/">
+  <meta property="og:image" content="https://gamesbehinddoors.de/gbd-social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Games Behind Doors">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Android Indie Games entdecken | Games Behind Doors">
+  <meta name="twitter:description" content="Manuell geprüfte Android-Indie-Games entdecken und unabhängige Entwickler finden.">
+  <meta name="twitter:image" content="https://gamesbehinddoors.de/gbd-social-preview.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="/gbd-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <title>Android Indie Games entdecken | Games Behind Doors</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./home-redesign.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "@id":"https://gamesbehinddoors.de/#website",
+        "url":"https://gamesbehinddoors.de/",
+        "name":"Games Behind Doors",
+        "alternateName":"GBD",
+        "inLanguage":"de-DE"
+      },
+      {
+        "@type":"Organization",
+        "@id":"https://gamesbehinddoors.de/#organization",
+        "name":"Rockydevgames",
+        "alternateName":"Games Behind Doors",
+        "url":"https://gamesbehinddoors.de/",
+        "logo":"https://gamesbehinddoors.de/icon-512.png",
+        "email":"rockydevgames@gmail.com",
+        "contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"rockydevgames@gmail.com","availableLanguage":["de","en"]},
+        "brand":{"@type":"Brand","name":"Games Behind Doors"}
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="home-page">
+<header class="site-header store-header">
+  <a class="brand" href="./">
+    <span class="brand-mark">GBD</span>
+    <span class="brand-copy"><strong>Games Behind Doors</strong><small>Indie Games. Sichtbar gemacht.</small></span>
+  </a>
+  <div class="header-controls">
+    <div class="language-switch" role="group" aria-label="Sprache wählen">
+      <a class="language-button active" href="/" lang="de" aria-current="page"><span aria-hidden="true">🇩🇪</span><span>Deutsch</span></a>
+      <a class="language-button" href="/en/" lang="en"><span aria-hidden="true">🇬🇧</span><span>English</span></a>
+    </div>
+    <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Menü öffnen"><span aria-hidden="true">☰</span></button>
+  </div>
+  <nav id="mainNav" aria-label="Hauptnavigation">
+    <a href="/games/">Spiele</a>
+    <a href="./developers/">Für Entwickler</a>
+    <a href="./review-process/">Prüfverfahren</a>
+    <a href="./about/">Über uns</a>
+    <a href="./account/">Konto</a>
+    <a href="./support/">Support</a>
+  </nav>
+</header>
+
+<main>
+  <section class="store-hero">
+    <div class="store-hero-copy">
+      <span class="eyebrow">BEHIND THE DOOR • ANDROID INDIE GAMES</span>
+      <h1>Android Indie Games entdecken.</h1>
+      <p class="hero-slogan">Andere Games. Andere Türen.</p>
+      <p>Games Behind Doors macht unabhängige Android-Spiele sichtbar. Entdecke neue Indie Games, informiere dich über Entwickler, Android-Anforderungen und Spielinhalte und finde nur Games, die vor einer Veröffentlichung manuell geprüft wurden.</p>
+
+      <div class="store-search" role="search">
+        <span aria-hidden="true">⌕</span>
+        <input id="gameSearch" type="search" placeholder="Android Games durchsuchen…" aria-label="Android Indie Games durchsuchen">
+        <button id="clearSearch" type="button" aria-label="Suche löschen"><span aria-hidden="true">×</span></button>
+      </div>
+
+      <div class="hero-actions">
+        <a class="button primary" href="#games">Spiele entdecken</a>
+        <a class="button secondary" href="./developers/">Infos für Entwickler</a>
+      </div>
+
+      <div class="hero-facts">
+        <span><b id="publicGameFact">0</b> öffentlich sichtbare Spiele</span>
+        <span><b>100 %</b> manuelle Freigabe</span>
+        <span><b>0</b> automatische Veröffentlichungen</span>
+      </div>
+    </div>
+
+    <div class="gbd-portal-stage" aria-label="Games Behind Doors Portal">
+      <div class="gbd-orbit orbit-a"></div><div class="gbd-orbit orbit-b"></div>
+      <div class="gbd-door-shell">
+        <div class="gbd-door-light"></div>
+        <div class="gbd-door">
+          <span class="gbd-door-number">01</span>
+          <div class="gbd-door-copy"><small>NÄCHSTES GEPRÜFTES GAME</small><strong>DEIN<br>GAME</strong></div>
+          <span class="gbd-door-handle"></span>
+        </div>
+      </div>
+      <div class="gbd-float-card card-top"><span>✓</span><div><b>Von uns geprüft</b><small>manuelle Freigabe</small></div></div>
+      <div class="gbd-float-card card-bottom"><span>↗</span><div><b>Android zuerst</b><small>eigene Spielseite</small></div></div>
+    </div>
+  </section>
+
+  <section class="store-benefits" aria-label="Plattform-Vorteile">
+    <div><span>✓</span><strong>Manuell geprüft</strong><small>Kein Spiel geht automatisch live.</small></div>
+    <div><span>⬇</span><strong>Android im Fokus</strong><small>Versionen und Anforderungen klar dargestellt.</small></div>
+    <div><span>◈</span><strong>Entwickler sichtbar</strong><small>Indie-Games stehen im Mittelpunkt.</small></div>
+    <div><span>↻</span><strong>Updates geprüft</strong><small>Neue Versionen können erneut geprüft werden.</small></div>
+  </section>
+
+  <section class="section store-section" id="games">
+    <div class="section-heading store-heading">
+      <div>
+        <span class="eyebrow">SPIELEKATALOG</span>
+        <h2>Neue Android Indie Games entdecken</h2>
+        <p class="section-subtitle">Kostenlose und später auch kostenpflichtige Android-Spiele erhalten eigene, klare Spielseiten mit Entwickler, Genre, Android-Version, Beschreibung und Screenshots.</p>
+      </div>
+      <span class="count" id="resultCount">0 Spiele</span>
+    </div>
+    <div class="category-chips" aria-label="Kategorien"><button class="category-chip active" data-filter="all" type="button">Alle</button></div>
+    <div class="catalog-grid" id="catalogGrid"></div>
+    <div class="empty-search" id="emptySearch" hidden><span>⌕</span><h3>Noch keine freigegebenen Spiele</h3><p>Sobald ein Spiel geprüft und freigegeben wurde, erscheint es hier.</p></div>
+  </section>
+
+  <section class="section ad-shell" data-gbd-ad-slot="homeCatalog" hidden aria-hidden="true" aria-label="Werbung"></section>
+
+  <section class="section discovery-section">
+    <div class="section-heading"><div><span class="eyebrow">WARUM GAMES BEHIND DOORS?</span><h2>Indie-Spiele finden, ohne im Massenkatalog unterzugehen.</h2></div></div>
+    <div class="discovery-grid">
+      <article><span class="discovery-number">01</span><h3>Klare Spielseiten</h3><p>Jedes veröffentlichte Android-Game erhält eine eigene Seite mit Spielbeschreibung, Entwickler, Android-Anforderungen und Screenshots.</p></article>
+      <article><span class="discovery-number">02</span><h3>Manuelle Prüfung</h3><p>Einreichungen werden vor einer Veröffentlichung kontrolliert. Was wir dabei tatsächlich prüfen, steht transparent im Prüfverfahren.</p></article>
+      <article><span class="discovery-number">03</span><h3>Für unabhängige Entwickler</h3><p>Entwickler können ihre Android-Games kostenlos einreichen und erhalten einen nachvollziehbaren Prüf- und Veröffentlichungsprozess.</p></article>
+    </div>
+  </section>
+
+  <section class="section workflow-section" id="how">
+    <div class="workflow-copy">
+      <span class="eyebrow">FÜR ENTWICKLER</span>
+      <h2>Von der Spiel-Datei bis zur Veröffentlichung.</h2>
+      <p>Android-Entwickler reichen eine Spiel-Datei als APK, ZIP oder HTML sowie Titelbild, App-Logo, Screenshots, Beschreibung und Versionsdaten ein. Eine Veröffentlichung erfolgt erst nach manueller Freigabe.</p>
+      <a class="button secondary" href="./developers/">Infos für Entwickler</a>
+    </div>
+    <div class="workflow-steps">
+      <div><span>1</span><div><strong>Spiel einreichen</strong><small>Spiel-Datei, Titelbild, App-Logo, Screenshots und Angaben.</small></div></div>
+      <div><span>2</span><div><strong>Prüfung</strong><small>Datei und Angaben werden kontrolliert.</small></div></div>
+      <div><span>3</span><div><strong>Freigabe</strong><small>Nur freigegebene Games erscheinen im Katalog.</small></div></div>
+      <div><span>4</span><div><strong>Updates</strong><small>Neue Versionen können erneut geprüft werden.</small></div></div>
+    </div>
+  </section>
+
+  <section class="section split">
+    <article class="panel">
+      <span class="eyebrow">VERTRAUEN</span>
+      <h2>Was bedeutet „manuell geprüft“?</h2>
+      <p>Wir dokumentieren, welche technischen und inhaltlichen Punkte geprüft werden und welche Grenzen eine solche Prüfung hat. Keine magischen Sicherheitsversprechen, nur ein nachvollziehbarer Prozess.</p>
+      <a class="button secondary" href="./review-process/">Prüfverfahren lesen</a>
+    </article>
+    <article class="panel">
+      <span class="eyebrow">ÜBER DIE PLATTFORM</span>
+      <h2>Wer steckt hinter Games Behind Doors?</h2>
+      <p>Games Behind Doors wird von Rockydevgames aufgebaut, um Android-Indie-Games und ihre Entwickler sichtbarer zu machen.</p>
+      <a class="button secondary" href="./about/">Über uns</a>
+    </article>
+  </section>
+
+  <section class="section developer-cta">
+    <div><span class="eyebrow">DEIN SPIEL HINTER DER NÄCHSTEN TÜR?</span><h2>Android-Game kostenlos einreichen.</h2><p>Die Einreichung bleibt kostenlos. Bei kostenpflichtigen Spielen, In-App-Käufen, Abos oder Pässen werden die Zahlungs- und Provisionsbedingungen im Entwicklerformular eingeblendet. Monetarisierte Angebote benötigen vor Veröffentlichung eine aktive PayPal-Verkäuferanbindung.</p></div>
+    <a class="button primary" href="./developers/">Für Entwickler</a>
+  </section>
+</main>
+
+<footer class="store-footer">
+  <div><div class="brand footer-brand"><span class="brand-mark">GBD</span><span>Games Behind Doors</span></div><p>Indie Games. Sichtbar gemacht.</p></div>
+  <div class="footer-links">
+    <a href="/games/">Spiele</a>
+    <a href="./developers/">Für Entwickler</a>
+    <a href="./review-process/">Prüfverfahren</a>
+    <a href="./about/">Über uns</a>
+    <a href="./legal/imprint">Impressum</a>
+    <a href="./legal/privacy">Datenschutz</a>
+    <a href="./legal/terms">Nutzungsbedingungen</a>
+    <button class="footer-link-button" type="button" data-open-privacy>Datenschutzeinstellungen</button>
+  </div>
+</footer>
+
+<script src="./ads-config.js"></script>
+<script src="./privacy-controls.js"></script>
+<script src="./ads.js"></script>
+<script src="./app.js"></script>
+<script src="./live-games.js"></script>
+</body>
+</html>
