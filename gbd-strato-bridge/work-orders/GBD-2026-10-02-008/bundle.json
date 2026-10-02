@@ -4,7 +4,7 @@
     "format": "gbd-maintenance-work-order/v1",
     "id": "GBD-2026-10-02-008",
     "created_at": "2026-10-02T08:10:00Z",
-    "description": "EU-Safe-Launch Staging synchronisieren: EU-Konten, Länderprüfung, kommerzielle Verifizierung, privater Identitätsnachweis, Account/Support/Checkout und DE/EN-Rechtstexte. Keine Veröffentlichung und keine Aktivierung von Echtgeld.",
+    "description": "EU-Safe-Launch Staging synchronisieren: EU-Konten, Länderprüfung, Alters- und Rechtsreview-Gates, kommerzielle Verifizierung, privater Identitätsnachweis, Account/Support/Checkout und DE/EN-Rechtstexte. Keine Veröffentlichung und keine Aktivierung von Echtgeld.",
     "operations": [
       {
         "op": "write",
@@ -59,7 +59,7 @@
         "op": "write",
         "path": "staging/developers/login.js",
         "source": "payload/developers/login.js",
-        "sha256": "d042077c5791e5da9a94ae4fc4608ff2b892043fd1f6463e3b42dc5b6563fefb",
+        "sha256": "42b28347b7780f2bf8b10ecdf2b71d47d1b1eb3b16609bfaa9653a678f780117",
         "expected_sha256": "0e0e6e5d1dc68bbaa4a4e374eec08b98e84ef6e200317c021975ce8e83b065fd"
       },
       {
@@ -73,7 +73,7 @@
         "op": "write",
         "path": "staging/developers/submission.js",
         "source": "payload/developers/submission.js",
-        "sha256": "fa87e868d64b799008be8758ce5472472bf7d37ae31ada0e8f68ac6c0aca3fd4",
+        "sha256": "900fe575409bc6089e1ba65b49b4ef83ef420f03298980acfd1964bba8b44aaa",
         "expected_sha256": "eb65cb0bc943d8e3e266d5318f59afbef98880c28dda04720c8253d63aae1f36"
       },
       {
@@ -108,7 +108,7 @@
         "op": "write",
         "path": "staging/games/checkout.js",
         "source": "payload/games/checkout.js",
-        "sha256": "7b0ba3128ad641b17b6d8e403dd93786078047957ef604bd62517a787a97205c",
+        "sha256": "28831107b2570a73afce7de0dfad23c4b098a53a55f7fcff866b3951eb2d5614",
         "create_only": true
       },
       {
@@ -272,8 +272,8 @@
       "source": "payload/developers/login.js",
       "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-008/payload/developers/login.js",
       "encoding": "raw",
-      "size": 8924,
-      "sha256": "d042077c5791e5da9a94ae4fc4608ff2b892043fd1f6463e3b42dc5b6563fefb"
+      "size": 9112,
+      "sha256": "42b28347b7780f2bf8b10ecdf2b71d47d1b1eb3b16609bfaa9653a678f780117"
     },
     {
       "source": "payload/developers/portal/index.html",
@@ -286,8 +286,8 @@
       "source": "payload/developers/submission.js",
       "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-008/payload/developers/submission.js",
       "encoding": "raw",
-      "size": 48248,
-      "sha256": "fa87e868d64b799008be8758ce5472472bf7d37ae31ada0e8f68ac6c0aca3fd4"
+      "size": 48938,
+      "sha256": "900fe575409bc6089e1ba65b49b4ef83ef420f03298980acfd1964bba8b44aaa"
     },
     {
       "source": "payload/admin/admin.js",
@@ -321,8 +321,8 @@
       "source": "payload/games/checkout.js",
       "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-008/payload/games/checkout.js",
       "encoding": "raw",
-      "size": 7548,
-      "sha256": "7b0ba3128ad641b17b6d8e403dd93786078047957ef604bd62517a787a97205c"
+      "size": 8650,
+      "sha256": "28831107b2570a73afce7de0dfad23c4b098a53a55f7fcff866b3951eb2d5614"
     },
     {
       "source": "payload/support/index.html",
