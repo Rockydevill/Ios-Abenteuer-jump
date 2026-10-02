@@ -4,7 +4,7 @@
     "format": "gbd-maintenance-work-order/v1",
     "id": "GBD-2026-10-02-013",
     "created_at": "2026-10-02T12:26:00Z",
-    "description": "EU-Safe-Launch Staging vollständig synchronisieren: Work-Order 012 plus read-only Startbereitschaft im Adminbereich. Zeigt 0/3 Freigaben sowie Public-/Echtgeld-Blocker, kann aber keine Freigabe erteilen und keine Feature-Flags aktivieren. Keine Veröffentlichung und keine Echtgeld-Aktivierung.",
+    "description": "EU-Safe-Launch Staging vollständig synchronisieren: aktueller Frontend-/Rechtstext-Stand, read-only Startbereitschaft im Adminbereich sowie Support- und Game-Report-Flows über den vertrauenswürdigen STRATO-Proxy. Zeigt 0/3 Freigaben und Blocker, kann aber keine Freigabe erteilen und keine Feature-Flags aktivieren. Keine Veröffentlichung und keine Echtgeld-Aktivierung.",
     "operations": [
       {
         "op": "write",
@@ -129,7 +129,7 @@
         "op": "write",
         "path": "staging/support/support.js",
         "source": "payload/support/support.js",
-        "sha256": "740d62f96e3cabdaadeb5ce82c7237d9dcf3a340a3b274fc457e756717ca932c",
+        "sha256": "6f86c50bfb179e5d3e755bcb0098a5a779ef9ab40e3363e42a2ac6c5b4ba72c5",
         "create_only": true
       },
       {
@@ -227,7 +227,7 @@
         "op": "write",
         "path": "staging/_gbd_proxy.php",
         "source": "payload/_gbd_proxy.php",
-        "sha256": "3853603dac3093a6593eacac1feb1ecf07b07963dd21b53116a670e6f8c64c2d",
+        "sha256": "aa3b991d29adc7f45fe03233dcc69b814e27c68f49cbcff125797f2d7e4b9609",
         "expected_sha256": "16f16d116d2cb2237cc12c2bc9fc1efd45b8eb8561d7bd88b96f9ac5a8d56ec1"
       },
       {
@@ -276,7 +276,7 @@
         "op": "write",
         "path": "staging/report-game/report.js",
         "source": "payload/report-game/report.js",
-        "sha256": "2d5ce9cfcc1919e2bdd14e9bdbe5a8b5b71f3a30b1fc1f2bb9d7033607d0afec",
+        "sha256": "42e321f64802690f6c964ffeb70bec0789bf822de01764c177cabc95d1a6de05",
         "create_only": true
       }
     ]
@@ -403,10 +403,10 @@
     },
     {
       "source": "payload/support/support.js",
-      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/payload/support/support.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-013/payload/support/support.js",
       "encoding": "raw",
-      "size": 2502,
-      "sha256": "740d62f96e3cabdaadeb5ce82c7237d9dcf3a340a3b274fc457e756717ca932c"
+      "size": 2620,
+      "sha256": "6f86c50bfb179e5d3e755bcb0098a5a779ef9ab40e3363e42a2ac6c5b4ba72c5"
     },
     {
       "source": "payload/en/support/index.html",
@@ -501,10 +501,10 @@
     },
     {
       "source": "payload/_gbd_proxy.php",
-      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-012/payload/_gbd_proxy.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-013/payload/_gbd_proxy.php",
       "encoding": "raw",
-      "size": 15928,
-      "sha256": "3853603dac3093a6593eacac1feb1ecf07b07963dd21b53116a670e6f8c64c2d"
+      "size": 16036,
+      "sha256": "aa3b991d29adc7f45fe03233dcc69b814e27c68f49cbcff125797f2d7e4b9609"
     },
     {
       "source": "payload/games/install.js",
@@ -550,10 +550,10 @@
     },
     {
       "source": "payload/report-game/report.js",
-      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/payload/report-game/report.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-013/payload/report-game/report.js",
       "encoding": "raw",
-      "size": 2843,
-      "sha256": "2d5ce9cfcc1919e2bdd14e9bdbe5a8b5b71f3a30b1fc1f2bb9d7033607d0afec"
+      "size": 2961,
+      "sha256": "42e321f64802690f6c964ffeb70bec0789bf822de01764c177cabc95d1a6de05"
     }
   ]
 }
