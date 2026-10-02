@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#06141b">
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../developer-redesign.css">
+<title>Report a game | Games Behind Doors</title>
+</head>
+<body class="developer-page login-only-page" data-report-lang="en">
+<header class="site-header login-only-header"><a class="brand" href="../"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>Report a game</small></span></a></header>
+<main><section class="developer-access"><div class="developer-access-card">
+<span class="eyebrow">RIGHTS & SECURITY</span><h1>Report a problem with a game</h1>
+<p>Use this form to report rights infringement, malware, phishing, credential theft, spyware, hidden miners, unsafe redirects, payment abuse or privacy problems.</p>
+<div id="reportClosed" class="notice">The report form has not been enabled yet. For urgent rights or security reports use <a href="mailto:rockydevgames@gmail.com">rockydevgames@gmail.com</a>.</div>
+<form id="reportForm" hidden>
+<label><span>Game *</span><input id="gameSlug" type="text" maxlength="120" required readonly></label>
+<label><span>Category *</span><select id="reportCategory" required>
+<option value="">Choose</option>
+<option value="rights_infringement">Rights infringement</option>
+<option value="malware">Malware</option>
+<option value="phishing">Phishing</option>
+<option value="credential_theft">Credential theft</option>
+<option value="spyware">Spyware</option>
+<option value="miner">Hidden miner</option>
+<option value="unsafe_redirect">Unsafe redirect</option>
+<option value="payment_abuse">Payment abuse</option>
+<option value="privacy">Privacy issue</option>
+<option value="other">Other</option>
+</select></label>
+<label><span>Email (optional)</span><input id="reportEmail" type="email" maxlength="254"></label>
+<label><span>Description *</span><textarea id="reportDescription" minlength="10" maxlength="5000" rows="8" required></textarea></label>
+<p class="field-hint">Do not send passwords, credentials or identity-document copies through this form.</p>
+<button class="button primary" id="reportSubmit" type="submit">Send report</button>
+</form>
+<div id="reportMessage" class="form-message" hidden></div>
+</div></section></main>
+<footer class="store-footer"><strong>Games Behind Doors</strong><div class="footer-links"><a href="../support/">Support</a><a href="../legal/privacy">Privacy</a></div></footer>
+<script src="../../report-game/report.js"></script>
+</body></html>
