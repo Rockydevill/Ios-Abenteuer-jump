@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#06141b">
+  <link rel="canonical" href="https://gamesbehinddoors.de/en/account/">
+  <link rel="alternate" hreflang="de" href="https://gamesbehinddoors.de/account/">
+  <link rel="alternate" hreflang="en" href="https://gamesbehinddoors.de/en/account/">
+  <link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../developer-redesign.css">
+  <title>User account | Games Behind Doors</title>
+</head>
+<body class="developer-page login-only-page" data-account-lang="en">
+<header class="site-header login-only-header"><a class="brand" href="../"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>User account</small></span></a></header>
+<main><section class="developer-access"><div class="developer-access-card">
+  <span class="eyebrow">EU USER ACCOUNT</span><h1>Account</h1>
+  <div id="playerAccountClosed" class="notice">User accounts are not enabled yet.</div>
+  <form id="playerLoginForm" hidden>
+    <h2>Sign in</h2>
+    <label><span>Email</span><input id="playerLoginEmail" type="email" autocomplete="email" required></label>
+    <label><span>Password</span><input id="playerLoginPassword" type="password" minlength="10" autocomplete="current-password" required></label>
+    <button class="button primary" type="submit">Sign in</button>
+  </form>
+  <form id="playerRegistrationForm" hidden style="margin-top:24px">
+    <h2>Register</h2><p>For the initial safe launch, user accounts are limited to EU users.</p>
+    <label><span>Display name</span><input id="playerRegisterDisplayName" type="text" maxlength="80"></label>
+    <label><span>Email *</span><input id="playerRegisterEmail" type="email" autocomplete="email" required></label>
+    <label><span>Password *</span><input id="playerRegisterPassword" type="password" minlength="10" maxlength="128" autocomplete="new-password" required></label>
+    <label><span>Country of residence *</span><select id="playerRegisterCountry" required><option value="">Choose EU country</option></select></label>
+    <label class="check-row"><input id="playerRegisterCountryConfirm" type="checkbox" required><span>I confirm that the country information is accurate.</span></label>
+    <label class="check-row"><input id="playerRegisterTerms" type="checkbox" required><span>I accept the <a href="../legal/terms" target="_blank" rel="noopener">Terms of Use</a>.</span></label>
+    <button class="button primary" id="playerRegisterButton" type="submit">Create EU user account</button>
+  </form>
+  <section id="playerSignedIn" hidden style="margin-top:24px">
+    <h2>Signed in</h2><p id="playerIdentity"></p><p id="playerCountryStatus"></p>
+    <div class="developer-access-actions"><button class="button secondary" id="playerLogout" type="button">Sign out</button><button class="button secondary" id="playerDeleteRequest" type="button">Request account deletion</button></div>
+  </section>
+  <div id="playerAccountMessage" class="form-message" hidden></div>
+</div></section></main>
+<footer class="store-footer"><strong>Games Behind Doors</strong><div class="footer-links"><a href="../legal/privacy">Privacy</a><a href="../legal/terms">Terms</a></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../account/account.js"></script>
+</body></html>
