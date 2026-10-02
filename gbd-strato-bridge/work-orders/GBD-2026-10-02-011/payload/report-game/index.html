@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#06141b">
+<link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../developer-redesign.css">
+<title>Spiel melden | Games Behind Doors</title>
+</head>
+<body class="developer-page login-only-page" data-report-lang="de">
+<header class="site-header login-only-header"><a class="brand" href="../"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>Spiel melden</small></span></a></header>
+<main><section class="developer-access"><div class="developer-access-card">
+<span class="eyebrow">RECHTE & SICHERHEIT</span><h1>Problem mit einem Spiel melden</h1>
+<p>Hier können Rechteverletzungen, Schadsoftware, Phishing, Credential-Stealing, Spyware, versteckte Miner, unsichere Weiterleitungen, Zahlungsprobleme oder Datenschutzprobleme gemeldet werden.</p>
+<div id="reportClosed" class="notice">Das Meldeformular ist derzeit noch nicht freigeschaltet. Für dringende Rechte- oder Sicherheitsmeldungen nutze <a href="mailto:rockydevgames@gmail.com">rockydevgames@gmail.com</a>.</div>
+<form id="reportForm" hidden>
+<label><span>Spiel *</span><input id="gameSlug" type="text" maxlength="120" required readonly></label>
+<label><span>Kategorie *</span><select id="reportCategory" required>
+<option value="">Bitte wählen</option>
+<option value="rights_infringement">Rechteverletzung</option>
+<option value="malware">Schadsoftware</option>
+<option value="phishing">Phishing</option>
+<option value="credential_theft">Credential-Stealing</option>
+<option value="spyware">Spyware</option>
+<option value="miner">Versteckter Miner</option>
+<option value="unsafe_redirect">Unsichere Weiterleitung</option>
+<option value="payment_abuse">Zahlungsproblem</option>
+<option value="privacy">Datenschutzproblem</option>
+<option value="other">Anderes Problem</option>
+</select></label>
+<label><span>E-Mail (optional)</span><input id="reportEmail" type="email" maxlength="254"></label>
+<label><span>Beschreibung *</span><textarea id="reportDescription" minlength="10" maxlength="5000" rows="8" required></textarea></label>
+<p class="field-hint">Keine Passwörter, Zugangsdaten oder Ausweiskopien über dieses Formular senden.</p>
+<button class="button primary" id="reportSubmit" type="submit">Meldung senden</button>
+</form>
+<div id="reportMessage" class="form-message" hidden></div>
+</div></section></main>
+<footer class="store-footer"><strong>Games Behind Doors</strong><div class="footer-links"><a href="../support/">Support</a><a href="../legal/privacy">Datenschutz</a></div></footer>
+<script src="./report.js"></script>
+</body></html>
