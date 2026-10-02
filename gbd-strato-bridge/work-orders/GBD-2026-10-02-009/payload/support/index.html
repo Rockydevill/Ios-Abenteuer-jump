@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#06141b">
+<link rel="canonical" href="https://gamesbehinddoors.de/support/"><link rel="alternate" hreflang="de" href="https://gamesbehinddoors.de/support/"><link rel="alternate" hreflang="en" href="https://gamesbehinddoors.de/en/support/">
+<link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../developer-redesign.css"><title>Support | Games Behind Doors</title></head>
+<body class="developer-page login-only-page" data-support-lang="de">
+<header class="site-header login-only-header"><a class="brand" href="../"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>Support</small></span></a></header>
+<main><section class="developer-access"><div class="developer-access-card">
+<span class="eyebrow">SUPPORT & BESCHWERDEN</span><h1>Hilfe anfordern</h1>
+<p>Der Support ist für Zahlungsprobleme, Refunds, Konten, Entwickler- und Identitätsprüfung, Länderfehler, Rechteverletzungen und Sicherheitsmeldungen vorbereitet.</p>
+<div id="supportClosed" class="notice">Das Supportformular ist derzeit noch nicht freigeschaltet. Für dringende Rechte- oder Sicherheitsmeldungen nutze <a href="mailto:rockydevgames@gmail.com">rockydevgames@gmail.com</a>. Bitte sende keine Ausweisdokumente als normalen E-Mail-Anhang.</div>
+<form id="supportForm" hidden>
+<label><span>Kategorie *</span><select id="supportCategory" required>
+<option value="">Bitte wählen</option><option value="payment">Zahlungsproblem</option><option value="refund">Refund / Rückerstattung</option><option value="account">Konto</option><option value="developer_verification">Entwicklerprüfung</option><option value="identity_verification">Identitätsprüfung</option><option value="country_error">Länderprüfung / Geolocation-Fehler</option><option value="rights_infringement">Rechteverletzung</option><option value="security_report">Sicherheitsmeldung</option><option value="general">Allgemeine Anfrage</option>
+</select></label>
+<label><span>E-Mail *</span><input id="supportEmail" type="email" maxlength="254" required></label>
+<label><span>Betreff *</span><input id="supportSubject" type="text" minlength="3" maxlength="160" required></label>
+<label><span>Nachricht *</span><textarea id="supportMessageText" minlength="10" maxlength="5000" rows="7" required></textarea></label>
+<p class="field-hint">Keine Passwörter, Zugangsdaten oder Ausweiskopien in die Nachricht einfügen. Identitätsdokumente werden ausschließlich über den dafür vorgesehenen privaten Uploadweg verarbeitet.</p>
+<button class="button primary" id="supportSubmit" type="submit">Anfrage senden</button>
+</form><div id="supportMessage" class="form-message" hidden></div>
+</div></section></main>
+<footer class="store-footer"><strong>Games Behind Doors</strong><div class="footer-links"><a href="../legal/privacy">Datenschutz</a><a href="../legal/terms">Nutzungsbedingungen</a></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./support.js"></script>
+</body></html>
