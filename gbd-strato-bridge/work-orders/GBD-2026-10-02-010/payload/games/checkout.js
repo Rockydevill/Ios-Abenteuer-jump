@@ -1,7 +1,8 @@
 (()=>{
   const BASE_URL='https://voldtqsdqcdexkexwerp.supabase.co';
   const PUBLIC_KEY='sb_publishable_2CqwTZnV0S35nNaKyoEyxw_PSTw9_Pk';
-  const CHECKOUT_URL=BASE_URL+'/functions/v1/gbd-paypal-checkout';
+  const SERVICE_PROXY_URL=(window.location.pathname.indexOf('/staging/')===0?'/staging/_gbd_proxy.php':'/_gbd_proxy.php');
+const CHECKOUT_URL=SERVICE_PROXY_URL+'?service=paypal_checkout';
   const button=document.getElementById('livePurchase');
   const message=document.getElementById('checkoutMessage');
   const supply=document.getElementById('immediateSupplyRequested');
