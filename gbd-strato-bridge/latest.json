@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T17:39:30Z",
+  "published_at": "2026-10-02T17:52:30Z",
   "work_order": {
-    "id": "GBD-2026-10-02-020",
-    "description": "Korrigierte STRATO Prelaunch-Härtung: gültigen expected_sha256 für staging/.htaccess verwenden, echten HTTP-404-Lock anwenden, Static-Security-Scanner im bestehenden Storage-Gateway aktivieren und Diagnose-Datei entfernen. Keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-020/bundle.json",
-    "bundle_sha256": "dfff933d1e7e91eec2262f925e381723ab60cac709e792de4faadbc5f2ce04d8",
+    "id": "GBD-2026-10-02-021",
+    "description": "Hotfix für das STRATO Storage-Gateway: PHP-Parsefehler in den neuen Static-Security-Scanner-RegEx korrigieren. Keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-021/bundle.json",
+    "bundle_sha256": "f37e74d904281ad5d51583d2966d1c3cf6777ae6df1664b942da1f921e88be9e",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "651cda3936c8a3d7e26b8f8ad1af091f5ecbd758597074e913da29c9b4058cb2"
+    "hmac_sha256": "7e02d2fc10968a5e811265609a3bea7df1c471c225ba634f827330768dd01997"
   }
 }
