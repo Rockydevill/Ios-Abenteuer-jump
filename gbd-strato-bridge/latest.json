@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T17:20:30Z",
+  "published_at": "2026-10-02T17:39:30Z",
   "work_order": {
-    "id": "GBD-2026-10-02-019",
-    "description": "STRATO Prelaunch-Härtung mit den durch Diagnose 018 bestätigten Ist-Hashes anwenden: echter HTTP-404-Lock für normale Staging-Seiten, Static-Security-Scanner im bestehenden Storage-Gateway und Diagnose-Datei entfernen. Maintenance und abgesicherte Serverendpunkte bleiben erreichbar. Keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-019/bundle.json",
-    "bundle_sha256": "2e2cab9fa0da7c99a12416560606f189f2d16fa9a96568a8b0c9613cd9678105",
+    "id": "GBD-2026-10-02-020",
+    "description": "Korrigierte STRATO Prelaunch-Härtung: gültigen expected_sha256 für staging/.htaccess verwenden, echten HTTP-404-Lock anwenden, Static-Security-Scanner im bestehenden Storage-Gateway aktivieren und Diagnose-Datei entfernen. Keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-020/bundle.json",
+    "bundle_sha256": "dfff933d1e7e91eec2262f925e381723ab60cac709e792de4faadbc5f2ce04d8",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "cfe01558d8066648732532ccd762e2d3d69853d2f866130f22291a8f7e886520"
+    "hmac_sha256": "651cda3936c8a3d7e26b8f8ad1af091f5ecbd758597074e913da29c9b4058cb2"
   }
 }
