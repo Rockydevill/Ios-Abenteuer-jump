@@ -570,9 +570,12 @@ identityDocumentUpload?.addEventListener('click', async () => {
       storagePath: prepared.storagePath,
       documentType: identityDocumentType.value,
       documentCountry: identityDocumentCountry.value,
+      copyMarkedConfirmed: identityCopyMarkedConfirm?.checked === true,
       mimeType: file.type
     });
     identityDocumentFile.value = '';
+    if (identityCopyMarkedConfirm) identityCopyMarkedConfirm.checked = false;
+    syncIdentityCopyMarkRequirement();
     showCommercialVerificationMessage('success', 'Der amtliche Identitätsnachweis wurde privat gespeichert und zur manuellen Prüfung vorgemerkt.');
     await loadDeveloperData();
   } catch (error) {
@@ -580,7 +583,10 @@ identityDocumentUpload?.addEventListener('click', async () => {
       identity_document_upload_closed: 'Der sichere Dokumentupload ist derzeit noch zentral gesperrt.',
       verification_required: 'Starte zuerst die kommerzielle Verifizierung.',
       invalid_document_type: 'Erlaubt sind PDF, JPG, PNG und WebP.',
-      invalid_document_size: 'Die Datei ist zu groß oder leer.'
+      invalid_document_size: 'Die Datei ist zu groß oder leer.',
+      german_identity_copy_marking_required: 'Bei einem deutschen Personalausweis bzw. einer deutschen nationalen Identitätskarte muss die Kopie eindeutig als Kopie gekennzeichnet und dies bestätigt werden.',
+      identity_legal_basis_review_required: 'Die Rechtsgrundlage für die Verarbeitung von Identitätsdokumenten ist noch nicht final freigegeben.',
+      identity_country_rules_review_required: 'Die länderspezifischen Regeln für Identitätsdokumente sind noch nicht final freigegeben.'
     };
     showCommercialVerificationMessage('error', messages[error.message] || ('Dokumentupload fehlgeschlagen: ' + error.message));
   } finally {
