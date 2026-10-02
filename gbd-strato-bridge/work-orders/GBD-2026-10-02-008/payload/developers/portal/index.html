@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06141b">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../gbd-icon.svg" type="image/svg+xml">
+  <title>Games Behind Doors – Entwicklerbereich</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../developer-redesign.css">
+</head>
+<body class="developer-page portal-page">
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">GBD</span>
+      <span class="brand-copy"><strong>Games Behind Doors</strong><small>Entwicklerbereich</small></span>
+    </div>
+  </header>
+
+  <section id="portalLoading" class="portal-loading" aria-live="polite">
+    <div class="portal-loading-card">
+      <strong>Entwicklerbereich wird geladen …</strong>
+      <span>Anmeldung und Kontodaten werden geprüft.</span>
+    </div>
+  </section>
+
+  <main id="portalMain" hidden>
+    <section class="page-hero developer-hero">
+      <span class="eyebrow">FÜR ENTWICKLER</span>
+      <h1>Deine Games.</h1>
+      <p class="muted">Hier reichst du ein Spiel ein und siehst getrennt davon den Prüf- und Veröffentlichungsstatus deiner bisherigen Einreichungen.</p>
+    </section>
+
+    <section class="developer-dashboard-bar">
+      <div>
+        <span class="eyebrow">MEIN KONTO</span>
+        <strong id="developerIdentity">Angemeldet</strong>
+      </div>
+      <div class="developer-dashboard-actions">
+        <button class="button primary" id="openSubmissionPanel" type="button">Game einreichen</button>
+        <a class="button secondary" href="../../">Games Webseite</a>
+        <button class="button secondary" id="developerLogout" type="button">Abmelden</button>
+      </div>
+    </section>
+
+    <section class="developer-status-section">
+      <div class="form-heading">
+        <div>
+          <span class="eyebrow">MEINE EINREICHUNGEN</span>
+          <h2>Prüfstatus</h2>
+        </div>
+        <span class="form-status-badge">NUR DEINE GAMES</span>
+      </div>
+      <div id="developerSubmissions" class="developer-status-list"></div>
+    </section>
+
+    <section class="developer-status-section">
+      <div class="form-heading">
+        <div>
+          <span class="eyebrow">GBD MARKETPLACE</span>
+          <h2>Gebühren & Auszahlung</h2>
+        </div>
+        <span class="form-status-badge">EINREICHUNG 0 €</span>
+      </div>
+      <div class="developer-status-list">
+        <article class="developer-status-card">
+          <div><strong>Spiele einreichen</strong><p>Dauerhaft kostenlos. Keine Upload- oder Prüfgebühr.</p></div>
+          <div class="developer-status-meta">
+            <span><small>Einreichungsgebühr</small><b id="submissionFeeLabel">0,00 €</b></span>
+            <span><small>Verkaufsprovision</small><b>Nur bei Kauf / In-App / Abo</b></span>
+            <span><small>Zahlungsanbieter</small><b>PayPal</b></span>
+            <span><small>Verkäuferkonto</small><b id="sellerStatusLabel">Noch nicht verbunden</b></span>
+          </div>
+        </article>
+      </div>
+      <div class="notice" id="paymentSetupNotice" style="margin-top:12px">
+        Kostenlose Games ohne Käufe können normal eingereicht werden. Bei einem kostenpflichtigen Spiel oder In-App-Käufen, Abos oder Pässen werden die PayPal- und Provisionsbedingungen direkt im Einreichungsformular eingeblendet. Vor der Veröffentlichung muss PayPal bei monetarisierten Angeboten vollständig verbunden sein.
+      </div>
+      <div class="developer-dashboard-actions" style="margin-top:12px">
+        <button class="button primary" id="paypalConnectButton" type="button" disabled>PayPal-Verkäuferkonto verbinden</button>
+        <button class="button secondary" id="paypalRefreshButton" type="button" hidden>Status prüfen</button>
+      </div>
+      <div id="paypalConnectMessage" class="form-message" hidden></div>
+    </section>
+
+    <section class="developer-status-section" id="commercialVerificationSection">
+      <div class="form-heading">
+        <div>
+          <span class="eyebrow">KOMMERZIELLE VERIFIZIERUNG</span>
+          <h2>Identität & Händlerstatus</h2>
+        </div>
+        <span class="form-status-badge" id="commercialVerificationBadge">NICHT ERFORDERLICH</span>
+      </div>
+      <div class="notice" id="commercialVerificationNotice">
+        Für vollständig kostenlose Spiele ohne Monetarisierung ist keine Ausweiskopie erforderlich. Erst wenn du Geld verdienen möchtest, wird vor der kommerziellen Freigabe eine zusätzliche Identitäts- und Händlerprüfung verlangt.
+      </div>
+      <form id="commercialVerificationForm" hidden style="margin-top:16px">
+        <div class="form-grid">
+          <label><span>Rolle als Anbieter *</span>
+            <select id="sellerType" required>
+              <option value="">Bitte wählen</option>
+              <option value="trader">Unternehmer / gewerblicher Anbieter</option>
+              <option value="company">Unternehmen / Gesellschaft</option>
+              <option value="individual_non_trader">Privatperson / nicht gewerblicher Anbieter</option>
+            </select>
+          </label>
+          <label><span>Vollständiger rechtlicher Name *</span><input id="commercialLegalName" type="text" maxlength="160" autocomplete="name" required></label>
+          <label><span>Straße / Hausnummer *</span><input id="commercialAddress1" type="text" maxlength="200" autocomplete="street-address" required></label>
+          <label><span>Adresszusatz</span><input id="commercialAddress2" type="text" maxlength="200"></label>
+          <label><span>PLZ *</span><input id="commercialPostalCode" type="text" maxlength="30" autocomplete="postal-code" required></label>
+          <label><span>Ort *</span><input id="commercialCity" type="text" maxlength="120" autocomplete="address-level2" required></label>
+          <label><span>Telefon *</span><input id="commercialPhone" type="tel" maxlength="60" autocomplete="tel" required></label>
+          <label><span>Unternehmenssitz (falls Unternehmen)</span><select id="commercialBusinessCountry"><option value="">Nicht angegeben</option></select></label>
+          <label><span>Firmenname</span><input id="commercialBusinessName" type="text" maxlength="160"></label>
+          <label><span>Register</span><input id="commercialRegisterName" type="text" maxlength="160"></label>
+          <label><span>Registernummer</span><input id="commercialRegisterNumber" type="text" maxlength="100"></label>
+          <label><span>USt-IdNr. (falls vorhanden)</span><input id="commercialVatId" type="text" maxlength="80"></label>
+        </div>
+        <label class="check-row"><input id="commercialAge18" type="checkbox" required><span>Ich bestätige, dass ich mindestens 18 Jahre alt bin. *</span></label>
+        <button class="button primary" id="commercialVerificationBegin" type="submit">Verifizierung zur Prüfung einreichen</button>
+      </form>
+
+      <div id="identityDocumentPanel" hidden style="margin-top:18px">
+        <h3>Amtlicher Identitätsnachweis</h3>
+        <p class="field-hint">Nur für die kommerzielle Verifizierung. Die Datei wird privat gespeichert, nicht öffentlich angezeigt und nach abgeschlossener Prüfung grundsätzlich gelöscht, soweit kein dokumentierter Aufbewahrungsgrund besteht.</p>
+        <div class="form-grid">
+          <label><span>Dokumenttyp *</span>
+            <select id="identityDocumentType">
+              <option value="">Bitte wählen</option>
+              <option value="national_identity_card">Nationale Identitätskarte / Personalausweis</option>
+              <option value="passport">Reisepass</option>
+              <option value="electronic_identification">Geeignete elektronische Identifikation</option>
+              <option value="other_official_id">Anderer amtlicher Identitätsnachweis</option>
+            </select>
+          </label>
+          <label><span>Ausstellungsland *</span><select id="identityDocumentCountry"><option value="">Bitte Land wählen</option></select></label>
+          <label><span>Datei *</span><input id="identityDocumentFile" type="file" accept="image/jpeg,image/png,image/webp,application/pdf"></label>
+        </div>
+        <div id="identityCopyMarkRow" class="notice" hidden style="margin-top:12px">
+          <label class="check-row"><input id="identityCopyMarkedConfirm" type="checkbox"><span>Bei einem deutschen Personalausweis / einer deutschen nationalen Identitätskarte bestätige ich, dass die hochgeladene Kopie eindeutig und dauerhaft als Kopie gekennzeichnet ist.</span></label>
+        </div>
+        <p class="field-hint">Erlaubt: PDF, JPG, PNG oder WebP bis 20 MB. Der Upload bleibt privat. Bitte keine Dokumente per normaler E-Mail senden. Es werden keine unnötigen Ausweisnummern oder vollständigen OCR-Daten verlangt.</p>
+        <button class="button secondary" id="identityDocumentUpload" type="button">Identitätsnachweis sicher hochladen</button>
+      </div>
+      <div id="commercialVerificationMessage" class="form-message" hidden></div>
+    </section>
+
+    <section class="developer-status-section">
+      <div class="form-heading">
+        <div>
+          <span class="eyebrow">KONTO & SICHERHEIT</span>
+          <h2>Kontoeinstellungen</h2>
+        </div>
+      </div>
+      <div class="developer-status-list">
+        <article class="developer-status-card">
+          <div><strong>Passwort & Konto</strong><p>Passwortänderungen laufen über einen sicheren E-Mail-Link. Eine Kontolöschung wird vor der endgültigen Entfernung geprüft, damit veröffentlichte Games, Abrechnungen und rechtliche Aufbewahrungspflichten nicht versehentlich beschädigt werden.</p></div>
+          <div class="developer-dashboard-actions">
+            <a class="button secondary" href="../reset-password/?mode=change">Passwort ändern</a>
+            <button class="button secondary" id="requestAccountDeletion" type="button">Kontolöschung anfordern</button>
+          </div>
+        </article>
+      </div>
+      <div id="accountControlMessage" class="form-message" hidden></div>
+    </section>
+
+    <section class="submission-layout" id="submissionPanel">
+      <aside class="submission-sidebar">
+        <div class="panel compact-panel">
+          <span class="eyebrow">ABLAUF</span>
+          <ol class="submission-steps">
+            <li><span>1</span><div><strong>Daten senden</strong><small>Spiel und Entwicklerangaben.</small></div></li>
+            <li><span>2</span><div><strong>Dateien hochladen</strong><small>Spiel-Datei, Titelbild, App-Logo und optionale Screenshots landen privat im Prüf-Speicher.</small></div></li>
+            <li><span>3</span><div><strong>Manuelle Prüfung</strong><small>Wir prüfen Details und Dateien.</small></div></li>
+            <li><span>4</span><div><strong>Veröffentlichen</strong><small>Nur freigegebene Spiele erscheinen öffentlich.</small></div></li>
+          </ol>
+        </div>
+      </aside>
+
+      <section class="submission-form-panel">
+        <div class="form-heading">
+          <div>
+            <span class="eyebrow">SPIEL EINREICHEN</span>
+            <h2>Einreichungsformular</h2>
+          </div>
+          <span class="form-status-badge">MANUELLE PRÜFUNG</span>
+        </div>
+
+        <form id="submissionForm" novalidate>
+          <input name="websiteTrap" class="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input id="correctionPublicId" name="correctionPublicId" type="hidden" value="">
+          <div id="correctionModeNotice" class="notice" hidden>
+            <strong>Korrekturmodus</strong><br>
+            Du bearbeitest eine bereits eingereichte Version. Spiel-Datei, Titelbild und App-Logo müssen aus Sicherheitsgründen erneut ausgewählt werden. Nach dem Absenden wechselt dieselbe Prüf-ID zurück auf „Eingereicht“.
+          </div>
+
+          <fieldset>
+            <legend>Land / Country</legend>
+            <div class="form-grid">
+              <label>
+                <span>Wohnsitz / Unternehmenssitz *</span>
+                <select id="declaredCountryCode" name="declaredCountryCode" required>
+                  <option value="">Bitte Land wählen</option>
+                </select>
+                <small class="field-hint">Die öffentliche Website ist weltweit erreichbar. Spieleinreichungen und Zahlungsfunktionen sind derzeit ausschließlich für EU-Mitgliedstaaten verfügbar.</small>
+              </label>
+            </div>
+            <label class="check-row">
+              <input id="countryConfirmed" name="countryConfirmed" type="checkbox" required>
+              <span>Ich bestätige, dass die angegebene Angabe zu meinem Wohnsitz bzw. Unternehmenssitz wahrheitsgemäß ist.</span>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Spiel</legend>
+            <div class="form-grid">
+              <label><span>Spielname *</span><input name="gameName" type="text" maxlength="80" required placeholder="z. B. Mein Indie Game"></label>
+              <label><span>Entwickler / Studio *</span><input name="developerName" type="text" maxlength="80" required placeholder="Studio oder Entwicklername"></label>
+              <label><span>Aktuelle Version *</span><input name="version" type="text" maxlength="40" required placeholder="z. B. 1.0.0"></label>
+              <label>
+                <span>Mindest-Android-Version *</span>
+                <select name="minAndroid" required>
+                  <option value="">Bitte wählen</option>
+                  <option>Android 8</option><option>Android 9</option><option>Android 10</option><option>Android 11</option>
+                  <option>Android 12</option><option>Android 13</option><option>Android 14</option><option>Android 15</option>
+                </select>
+              </label>
+              <label>
+                <span>Genre *</span>
+                <select name="genre" required>
+                  <option value="">Bitte wählen</option>
+                  <option>Arcade</option><option>Action</option><option>Adventure</option><option>Jump</option><option>Horror</option>
+                  <option>Simulation</option><option>Racing</option><option>Strategy</option><option>Puzzle</option><option>Sonstiges</option>
+                </select>
+              </label>
+              <label>
+                <span>Preismodell *</span>
+                <select id="pricingSelect" name="pricing" required>
+                  <option value="">Bitte wählen</option>
+                  <option>Kostenlos</option><option>Kostenlos mit In-Game-Käufen / Abos / Pässen</option><option>Kostenlos mit Werbung</option><option>Kostenpflichtig</option>
+                </select>
+                <small class="field-hint">Für Käufe und In-App-Käufe unterstützt Games Behind Doors ausschließlich PayPal. Google Play Billing, Klarna und andere Zahlungswege werden nicht unterstützt.</small>
+              </label>
+              <label id="paidPriceField" hidden>
+                <span>Verkaufspreis in € *</span>
+                <input id="priceEuro" name="priceEuro" type="number" inputmode="decimal" min="0.50" max="100000" step="0.01" placeholder="z. B. 0,99">
+                <small class="field-hint">GBD erhält 10 % Plattformprovision auf Verkäufe. PayPal-Gebühren werden getrennt behandelt.</small>
+              </label>
+              <div id="monetizationInfo" class="notice" hidden>
+                Bei einem kostenpflichtigen Spiel oder In-App-Käufen, Abos oder Pässen gilt die 10-%-Plattformprovision. Vor Veröffentlichung muss das PayPal-Verkäuferkonto vollständig verbunden sein.
+              </div>
+              <div id="monetizationFeatureField" class="full-field" hidden>
+                <span>Welche Echtgeldfunktionen enthält das Spiel?</span>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="real_money_shop"><span>Echtgeld-Shop</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="in_app_purchase"><span>In-App-Käufe</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="subscription"><span>Abonnement / wiederkehrende Zahlung</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="battle_pass"><span>Battle Pass</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="season_pass"><span>Season Pass</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="other_pass"><span>Sonstiger Pass / zeitlich begrenzter Zugang</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="premium_currency"><span>Premium-Währung</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="coin_pack"><span>Münzpakete</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="premium_content"><span>Premium-Inhalte</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="dlc"><span>DLC-artige Inhalte</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="external_purchase"><span>Externe Kaufseite / externer Zahlungslink</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="donation"><span>Spenden</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="tip"><span>Trinkgeld</span></label>
+                <label class="check-row"><input name="monetizationFeature" type="checkbox" value="other_real_money"><span>Andere Echtgeldfunktion</span></label>
+                <label id="monetizationOtherField" class="full-field" hidden>
+                  <span>Andere Echtgeldfunktion beschreiben *</span>
+                  <textarea id="monetizationOtherDescription" name="monetizationOtherDescription" minlength="3" maxlength="500" rows="3" placeholder="Beschreibe die Echtgeldfunktion möglichst genau."></textarea>
+                </label>
+                <small class="field-hint">Bei kostenlosen Spielen mit In-Game-Käufen muss mindestens eine Echtgeldfunktion ausgewählt werden. Bei einem kostenpflichtigen Spiel sind zusätzliche Echtgeldfunktionen nur anzugeben, wenn sie neben dem Kaufpreis existieren. Abos bleiben bis zur PayPal-Freigabe gesperrt.</small>
+              </div>
+            </div>
+
+            <label class="full-field">
+              <span>Kurzbeschreibung *</span>
+              <textarea name="shortDescription" required minlength="50" maxlength="180" rows="3" placeholder="In 1–3 Sätzen: Was ist das Spiel und was macht es besonders?"></textarea>
+              <small class="field-hint">50 bis 180 Zeichen. Wird für Katalog, Suchmaschinen und Vorschauen verwendet.</small>
+            </label>
+
+            <label class="full-field">
+              <span>Ausführliche Beschreibung *</span>
+              <textarea name="description" required minlength="100" maxlength="3000" rows="8" placeholder="Worum geht es, welches Ziel hat das Spiel und welche Besonderheiten bietet es?"></textarea>
+              <small class="field-hint">100 bis 3.000 Zeichen. Bitte individuell für dieses Spiel schreiben.</small>
+            </label>
+
+            <label class="full-field">
+              <span>Spielprinzip / Gameplay *</span>
+              <textarea name="gameplayDescription" required minlength="50" maxlength="1200" rows="5" placeholder="Wie spielt sich das Game? Steuerung, Ziel, Fortschritt und wichtige Mechaniken …"></textarea>
+              <small class="field-hint">50 bis 1.200 Zeichen.</small>
+            </label>
+
+            <label class="full-field">
+              <span>Besondere Funktionen</span>
+              <input name="features" type="text" maxlength="300" placeholder="z. B. Bestenliste, Offline-Modus, Controller-Support">
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Kontakt & Datenschutz des Spiels</legend>
+            <div class="form-grid">
+              <label><span>E-Mail *</span><input id="submissionEmail" name="email" type="email" maxlength="160" required readonly placeholder="Deine Konto-E-Mail"></label>
+              <label><span>Webseite (optional)</span><input name="website" type="url" maxlength="250" placeholder="https://…"></label>
+              <label>
+                <span>Verarbeitet das Spiel personenbezogene Daten? *</span>
+                <select id="dataProcessingSelect" name="dataProcessing" required>
+                  <option value="">Bitte wählen</option>
+                  <option value="no">Nein</option>
+                  <option value="yes">Ja, z. B. Login, Analytics, Werbung, Cloud-Daten oder Zahlungsdaten</option>
+                </select>
+              </label>
+              <label id="privacyPolicyField" hidden>
+                <span>Datenschutzerklärung des Spiels *</span>
+                <input id="privacyPolicyUrl" name="privacyPolicyUrl" type="url" maxlength="500" placeholder="https://…">
+                <small class="field-hint">Bei Datenverarbeitung muss vor Veröffentlichung eine erreichbare Datenschutzerklärung angegeben werden.</small>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Dateien</legend>
+            <div class="upload-grid artwork-upload-grid">
+              <label class="upload-box">
+                <span class="upload-icon">FILE</span><strong>Spiel-Datei *</strong><small>APK, ZIP, HTML oder HTM • maximal 300 MB</small>
+                <input id="apkFile" name="apkFile" type="file" accept=".apk,.zip,.html,.htm,application/vnd.android.package-archive,application/zip,text/html" required>
+                <span class="file-selection" id="apkSelection">Noch keine Datei gewählt</span>
+              </label>
+
+              <label class="upload-box">
+                <span class="upload-icon">TITLE</span><strong>Titelbild *</strong><small>Breites Store-Bild, empfohlen 16:9</small>
+                <input id="titleImageFile" name="titleImageFile" type="file" accept="image/png,image/jpeg,image/webp" required>
+                <span class="file-selection" id="titleImageSelection">Noch kein Titelbild gewählt</span>
+              </label>
+
+              <label class="upload-box">
+                <span class="upload-icon">LOGO</span><strong>App-Logo *</strong><small>Quadratisches App-Icon / Logo</small>
+                <input id="appLogoFile" name="appLogoFile" type="file" accept="image/png,image/jpeg,image/webp" required>
+                <span class="file-selection" id="appLogoSelection">Noch kein App-Logo gewählt</span>
+              </label>
+
+              <label class="upload-box">
+                <span class="upload-icon">IMG</span><strong>Screenshots (optional)</strong><small>Bis zu 6 PNG/JPG/WebP, je max. 15 MB</small>
+                <input id="screenshotFiles" name="screenshots" type="file" accept="image/png,image/jpeg,image/webp" multiple>
+                <span class="file-selection" id="screenshotSelection">Noch keine Bilder gewählt</span>
+              </label>
+            </div>
+            <div class="file-rules">
+              <span>✓ APK, ZIP, HTML oder HTM möglich</span>
+              <span>✓ APK kann als Android-App veröffentlicht und installiert werden</span>
+              <span>✓ ZIP/HTML/HTM bleiben private Entwicklerquellen und werden niemals direkt an Spieler ausgeliefert</span>
+              <span>✓ Für ZIP/HTML/HTM wird nach Prüfung ein separates, validiertes Android-Installationsartefakt erzeugt; schlägt die Verarbeitung fehl, gibt es keinen Quelldatei-Fallback</span>
+              <span>✓ Titelbild ist Pflicht</span>
+              <span>✓ App-Logo ist Pflicht</span>
+              <span>✓ Screenshots sind optional</span>
+              <span>✓ Keine automatische Freigabe</span>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Bestätigung</legend>
+            <label class="check-row"><input name="rightsConfirmed" type="checkbox" required><span>Ich bestätige, dass ich das Spiel einreichen darf und die notwendigen Rechte besitze. *</span></label>
+            <label class="check-row"><input name="manualReviewAccepted" type="checkbox" required><span>Ich akzeptiere die manuelle Prüfung vor einer Veröffentlichung. *</span></label>
+            <label class="check-row"><input name="monetizationDeclared" type="checkbox" required><span>Ich bestätige, dass das gewählte Preismodell vollständig ist und sämtliche Kauf-, Abo-, Shop- oder sonstigen Zahlungsfunktionen des Spiels angegeben wurden. *</span></label>
+            <label class="check-row"><input name="developerTermsAccepted" type="checkbox" required><span>Ich akzeptiere die <a href="../../legal/developer-terms" target="_blank" rel="noopener">Entwicklerbedingungen <span id="developerTermsVersionLabel">V4</span></a>. *</span></label>
+            <label class="check-row" id="paymentTermsRow" hidden><input id="paymentTermsAccepted" name="paymentTermsAccepted" type="checkbox"><span>Für dieses monetarisierte Spiel bestätige ich die 10-%-Plattformprovision von Games Behind Doors. Sie gilt auch für über GBD abgewickelte In-App-Käufe, Pässe und bei Abonnements für jede wiederkehrende Zahlung. PayPal-Gebühren werden getrennt behandelt. Vor Veröffentlichung muss ein für den Zahlungsempfang freigeschaltetes PayPal-Verkäuferkonto verbunden sein. *</span></label>
+          </fieldset>
+
+          <div id="uploadProgress" class="upload-progress" hidden>
+            <div class="upload-progress-head"><strong id="uploadProgressLabel">Upload wird vorbereitet …</strong><span id="uploadProgressValue">0 %</span></div>
+            <div class="upload-progress-track"><span id="uploadProgressBar"></span></div>
+          </div>
+
+          <div id="formMessage" class="form-message" hidden></div>
+
+          <div class="form-actions">
+            <button id="submitButton" class="button primary submit-button" type="submit">Einreichung zur Prüfung senden</button>
+            <button class="button secondary" type="reset">Formular leeren</button>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer class="store-footer">
+    <strong>Games Behind Doors</strong>
+    <div class="footer-links">
+      <a href="../../legal/imprint">Impressum</a>
+      <a href="../../legal/privacy">Datenschutz</a>
+      <a href="../../legal/terms">Nutzungsbedingungen</a>
+      <a href="../../legal/developer-terms">Entwicklerbedingungen</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tus-js-client@4/dist/tus.min.js"></script>
+  <script src="../submission.js"></script>
+</body>
+</html>
