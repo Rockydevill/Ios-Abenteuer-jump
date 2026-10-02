@@ -306,19 +306,27 @@ function render() {
         const next = btn.dataset.status;
         const id = card.dataset.id;
         const note = card.querySelector('[data-note]').value.trim();
-        if (
-          next === 'approved' &&
-          !confirm(
-            'Technische Freigabe prüfen? Ohne fertiges, validiertes Installationsartefakt wird nichts veröffentlicht.'
-          )
-        )
-          return;
+        let malwareReviewConfirmed = false;
+        let monetizationReviewConfirmed = false;
+        let externalLinksReviewConfirmed = false;
+        if (next === 'approved') {
+          if (!confirm('Technische Freigabe prüfen? Ohne fertiges, validiertes Installationsartefakt wird nichts veröffentlicht.')) return;
+          malwareReviewConfirmed = confirm('Hast du die Datei und die vorhandenen Sicherheits-/Prüfergebnisse tatsächlich auf offensichtliche Schadsoftware, Phishing, Credential-Stealing, versteckte Miner und manipulierte Installer geprüft?');
+          if (!malwareReviewConfirmed) return;
+          monetizationReviewConfirmed = confirm('Hast du die angegebenen Kauf-, Abo-, Pass-, Werbe- und sonstigen Echtgeldfunktionen tatsächlich mit der Einreichung abgeglichen?');
+          if (!monetizationReviewConfirmed) return;
+          externalLinksReviewConfirmed = confirm('Hast du externe Links, Weiterleitungen, externe Downloads und externe Kaufbuttons tatsächlich geprüft?');
+          if (!externalLinksReviewConfirmed) return;
+        }
         btn.disabled = true;
         try {
           if (next === 'approved') {
             await callAdminRelease({
               submissionId: id,
               reviewNote: note,
+              malwareReviewConfirmed,
+              monetizationReviewConfirmed,
+              externalLinksReviewConfirmed,
             });
           } else {
             await callAdmin({
@@ -339,6 +347,9 @@ function render() {
             install_artifact_not_ready: 'Das private Android-Installationsartefakt ist noch nicht vollständig validiert.',
             savegame_declaration_required: 'Für dieses Update muss die Savegame-/Datenmigration bestätigt werden.',
             release_validation_checks_incomplete: 'Mindestens eine erforderliche Release-Prüfung ist noch offen.',
+            malware_review_confirmation_required: 'Die Malware-/Sicherheitsprüfung wurde nicht ausdrücklich bestätigt.',
+            monetization_review_confirmation_required: 'Die Monetarisierungsprüfung wurde nicht ausdrücklich bestätigt.',
+            external_links_review_confirmation_required: 'Die Prüfung externer Links und Weiterleitungen wurde nicht ausdrücklich bestätigt.',
             game_record_missing: 'Der interne Game-Datensatz zum Release fehlt.',
             publishing_disabled: 'Veröffentlichungen sind global gesperrt. publishing_enabled ist weiterhin false.',
             approved_status_locked: 'Ein bereits veröffentlichtes Spiel kann nicht nur durch einen Statuswechsel zurückgesetzt werden. Dafür ist ein eigener Entfernungs-/Update-Ablauf nötig.',
