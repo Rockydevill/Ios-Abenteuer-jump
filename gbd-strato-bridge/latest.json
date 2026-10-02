@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-01T21:10:30Z",
+  "published_at": "2026-10-02T08:10:30Z",
   "work_order": {
-    "id": "GBD-2026-10-01-007",
-    "description": "EU-Länderprüfung vorbereiten: verpflichtendes ISO-Land bei Einreichung, Admin-Länderstatus und Datenschutzhinweise. Keine öffentliche Freigabe und keine Aktivierung von Zahlungen.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-01-007/bundle.json",
-    "bundle_sha256": "98aa667e8fe2e98fd76ddc94286f6670af5f55e8cb85c474a7d7b148752cb069",
+    "id": "GBD-2026-10-02-008",
+    "description": "EU-Safe-Launch Staging synchronisieren: EU-Konten, Länderprüfung, kommerzielle Verifizierung, privater Identitätsnachweis, Account/Support/Checkout und DE/EN-Rechtstexte. Keine Veröffentlichung und keine Aktivierung von Echtgeld.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-008/bundle.json",
+    "bundle_sha256": "f4eefb156ec3de01bb155efaffc40e72085b25be96d75db25e96bb290f31cb79",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "440c806dd9ee9e2fce9697be08fd7b1d0471a6604be484a9f49ce82264d0c3ee"
+    "hmac_sha256": "85ce004df32253a7030a15be54d9f8353cae3196c7676fc713be379f2f922ac6"
   }
 }
