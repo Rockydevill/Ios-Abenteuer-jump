@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T10:12:00Z",
+  "published_at": "2026-10-02T09:25:00Z",
   "work_order": {
     "id": "GBD-2026-10-02-010",
-    "description": "EU-Safe-Launch Staging vollständig synchronisieren: EU-Konten, kommerzielle Verifizierung, privater Identitätsworkflow, Support, Checkout, Kaufbestätigungen, ausdrückliche Admin-Prüfbestätigungen und aktualisierte DE/EN-Rechtstexte. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Freigabegates.",
+    "description": "EU-Safe-Launch Staging vollständig synchronisieren: EU-Konten, kommerzielle Verifizierung, privater Identitätsworkflow, Support, Checkout, Kaufbestätigungen, ausdrückliche Admin-Prüfbestätigungen, aktualisierte DE/EN-Rechtstexte und vertrauenswürdige serverseitige STRATO-Länderprüfung für sensible EU-Aktionen. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Freigabegates.",
     "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-010/bundle.json",
-    "bundle_sha256": "d9431cbd4a97762f26cb6c33bfa355e1e52cd0b8c3b6dcdbe7095d714770f7ef",
+    "bundle_sha256": "dc5d84abf49d11f1c80be6bf6b397038dae647ac304662eb8c2a562452e3393e",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "bdb786a6ae4b15daddabc131ba4d219be030bb51b7292af966d8622497d0c452"
+    "hmac_sha256": "a08e24807277bebee2de5e91c588f83e7ba255cc205112fe0db53bdee9848242"
   }
 }
