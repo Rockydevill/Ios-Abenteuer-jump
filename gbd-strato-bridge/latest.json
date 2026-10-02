@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T12:11:00Z",
+  "published_at": "2026-10-02T12:46:00Z",
   "work_order": {
-    "id": "GBD-2026-10-02-011",
-    "description": "EU-Safe-Launch Staging vollständig synchronisieren: alle Änderungen aus Work-Order 010 plus sichtbare Ranking-Transparenz, Rechte-/Sicherheitsmeldewege und aktuelle Startseitenlinks. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Freigabegates.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-011/bundle.json",
-    "bundle_sha256": "4525b5371d0a872bd03107ef49664f6dc59e2ba592c3149e35695dd1a9726656",
+    "id": "GBD-2026-10-02-012",
+    "description": "EU-Safe-Launch Staging vollständig synchronisieren: Work-Order 011 plus vertrauenswürdige serverseitige Länderprüfung auch für Entwicklerportal und Nutzerkonto. Direkte Account-Service-Aufrufe ohne STRATO-Country-Assertion werden blockiert. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Freigabegates.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-012/bundle.json",
+    "bundle_sha256": "7ed1b1de09e9eda13bfcca0fef2674bbd8ff4e92b86e1927d8439c2e7f089450",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "f788ad0fc429bea51e9d7a32053b2e2b4f5676ac7599ae7d5228be590c88bb98"
+    "hmac_sha256": "a70c9c32896119bc567832b3d5ea64ebb475b683a4bb814c4c9773965ef92936"
   }
 }
