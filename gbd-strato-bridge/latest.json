@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T14:05:00Z",
+  "published_at": "2026-10-02T14:58:00Z",
   "work_order": {
-    "id": "GBD-2026-10-02-013",
-    "description": "EU-Safe-Launch Staging vollständig synchronisieren: aktueller Frontend-/Rechtstext-Stand, read-only Startbereitschaft im Adminbereich sowie Support- und Game-Report-Flows über den vertrauenswürdigen STRATO-Proxy. Zeigt 0/3 Freigaben und Blocker, kann aber keine Freigabe erteilen und keine Feature-Flags aktivieren. Keine Veröffentlichung und keine Echtgeld-Aktivierung.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-013/bundle.json",
-    "bundle_sha256": "5052e80b00d8e03eca8d65ee033e20051bb46a9fab2b52fdb7b71ceb9ea8c417",
+    "id": "GBD-2026-10-02-014",
+    "description": "EU-Safe-Launch Staging vollständig synchronisieren und bis zur kontrollierten Test-/Freigabephase zusätzlich per HTTP-404 gegen normale Besucher sperren. Maintenance sowie die bereits HMAC-/Proxy-geschützten Serverendpunkte bleiben erreichbar. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Änderung der 0/3-Freigaben.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-014/bundle.json",
+    "bundle_sha256": "2d22ff4b4eba10b040227f71460ea4ad6bf4ebc6f0f1050f0a2732b526870996",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "b5f9e7db49cf7ed2c0923317a0a37abb1772056fe41fa1a3f9de29633094ed5c"
+    "hmac_sha256": "ba32c9f7def2a9c538095619835c9e3c0dd83ed5958998a7705216e729f7d673"
   }
 }
