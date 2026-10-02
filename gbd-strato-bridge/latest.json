@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T08:10:30Z",
+  "published_at": "2026-10-02T08:42:00Z",
   "work_order": {
     "id": "GBD-2026-10-02-008",
-    "description": "EU-Safe-Launch Staging synchronisieren: EU-Konten, Länderprüfung, kommerzielle Verifizierung, privater Identitätsnachweis, Account/Support/Checkout und DE/EN-Rechtstexte. Keine Veröffentlichung und keine Aktivierung von Echtgeld.",
+    "description": "EU-Safe-Launch Staging synchronisieren: EU-Konten, Länderprüfung, Alters- und Rechtsreview-Gates, kommerzielle Verifizierung, privater Identitätsnachweis, Account/Support/Checkout und DE/EN-Rechtstexte. Keine Veröffentlichung und keine Aktivierung von Echtgeld.",
     "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-008/bundle.json",
-    "bundle_sha256": "f4eefb156ec3de01bb155efaffc40e72085b25be96d75db25e96bb290f31cb79",
+    "bundle_sha256": "11518f79d461fde8b5636b11dd6f389d1d61a6befd7d757b7ba16b4a23d99a2c",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "85ce004df32253a7030a15be54d9f8353cae3196c7676fc713be379f2f922ac6"
+    "hmac_sha256": "f43a4f6b9fcde5df487cf4ef8306e508338bacda36f3643d0fd1deb83c565ff1"
   }
 }
