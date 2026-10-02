@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T15:38:30Z",
+  "published_at": "2026-10-02T16:18:30Z",
   "work_order": {
-    "id": "GBD-2026-10-02-015",
-    "description": "EU-Safe-Launch Staging vollständig synchronisieren, normale Besucher weiter per HTTP-404 sperren und das private Storage-Gateway um bounded statische Sicherheitsindikatoren für HTML/ZIP/PWA erweitern. Keine Veröffentlichung, keine Echtgeld-Aktivierung und keine Änderung der 0/3-Freigaben.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-015/bundle.json",
-    "bundle_sha256": "7035388f136cf67643dc85348aac9ffb168d2f886c0e389150ea2dd67efd4e1e",
+    "id": "GBD-2026-10-02-016",
+    "description": "STRATO-Staging Prelaunch-Lock korrigieren: normale Staging-Seiten müssen echten HTTP 404 liefern; Maintenance und die abgesicherten Serverendpunkte bleiben erreichbar. Keine Veröffentlichung, keine Echtgeld-Aktivierung, 0/3 bleibt unverändert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-016/bundle.json",
+    "bundle_sha256": "7268fe183d7b9deded50b106da8f296e296c7d0716dfcc8c25d87d5a09031d45",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "3e7a07bf3a7e37ed832f1533f946c6bbf778de1f3b728a2aeec319b1cab7912f"
+    "hmac_sha256": "d9b114a1009e6fb90754895958f0682966c4244066b84d4d1de09a6c5f3c6057"
   }
 }
