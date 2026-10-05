@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-05T19:36:30Z",
+  "published_at": "2026-10-05T19:39:30Z",
   "work_order": {
-    "id": "GBD-2026-10-05-023",
-    "description": "Aktuelle Staging-UI-Fehler beheben: Rechtslinks und DE/EN-Navigation auf Staging-Ziele korrigieren; Konto zeigt Anmelden oder Registrieren statt beide Formulare gleichzeitig. Keine Veroeffentlichung, kein PayPal LIVE, 0/3 unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-023/bundle.json",
-    "bundle_sha256": "b541d3419d0eceeea149544aa7ae35502e8462d1cff4cf7db39a3289c8edbeb4",
+    "id": "GBD-2026-10-05-024",
+    "description": "Aktuelle Staging-Fehler gezielt beheben: DE/EN- und interne Startseitenlinks unter /staging/ halten, Rechtslinks auf vorhandene .html-Dateien fuehren und auf der Konto-Seite nur das ausgewaehlte Anmelden- oder Registrieren-Formular zeigen. Keine .htaccess-Aenderung, keine Veroeffentlichung, kein PayPal LIVE, 0/3 unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-024/bundle.json",
+    "bundle_sha256": "7430afb820f9558aa0536405c1b6c19a6d2d3c6ba5a3593bbfd863fa0ddda1b1",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "abacbc629b01cfc6dc61bb29b67a0b3515d83f7840b9a5753a170013b97944cf"
+    "hmac_sha256": "b5866bf6a83bd954b1888fa93213fc7e04e9c2bdd74b4861ae8fc330fd0c0806"
   }
 }
