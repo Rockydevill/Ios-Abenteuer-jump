@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-02T17:52:30Z",
+  "published_at": "2026-10-05T18:40:30Z",
   "work_order": {
-    "id": "GBD-2026-10-02-021",
-    "description": "Hotfix für das STRATO Storage-Gateway: PHP-Parsefehler in den neuen Static-Security-Scanner-RegEx korrigieren. Keine Veröffentlichung, kein Echtgeld, 0/3 unverändert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-02-021/bundle.json",
-    "bundle_sha256": "f37e74d904281ad5d51583d2966d1c3cf6777ae6df1664b942da1f921e88be9e",
+    "id": "GBD-2026-10-05-022",
+    "description": "STRATO-Staging-Testzugang wiederherstellen: die versehentliche 404-Sperre unter /staging/ entfernen, noindex/noarchive und WordPress-Rewrite erhalten. Root/Launch/PayPal bleiben unveraendert. Keine Veroeffentlichung, kein Echtgeld, 0/3 unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-022/bundle.json",
+    "bundle_sha256": "4746e79889c0f2094f50aede70e26e061a2488d0ba651d8d324c31391d055f52",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "7e02d2fc10968a5e811265609a3bea7df1c471c225ba634f827330768dd01997"
+    "hmac_sha256": "c2a67cb22895ea02e05e84204d03d789d96ebf992545d14eb3ecd39c4912560f"
   }
 }
