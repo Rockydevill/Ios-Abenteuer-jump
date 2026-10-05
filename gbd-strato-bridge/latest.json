@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-05T18:40:30Z",
+  "published_at": "2026-10-05T19:36:30Z",
   "work_order": {
-    "id": "GBD-2026-10-05-022",
-    "description": "STRATO-Staging-Testzugang wiederherstellen: die versehentliche 404-Sperre unter /staging/ entfernen, noindex/noarchive und WordPress-Rewrite erhalten. Root/Launch/PayPal bleiben unveraendert. Keine Veroeffentlichung, kein Echtgeld, 0/3 unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-022/bundle.json",
-    "bundle_sha256": "4746e79889c0f2094f50aede70e26e061a2488d0ba651d8d324c31391d055f52",
+    "id": "GBD-2026-10-05-023",
+    "description": "Aktuelle Staging-UI-Fehler beheben: Rechtslinks und DE/EN-Navigation auf Staging-Ziele korrigieren; Konto zeigt Anmelden oder Registrieren statt beide Formulare gleichzeitig. Keine Veroeffentlichung, kein PayPal LIVE, 0/3 unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-023/bundle.json",
+    "bundle_sha256": "b541d3419d0eceeea149544aa7ae35502e8462d1cff4cf7db39a3289c8edbeb4",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "c2a67cb22895ea02e05e84204d03d789d96ebf992545d14eb3ecd39c4912560f"
+    "hmac_sha256": "abacbc629b01cfc6dc61bb29b67a0b3515d83f7840b9a5753a170013b97944cf"
   }
 }
