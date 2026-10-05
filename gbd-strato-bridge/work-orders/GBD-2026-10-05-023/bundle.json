@@ -1,0 +1,83 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-05-023",
+    "created_at": "2026-10-05T19:36:00Z",
+    "description": "Aktuelle Staging-UI-Fehler beheben: Rechtslinks und DE/EN-Navigation auf Staging-Ziele korrigieren; Konto zeigt Anmelden oder Registrieren statt beide Formulare gleichzeitig. Keine Veroeffentlichung, kein PayPal LIVE, 0/3 unveraendert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/index.html",
+        "source": "payload/index.html",
+        "sha256": "ebab2c8b8d63c811de5536eabff0323883be66194e1c7ca6d7d7ba1d07c4ea04",
+        "expected_sha256": "6693d557f43ea162abf93dab3a71338f3db06d356a0019135625a43abf9eea77"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/index.html",
+        "source": "payload/en/index.html",
+        "sha256": "f2d4ccb9972f7c16617b50f70804467fa3f059001441f7a034f615a6de484cc2",
+        "expected_sha256": "73dcc2c4519aee4fce301de74551af3f3661f0148c8365452154664976f593fb"
+      },
+      {
+        "op": "write",
+        "path": "staging/account/index.html",
+        "source": "payload/account/index.html",
+        "sha256": "92cf52030103f75f01a81f656f6706e9bd7c0b7011e0d905ead965ea1f04973c",
+        "expected_sha256": "67cb72fef7e8f3dd84efe85c5ee970321e9b48c62c617917adf781c2fb506fdb"
+      },
+      {
+        "op": "write",
+        "path": "staging/en/account/index.html",
+        "source": "payload/en/account/index.html",
+        "sha256": "6e5915aa3c5e9d39bff1110edaea2cc9e70e4566fff46ae99f2fc5c3f2d9fa8a",
+        "expected_sha256": "0479838428bf500a21aad6cb5d36b681b1b4f69f0a6dd8e6e845b7bb5e94c210"
+      },
+      {
+        "op": "write",
+        "path": "staging/account/account.js",
+        "source": "payload/account.js",
+        "sha256": "eebe000924e320d4c9d0dc652baac1b6538319d42c2b624d6383efe9d88ab7e3",
+        "expected_sha256": "6eb1c339acd09bdd022ca9ef07f711668b2532b9e22142012ce289aa810237bc"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-023/payload/index.html",
+      "encoding": "raw",
+      "size": 12550,
+      "sha256": "ebab2c8b8d63c811de5536eabff0323883be66194e1c7ca6d7d7ba1d07c4ea04"
+    },
+    {
+      "source": "payload/en/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-023/payload/en/index.html",
+      "encoding": "raw",
+      "size": 12041,
+      "sha256": "f2d4ccb9972f7c16617b50f70804467fa3f059001441f7a034f615a6de484cc2"
+    },
+    {
+      "source": "payload/account/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-023/payload/account/index.html",
+      "encoding": "raw",
+      "size": 4268,
+      "sha256": "92cf52030103f75f01a81f656f6706e9bd7c0b7011e0d905ead965ea1f04973c"
+    },
+    {
+      "source": "payload/en/account/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-023/payload/en/account/index.html",
+      "encoding": "raw",
+      "size": 4186,
+      "sha256": "6e5915aa3c5e9d39bff1110edaea2cc9e70e4566fff46ae99f2fc5c3f2d9fa8a"
+    },
+    {
+      "source": "payload/account.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-023/payload/account.js",
+      "encoding": "raw",
+      "size": 9800,
+      "sha256": "eebe000924e320d4c9d0dc652baac1b6538319d42c2b624d6383efe9d88ab7e3"
+    }
+  ]
+}
