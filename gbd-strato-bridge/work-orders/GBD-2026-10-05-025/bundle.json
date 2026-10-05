@@ -1,0 +1,41 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-05-025",
+    "created_at": "2026-10-05T19:50:00Z",
+    "description": "Finaler Staging-Frontend-Hotfix: alle internen DE/EN-Staging- und Rechtslinks korrekt im /staging/-Bereich halten und Konto-Anmelden/Registrieren als eindeutige Umschaltung darstellen. Keine .htaccess-Aenderung, keine Veroeffentlichung, kein Echtgeld, 0/3 unveraendert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/app.js",
+        "source": "payload/app.js",
+        "sha256": "fc80316c266bb1738e7bf84816a242e4576dae3593e0fdd03ff019d6e5a2ed01",
+        "expected_sha256": "3fcbd71893a490a250436ee1060bc96d267c4cd03dfdd843d5b0049ea33af8f6"
+      },
+      {
+        "op": "write",
+        "path": "staging/account/account.js",
+        "source": "payload/account.js",
+        "sha256": "dbaa34b193b0afc8043d1c5edf10e65aca56da3cf5718a6b75815b28f5203a1a",
+        "expected_sha256": "6eb1c339acd09bdd022ca9ef07f711668b2532b9e22142012ce289aa810237bc"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/app.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-025/payload/app.js",
+      "encoding": "raw",
+      "size": 3707,
+      "sha256": "fc80316c266bb1738e7bf84816a242e4576dae3593e0fdd03ff019d6e5a2ed01"
+    },
+    {
+      "source": "payload/account.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-025/payload/account.js",
+      "encoding": "raw",
+      "size": 11579,
+      "sha256": "dbaa34b193b0afc8043d1c5edf10e65aca56da3cf5718a6b75815b28f5203a1a"
+    }
+  ]
+}
