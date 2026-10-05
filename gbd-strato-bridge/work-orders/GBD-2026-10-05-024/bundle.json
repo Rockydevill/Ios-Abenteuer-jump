@@ -1,0 +1,44 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-05-024",
+    "created_at": "2026-10-05T19:39:00Z",
+    "description": "Aktuelle Staging-Fehler gezielt beheben: DE/EN- und interne Startseitenlinks unter /staging/ halten, Rechtslinks auf vorhandene .html-Dateien fuehren und auf der Konto-Seite nur das ausgewaehlte Anmelden- oder Registrieren-Formular zeigen. Keine .htaccess-Aenderung, keine Veroeffentlichung, kein PayPal LIVE, 0/3 unveraendert.",
+    "operations": [
+      {
+        "op": "replace_text",
+        "path": "staging/app.js",
+        "expected_sha256": "3fcbd71893a490a250436ee1060bc96d267c4cd03dfdd843d5b0049ea33af8f6",
+        "result_sha256": "61a6a380a0e281936a52667b99373d546dcee14fee57bc9b464cf72db7d8c1a6",
+        "replacements": [
+          {
+            "search": "window.addEventListener('gbd-catalog-updated',updateCatalog);\nupdateCatalog();",
+            "replace": "window.addEventListener('gbd-catalog-updated',updateCatalog);\nupdateCatalog();\n\nfunction fixStagingLinks(){\n  if(!window.location.pathname.startsWith('/staging/'))return;\n  document.querySelectorAll('a[href]').forEach(a=>{\n    const raw=a.getAttribute('href');\n    if(raw==='/')a.setAttribute('href','/staging/');\n    else if(raw==='/en/')a.setAttribute('href','/staging/en/');\n    else if(raw==='/games/')a.setAttribute('href',lang==='en'?'/staging/en/games/':'/staging/games/');\n    const current=a.getAttribute('href');\n    if(!current)return;\n    try{\n      const u=new URL(current,window.location.href);\n      if(/^\\/staging\\/(?:en\\/)?legal\\/(?:imprint|privacy|terms)$/.test(u.pathname)){\n        a.setAttribute('href',u.pathname+'.html'+u.search+u.hash);\n      }\n    }catch{}\n  });\n}\nfixStagingLinks();"
+          }
+        ]
+      },
+      {
+        "op": "replace_text",
+        "path": "staging/account/account.js",
+        "expected_sha256": "6eb1c339acd09bdd022ca9ef07f711668b2532b9e22142012ce289aa810237bc",
+        "result_sha256": "6b691458a7b09de2410b35374ad9c99810e8d86550b7e5cae606836b8c93b8d7",
+        "replacements": [
+          {
+            "search": "const EU=['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE'];",
+            "replace": "const EU=['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE'];\nlet canLogin=false;\nlet canRegister=false;\nlet accountMode='login';\nlet modeBar=null;\nfunction ensureModeBar(){\n  if(modeBar||!loginForm||!regForm)return;\n  modeBar=document.createElement('div');\n  modeBar.id='playerAccountMode';\n  modeBar.className='developer-access-actions';\n  modeBar.style.margin='16px 0 20px';\n  const loginButton=document.createElement('button');\n  loginButton.type='button';\n  loginButton.dataset.accountMode='login';\n  loginButton.textContent=t('Anmelden','Sign in');\n  const registerButton=document.createElement('button');\n  registerButton.type='button';\n  registerButton.dataset.accountMode='register';\n  registerButton.textContent=t('Registrieren','Register');\n  modeBar.append(loginButton,registerButton);\n  loginForm.parentNode.insertBefore(modeBar,loginForm);\n  loginButton.addEventListener('click',()=>{msg.hidden=true;setAccountMode('login')});\n  registerButton.addEventListener('click',()=>{msg.hidden=true;setAccountMode('register')});\n}\nfunction setAccountMode(mode){\n  accountMode=mode==='register'?'register':'login';\n  if(modeBar){\n    const loginButton=modeBar.querySelector('[data-account-mode=\"login\"]');\n    const registerButton=modeBar.querySelector('[data-account-mode=\"register\"]');\n    if(loginButton){\n      loginButton.hidden=!canLogin;\n      loginButton.className='button '+(accountMode==='login'?'primary':'secondary');\n      loginButton.setAttribute('aria-pressed',String(accountMode==='login'));\n    }\n    if(registerButton){\n      registerButton.hidden=!canRegister;\n      registerButton.className='button '+(accountMode==='register'?'primary':'secondary');\n      registerButton.setAttribute('aria-pressed',String(accountMode==='register'));\n    }\n  }\n  loginForm.hidden=!(canLogin&&accountMode==='login');\n  regForm.hidden=!(canRegister&&accountMode==='register');\n}\nfunction fixAccountLinks(){\n  if(!window.location.pathname.startsWith('/staging/'))return;\n  document.querySelectorAll('a[href]').forEach(a=>{\n    const raw=a.getAttribute('href');\n    if(!raw)return;\n    try{\n      const u=new URL(raw,window.location.href);\n      if(/^\\/staging\\/(?:en\\/)?legal\\/(?:imprint|privacy|terms)$/.test(u.pathname)){\n        a.setAttribute('href',u.pathname+'.html'+u.search+u.hash);\n      }\n    }catch{}\n  });\n}\nfixAccountLinks();"
+          },
+          {
+            "search": "  if(s){\n    loginForm.hidden=true;regForm.hidden=true;",
+            "replace": "  if(s){\n    canLogin=false;canRegister=false;\n    if(modeBar)modeBar.hidden=true;\n    loginForm.hidden=true;regForm.hidden=true;"
+          },
+          {
+            "search": "  loginForm.hidden=d.playerAccountsEnabled!==true;\n  regForm.hidden=d.playerRegistrationEnabled!==true;\n  closed.hidden=d.playerAccountsEnabled===true||d.playerRegistrationEnabled===true;\n  fillCountries();",
+            "replace": "  canLogin=d.playerAccountsEnabled===true;\n  canRegister=d.playerRegistrationEnabled===true;\n  closed.hidden=canLogin||canRegister;\n  ensureModeBar();\n  if(modeBar)modeBar.hidden=!(canLogin||canRegister);\n  if(accountMode==='login'&&!canLogin&&canRegister)accountMode='register';\n  if(accountMode==='register'&&!canRegister&&canLogin)accountMode='login';\n  setAccountMode(accountMode);\n  fillCountries();"
+          }
+        ]
+      }
+    ]
+  },
+  "payloads": []
+}
