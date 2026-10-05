@@ -9,7 +9,7 @@ const lang=document.body.dataset.accountLang==='en'?'en':'de';
 const t=(de,en)=>lang==='en'?en:de;
 const closed=document.getElementById('playerAccountClosed');
 const loginForm=document.getElementById('playerLoginForm');
-const regForm=document.getElementById('playerRegistrationForm');\nconst accountChoice=document.getElementById('playerAccountChoice');\nconst showLoginButton=document.getElementById('showPlayerLogin');\nconst showRegistrationButton=document.getElementById('showPlayerRegistration');\nlet loginEnabled=false,registrationEnabled=false;\nfunction selectAccountMode(mode){\n  if(loginForm)loginForm.hidden=!(mode==='login'&&loginEnabled);\n  if(regForm)regForm.hidden=!(mode==='register'&&registrationEnabled);\n  if(showLoginButton)showLoginButton.hidden=!loginEnabled||mode==='login';\n  if(showRegistrationButton)showRegistrationButton.hidden=!registrationEnabled||mode==='register';\n}
+const regForm=document.getElementById('playerRegistrationForm');
 const msg=document.getElementById('playerAccountMessage');
 const signed=document.getElementById('playerSignedIn');
 const identity=document.getElementById('playerIdentity');
@@ -75,9 +75,83 @@ async function loadConfig(){
   closed.hidden=d.playerAccountsEnabled===true||d.playerRegistrationEnabled===true;
   fillCountries();
 }
-showLoginButton?.addEventListener('click',()=>selectAccountMode('login'));\nshowRegistrationButton?.addEventListener('click',()=>selectAccountMode('register'));\nloginForm?.addEventListener('submit',async e=>{e.preventDefault();msg.hidden=true;const email=document.getElementById('playerLoginEmail').value.trim();const password=document.getElementById('playerLoginPassword').value;const {data,error}=await client.auth.signInWithPassword({email,password});if(error){show('error',t('Anmeldung fehlgeschlagen.','Sign-in failed.'));return}if(!data.user?.email_confirmed_at){await client.auth.signOut({scope:'local'});show('error',t('Bitte bestätige zuerst deine E-Mail-Adresse.','Please confirm your email address first.'));return}await loadConfig()});
-regForm?.addEventListener('submit',async e=>{e.preventDefault();msg.hidden=true;if(!regForm.checkValidity()){regForm.reportValidity();return}const button=document.getElementById('playerRegisterButton');button.disabled=true;try{const r=await fetch(SIGNUP_URL,{method:'POST',headers:{'Content-Type':'application/json',apikey:PUBLISHABLE_KEY},body:JSON.stringify({displayName:document.getElementById('playerRegisterDisplayName').value.trim(),email:document.getElementById('playerRegisterEmail').value.trim(),password:document.getElementById('playerRegisterPassword').value,declaredCountryCode:country.value,countryConfirmed:document.getElementById('playerRegisterCountryConfirm').checked,playerTermsAccepted:document.getElementById('playerRegisterTerms').checked})});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.error||'registration_failed');document.getElementById('playerRegisterPassword').value='';show('success',d.message||t('Bitte bestätige deine E-Mail-Adresse.','Please confirm your email address.'))}catch(e){const m={country_not_supported:t('Für deinen Staat ist diese Funktion nicht verfügbar.','This feature is not available in your country.'),country_verification_required:t('Dein Land konnte nicht eindeutig bestätigt werden.','Your country could not be confirmed.'),player_registration_closed:t('Nutzerregistrierung ist derzeit geschlossen.','User registration is currently closed.'),rate_limited:t('Zu viele Versuche. Bitte später erneut versuchen.','Too many attempts. Please try again later.'),user_already_exists:t('Für diese E-Mail-Adresse existiert bereits ein Konto. Bitte anmelden.','An account already exists for this email address. Please sign in.'),email_exists:t('Für diese E-Mail-Adresse existiert bereits ein Konto. Bitte anmelden.','An account already exists for this email address. Please sign in.')} ;show('error',m[e.message]||t('Registrierung fehlgeschlagen.','Registration failed.'))}finally{button.disabled=false}});
+loginForm?.addEventListener('submit',async e=>{e.preventDefault();msg.hidden=true;const email=document.getElementById('playerLoginEmail').value.trim();const password=document.getElementById('playerLoginPassword').value;const {data,error}=await client.auth.signInWithPassword({email,password});if(error){show('error',t('Anmeldung fehlgeschlagen.','Sign-in failed.'));return}if(!data.user?.email_confirmed_at){await client.auth.signOut({scope:'local'});show('error',t('Bitte bestätige zuerst deine E-Mail-Adresse.','Please confirm your email address first.'));return}await loadConfig()});
+regForm?.addEventListener('submit',async e=>{e.preventDefault();msg.hidden=true;if(!regForm.checkValidity()){regForm.reportValidity();return}const button=document.getElementById('playerRegisterButton');button.disabled=true;try{const r=await fetch(SIGNUP_URL,{method:'POST',headers:{'Content-Type':'application/json',apikey:PUBLISHABLE_KEY},body:JSON.stringify({displayName:document.getElementById('playerRegisterDisplayName').value.trim(),email:document.getElementById('playerRegisterEmail').value.trim(),password:document.getElementById('playerRegisterPassword').value,declaredCountryCode:country.value,countryConfirmed:document.getElementById('playerRegisterCountryConfirm').checked,playerTermsAccepted:document.getElementById('playerRegisterTerms').checked})});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.error||'registration_failed');document.getElementById('playerRegisterPassword').value='';show('success',d.message||t('Bitte bestätige deine E-Mail-Adresse.','Please confirm your email address.'))}catch(e){const m={country_not_supported:t('Für deinen Staat ist diese Funktion nicht verfügbar.','This feature is not available in your country.'),country_verification_required:t('Dein Land konnte nicht eindeutig bestätigt werden.','Your country could not be confirmed.'),player_registration_closed:t('Nutzerregistrierung ist derzeit geschlossen.','User registration is currently closed.'),rate_limited:t('Zu viele Versuche. Bitte später erneut versuchen.','Too many attempts. Please try again later.')} ;show('error',m[e.message]||t('Registrierung fehlgeschlagen.','Registration failed.'))}finally{button.disabled=false}});
 logout?.addEventListener('click',async()=>{await client.auth.signOut({scope:'local'});location.reload()});
 deleteButton?.addEventListener('click',async()=>{if(!confirm(t('Kontolöschung anfordern? Rechtlich notwendige Transaktionsnachweise werden getrennt behandelt.','Request account deletion? Legally required transaction evidence is handled separately.')))return;try{await accountApi({action:'request_delete'});show('success',t('Kontolöschung wurde angefordert.','Account deletion has been requested.'));deleteButton.disabled=true}catch(e){show('error',e.message==='account_deletion_closed'?t('Kontolöschung ist derzeit noch nicht freigeschaltet.','Account deletion is not enabled yet.'):e.message)}});
 client.auth.onAuthStateChange(()=>loadConfig());
 loadConfig().catch(()=>show('error',t('Kontostatus konnte nicht geladen werden.','Account status could not be loaded.')));
+
+function gbdRepairAccountUi(){
+  if(window.location.pathname.startsWith('/staging/')){
+    document.querySelectorAll('a[href]').forEach(link=>{
+      const raw=link.getAttribute('href');
+      if(raw&&/(?:^|\/)legal\/(?:privacy|terms)$/.test(raw)) link.setAttribute('href',raw+'.html');
+    });
+  }
+  if(!loginForm||!regForm) return;
+
+  const host=loginForm.parentElement;
+  const switcher=document.createElement('div');
+  switcher.id='playerAccountModeSwitch';
+  switcher.className='developer-access-actions';
+  switcher.style.margin='16px 0 20px';
+  switcher.hidden=true;
+
+  const loginButton=document.createElement('button');
+  loginButton.type='button';
+  loginButton.className='button secondary';
+  loginButton.textContent=t('Anmelden','Sign in');
+
+  const registerButton=document.createElement('button');
+  registerButton.type='button';
+  registerButton.className='button secondary';
+  registerButton.textContent=t('Registrieren','Register');
+
+  switcher.append(loginButton,registerButton);
+  host.insertBefore(switcher,loginForm);
+
+  let mode='login';
+  let internal=false;
+
+  function selectMode(next){
+    mode=next==='register'?'register':'login';
+    internal=true;
+    const canLogin=loginForm.dataset.gbdAvailable==='1';
+    const canRegister=regForm.dataset.gbdAvailable==='1';
+    loginForm.hidden=!(mode==='login'&&canLogin);
+    regForm.hidden=!(mode==='register'&&canRegister);
+    loginButton.className='button '+(mode==='login'?'primary':'secondary');
+    registerButton.className='button '+(mode==='register'?'primary':'secondary');
+    loginButton.setAttribute('aria-pressed',mode==='login'?'true':'false');
+    registerButton.setAttribute('aria-pressed',mode==='register'?'true':'false');
+    internal=false;
+  }
+
+  function sync(){
+    if(internal)return;
+    if(signed&&!signed.hidden){switcher.hidden=true;return;}
+    if(!loginForm.hidden) loginForm.dataset.gbdAvailable='1';
+    if(!regForm.hidden) regForm.dataset.gbdAvailable='1';
+    const canLogin=loginForm.dataset.gbdAvailable==='1';
+    const canRegister=regForm.dataset.gbdAvailable==='1';
+    switcher.hidden=!(canLogin||canRegister);
+    loginButton.hidden=!canLogin;
+    registerButton.hidden=!canRegister;
+    if(!canLogin&&!canRegister)return;
+    if(mode==='login'&&!canLogin)mode='register';
+    if(mode==='register'&&!canRegister)mode='login';
+    selectMode(mode);
+  }
+
+  loginButton.addEventListener('click',()=>selectMode('login'));
+  registerButton.addEventListener('click',()=>selectMode('register'));
+
+  const observer=new MutationObserver(sync);
+  observer.observe(loginForm,{attributes:true,attributeFilter:['hidden']});
+  observer.observe(regForm,{attributes:true,attributeFilter:['hidden']});
+  if(signed)observer.observe(signed,{attributes:true,attributeFilter:['hidden']});
+  queueMicrotask(sync);
+  window.addEventListener('load',sync,{once:true});
+}
+gbdRepairAccountUi();
