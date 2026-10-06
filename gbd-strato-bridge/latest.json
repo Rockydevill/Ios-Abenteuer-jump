@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T16:24:30Z",
+  "published_at": "2026-10-06T16:32:52Z",
   "work_order": {
     "id": "GBD-2026-10-06-035",
     "description": "Staging-Reparaturblock: Impressum, Datenschutz und Nutzungsbedingungen bleiben sicher unter /staging/ und erhalten robuste DE/EN-Routen. Zusätzlich wird ein owner-sicherer Google-Admin-Testzugang bereitgestellt. Keine öffentliche Registrierung, keine Veröffentlichung, kein Echtgeld; 0/3 unverändert.",
     "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-035/bundle.json",
-    "bundle_sha256": "182010e7ab2d6d6a5e6bdb83cf11eac7b68d9f6babce5222cfa94f39e2870d00",
+    "bundle_sha256": "55a99e24ef583cf163477c9c2e581bd0b4f597d77b8fac22e7267de75b3404e9",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "d2fc547bfb769678cc1c80bdcf237ac628ac4b5ce7f2dea90945a258aca0da7f"
+    "hmac_sha256": "8c8fd223069a88a3f8bc23676f28dccf2e43d863e9ee3ab417e6682851078da8"
   }
 }
