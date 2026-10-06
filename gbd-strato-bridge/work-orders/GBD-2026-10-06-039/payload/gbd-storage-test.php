@@ -26,14 +26,25 @@ function gate_install(string $gateToken):void{
   $b=str_contains($cur,GBD_GATE_BEGIN);$e=str_contains($cur,GBD_GATE_END);if($b xor $e)throw new RuntimeException('gate_marker_mismatch');
   $bak=$data.'/staging-htaccess-before-private-link-'.gmdate('Ymd-His').'-'.bin2hex(random_bytes(4)).'.bak';
   if(@file_put_contents($bak,$cur,LOCK_EX)===false)throw new RuntimeException('backup_failed');@chmod($bak,0600);
-  if($b&&$e){$pat='~\R?'.preg_quote(GBD_GATE_BEGIN,'~').'.*?'.preg_quote(GBD_GATE_END,'~').'\R?~s';$base=preg_replace($pat,"\n",$cur,1);if($base===null)throw new RuntimeException('gate_replace_failed');}else{$base=$cur;}
-  $gate="\n".GBD_GATE_BEGIN."\n<IfModule mod_rewrite.c>\nRewriteEngine On\n"
-       ."RewriteCond %{REQUEST_URI} !^/staging/chatgpt-maintenance(?:/|$) [NC]\n"
-       ."RewriteCond %{REQUEST_URI} !^/staging/gbd-storage-test\\.php$ [NC]\n"
-       ."RewriteCond %{HTTP:Cookie} !(^|;[[:space:]]*)".GBD_OWNER_COOKIE."=".$gateToken."(;|$) [NC]\n"
-       ."RewriteRule ^ - [R=404,L]\n</IfModule>\n"
+  if($b&&$e){$pat='~\R?'.preg_quote(GBD_GATE_BEGIN,'~').'.*?'.preg_quote(GBD_GATE_END,'~').'\R?~s';$base=preg_replace($pat,"
+",$cur,1);if($base===null)throw new RuntimeException('gate_replace_failed');}else{$base=$cur;}
+  $gate="
+".GBD_GATE_BEGIN."
+<IfModule mod_rewrite.c>
+RewriteEngine On
+"
+       ."RewriteCond %{REQUEST_URI} !^/staging/chatgpt-maintenance(?:/|$) [NC]
+"
+       ."RewriteCond %{REQUEST_URI} !^/staging/gbd-storage-test\.php$ [NC]
+"
+       ."RewriteCond %{HTTP:Cookie} !(^|;[[:space:]]*)".GBD_OWNER_COOKIE."=".$gateToken."(;|$) [NC]
+"
+       ."RewriteRule ^ - [R=404,L]
+</IfModule>
+"
        ."<IfModule mod_headers.c>\nHeader always set X-Robots-Tag \"noindex, nofollow, noarchive, nosnippet\"\nHeader always set Cache-Control \"no-store\"\n</IfModule>\n".GBD_GATE_END."\n";
-  $next=rtrim((string)$base)."\n".$gate;if(@file_put_contents($ht,$next,LOCK_EX)===false)throw new RuntimeException('htaccess_write_failed');
+  $next=rtrim((string)$base)."
+".$gate;if(@file_put_contents($ht,$next,LOCK_EX)===false)throw new RuntimeException('htaccess_write_failed');
  }finally{flock($lock,LOCK_UN);fclose($lock);@chmod($lockPath,0600);}
 }
 sec();if(!host_ok())nf();$method=strtoupper((string)($_SERVER['REQUEST_METHOD']??'GET'));
