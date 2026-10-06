@@ -1,0 +1,27 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-06-031",
+    "created_at": "2026-10-06T11:20:00Z",
+    "description": "Owner-Testzugang robust aktivieren, ohne bestehende 027-Datei zu ueberschreiben: kleine same-site gepruefte Hilfsseite anlegen, die danach die vorhandene Passwort-/Cookie-Logik verwendet. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/gbd-owner-login.php",
+        "source": "payload/gbd-owner-login.php",
+        "sha256": "831932d45e67b3ae01501a92ea724cb7c168a2445615ea8af3a03c17df1bb6e1",
+        "create_only": true
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/gbd-owner-login.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-031/payload/gbd-owner-login.php",
+      "encoding": "raw",
+      "size": 1229,
+      "sha256": "831932d45e67b3ae01501a92ea724cb7c168a2445615ea8af3a03c17df1bb6e1"
+    }
+  ]
+}
