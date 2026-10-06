@@ -1,0 +1,41 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-06-036",
+    "created_at": "2026-10-06T17:31:17Z",
+    "description": "Privater Owner-Auth-Test fuer echte Bestätigungs-Mail und Google OAuth im geschützten Staging. Nur neue Dateien unter staging/admin/auth-test; öffentliche Registrierung, Veröffentlichung, PayPal LIVE und 0/3 bleiben unverändert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/admin/auth-test/index.html",
+        "source": "payload/admin/auth-test/index.html",
+        "sha256": "9c9b43888a671d49f2cc0627f5f3a719aeb2943e882d1b20cc55e7a75e32c1ec",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/admin/auth-test/auth-test.js",
+        "source": "payload/admin/auth-test/auth-test.js",
+        "sha256": "3f7cb16371b17415d7c8379b6d060f2a52f21416c6d06bdf9750d29229cb481d",
+        "create_only": true
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/admin/auth-test/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-036/payload/admin/auth-test/index.html",
+      "encoding": "raw",
+      "size": 4250,
+      "sha256": "9c9b43888a671d49f2cc0627f5f3a719aeb2943e882d1b20cc55e7a75e32c1ec"
+    },
+    {
+      "source": "payload/admin/auth-test/auth-test.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-036/payload/admin/auth-test/auth-test.js",
+      "encoding": "raw",
+      "size": 7031,
+      "sha256": "3f7cb16371b17415d7c8379b6d060f2a52f21416c6d06bdf9750d29229cb481d"
+    }
+  ]
+}
