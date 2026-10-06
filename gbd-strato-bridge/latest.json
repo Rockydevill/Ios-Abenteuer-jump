@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T11:05:00Z",
+  "published_at": "2026-10-06T11:20:30Z",
   "work_order": {
-    "id": "GBD-2026-10-06-029",
-    "description": "Bridge-Metadaten fuer Owner-Testzugang korrigieren: tatsaechliche GitHub-Payload-Groesse fuer gbd-storage-test.php verwenden. PHP-Inhalt und Sicherheitslogik bleiben unveraendert. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-029/bundle.json",
-    "bundle_sha256": "f89f924486a4826ffbb30243a9c9df4cb031c87bf88eb41a92aa9726dfe1c57a",
+    "id": "GBD-2026-10-06-031",
+    "description": "Owner-Testzugang robust aktivieren, ohne bestehende 027-Datei zu ueberschreiben: kleine same-site gepruefte Hilfsseite anlegen, die danach die vorhandene Passwort-/Cookie-Logik verwendet. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-031/bundle.json",
+    "bundle_sha256": "c02bb8fa8d345567570177a6f09c10ba34e577ca62f3730196784ebcefb86463",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "\u0062\u0064\u0064\u0036\u0036\u0030\u0032\u0062\u0038\u0038\u0038\u0035\u0036\u0039\u0066\u0065\u0032\u0037\u0038\u0064\u0036\u0063\u0036\u0065\u0033\u0039\u0033\u0066\u0036\u0031\u0064\u0032\u0033\u0037\u0032\u0062\u0062\u0039\u0035\u0037\u0030\u0034\u0033\u0030\u0061\u0064\u0063\u0065\u0031\u0032\u0062\u0063\u0038\u0066\u0031\u0039\u0035\u0034\u0037\u0066\u0066\u0064\u0061\u0065"
+    "hmac_sha256": "\u0036\u0066\u0035\u0035\u0063\u0064\u0038\u0032\u0036\u0031\u0065\u0030\u0035\u0039\u0033\u0066\u0030\u0066\u0063\u0064\u0038\u0064\u0064\u0034\u0061\u0061\u0031\u0038\u0038\u0039\u0064\u0065\u0032\u0061\u0032\u0038\u0034\u0033\u0036\u0030\u0061\u0063\u0035\u0036\u0064\u0030\u0034\u0036\u0039\u0034\u0036\u0062\u0034\u0033\u0038\u0032\u0064\u0031\u0033\u0064\u0065\u0066\u0038\u0035"
   }
 }
