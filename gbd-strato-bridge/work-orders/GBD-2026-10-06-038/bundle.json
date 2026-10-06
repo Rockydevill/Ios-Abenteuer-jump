@@ -1,0 +1,27 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-06-038",
+    "created_at": "2026-10-06T18:20:00Z",
+    "description": "Privater Online-Test nach ausdruecklicher 3/3-Freigabe: ein hochentropischer Link schaltet nur den aufrufenden Browser fuer /staging/ frei; alle Aufrufe ohne privaten Zugang bleiben HTTP 404. Staging bleibt noindex/nofollow/noarchive. PayPal bleibt ausschliesslich Sandbox; kein PayPal LIVE und kein Echtgeld.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/gbd-storage-test.php",
+        "source": "payload/gbd-storage-test.php",
+        "sha256": "0bbe6d2cc4c383a882e108b54980251a3dbe44f9f2099dcc71c5f5bedc6d91c1",
+        "expected_sha256": "77d573ff890392405850fb14f4707eadb671a3780d07000916f49d40f3714a71"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/gbd-storage-test.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-038/payload/gbd-storage-test.php",
+      "encoding": "raw",
+      "size": 8438,
+      "sha256": "0bbe6d2cc4c383a882e108b54980251a3dbe44f9f2099dcc71c5f5bedc6d91c1"
+    }
+  ]
+}
