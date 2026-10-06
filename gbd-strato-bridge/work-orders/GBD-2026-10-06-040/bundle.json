@@ -1,0 +1,55 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-06-040",
+    "created_at": "2026-10-06T19:28:00Z",
+    "description": "Privater Staging-Auth-Fix: Entwickler-Anmeldung und Registrierung funktionieren auf der normalen Staging-Loginseite hinter dem privaten 404-Gate. E-Mail-Registrierung, Passwort-Reset und Bestaetigungsmail laufen ueber den signierten STRATO-Staging-Proxy und STRATO-SMTP. Google-Login/-Registrierung wird mit kurzlebiger privater Vorabfreigabe aktiviert. Oeffentliche Registrierungsflags bleiben AUS, 0/3 bleibt unveraendert, PayPal bleibt Sandbox; kein LIVE/Echtgeld.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/_gbd_proxy.php",
+        "source": "payload/_gbd_proxy.php",
+        "sha256": "3058a9e092b7f53b9ed008b7ffd0b8cb035e9b3694a8f836e1f85fa81c4b1271",
+        "expected_sha256": "aa3b991d165e7d6cdfc90d32912919024272dfa68c18f9cee3020557988e9d77"
+      },
+      {
+        "op": "write",
+        "path": "staging/developers/login/index.html",
+        "source": "payload/developers/login/index.html",
+        "sha256": "6c13c6f34ab9cae5eaef727c677095b4305dca926d8c6956bfb074374437be20",
+        "expected_sha256": "0db12ef040badf80775cb22fc6d3c596191eb4b59568c919634c0171ddbd7101"
+      },
+      {
+        "op": "write",
+        "path": "staging/developers/login.js",
+        "source": "payload/developers/login.js",
+        "sha256": "49736d0e53584ae46c376a75ef9b10441648eb52f76a957e3ff711df01a5c53d",
+        "expected_sha256": "99021ab149f4e145173cd2537ec70fdaf46cda636834c94a59706c1e1853b690"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/_gbd_proxy.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-040/payload/_gbd_proxy.php",
+      "encoding": "raw",
+      "size": 14785,
+      "sha256": "3058a9e092b7f53b9ed008b7ffd0b8cb035e9b3694a8f836e1f85fa81c4b1271"
+    },
+    {
+      "source": "payload/developers/login/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-040/payload/developers/login/index.html",
+      "encoding": "raw",
+      "size": 6347,
+      "sha256": "6c13c6f34ab9cae5eaef727c677095b4305dca926d8c6956bfb074374437be20"
+    },
+    {
+      "source": "payload/developers/login.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-040/payload/developers/login.js",
+      "encoding": "raw",
+      "size": 9489,
+      "sha256": "49736d0e53584ae46c376a75ef9b10441648eb52f76a957e3ff711df01a5c53d"
+    }
+  ]
+}
