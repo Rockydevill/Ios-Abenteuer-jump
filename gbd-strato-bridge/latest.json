@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T11:20:30Z",
+  "published_at": "2026-10-06T11:54:30Z",
   "work_order": {
-    "id": "GBD-2026-10-06-031",
-    "description": "Owner-Testzugang robust aktivieren, ohne bestehende 027-Datei zu ueberschreiben: kleine same-site gepruefte Hilfsseite anlegen, die danach die vorhandene Passwort-/Cookie-Logik verwendet. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-031/bundle.json",
-    "bundle_sha256": "c02bb8fa8d345567570177a6f09c10ba34e577ca62f3730196784ebcefb86463",
+    "id": "GBD-2026-10-06-032",
+    "description": "Owner-Testzugang ohne neue PHP-Datei erreichbar machen: statischer noindex Einstieg leitet auf die bereits freigegebene staging/gbd-storage-test.php weiter. Keine PHP-Allowlist-Erweiterung. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-032/bundle.json",
+    "bundle_sha256": "3f89a1dae46d6dd9b6213159fdb397eb6d2944c0c0fb1fc8bfa0157d95fb875f",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "\u0036\u0066\u0035\u0035\u0063\u0064\u0038\u0032\u0036\u0031\u0065\u0030\u0035\u0039\u0033\u0066\u0030\u0066\u0063\u0064\u0038\u0064\u0064\u0034\u0061\u0061\u0031\u0038\u0038\u0039\u0064\u0065\u0032\u0061\u0032\u0038\u0034\u0033\u0036\u0030\u0061\u0063\u0035\u0036\u0064\u0030\u0034\u0036\u0039\u0034\u0036\u0062\u0034\u0033\u0038\u0032\u0064\u0031\u0033\u0064\u0065\u0066\u0038\u0035"
+    "hmac_sha256": "352fbabc3924b8cc31b8ec075e5319e411d2d3bb6d344e036220b6895738d132"
   }
 }
