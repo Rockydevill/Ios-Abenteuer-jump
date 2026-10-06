@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T09:45:30Z",
+  "published_at": "2026-10-06T10:20:30Z",
   "work_order": {
-    "id": "GBD-2026-10-06-027",
-    "description": "Owner-Testzugang korrigieren: künstliche Mindestlänge beim bestehenden Wartungs-Passwort entfernen und Passwort-anzeigen-Umschalter ergänzen. Nur staging/gbd-storage-test.php. 0/3, PayPal-LIVE, Veröffentlichung und Echtgeld bleiben unverändert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-027/bundle.json",
-    "bundle_sha256": "71acd525c777f5d37d94d269006b28591d0d816b5b3a66e60bbe0a93f558c673",
+    "id": "GBD-2026-10-06-028",
+    "description": "Owner-Testzugang Browser-Herkunftspruefung robust machen: Android-/Chrome-POSTs mit fehlendem oder null Origin sowie Host mit Port korrekt akzeptieren, solange der Request-Host gamesbehinddoors.de oder www.gamesbehinddoors.de ist. Passwort-Hashpruefung, Rate-Limit, 404-Owner-Gate, 0/3, PayPal-LIVE und Echtgeld bleiben unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-028/bundle.json",
+    "bundle_sha256": "d9af0ecabecfed58f5f6a46c23698e3de278dc885955b3f1e84464c29aa770a4",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "6f1a8bd67cd4fe7d31f9ba1c51e84496f7798b48339965817e27f4fbf3ae2fb8"
+    "hmac_sha256": "5d0934a834df4aef7850de40fbeaa9cf0ca4714673a7d5444b235243f6ab5c55"
   }
 }
