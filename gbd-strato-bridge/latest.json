@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-05T19:50:30Z",
+  "published_at": "2026-10-06T07:15:30Z",
   "work_order": {
-    "id": "GBD-2026-10-05-025",
-    "description": "Finaler Staging-Frontend-Hotfix: alle internen DE/EN-Staging- und Rechtslinks korrekt im /staging/-Bereich halten und Konto-Anmelden/Registrieren als eindeutige Umschaltung darstellen. Keine .htaccess-Aenderung, keine Veroeffentlichung, kein Echtgeld, 0/3 unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-05-025/bundle.json",
-    "bundle_sha256": "a07f4c385b99be5635b863785d3e0b4bd572fc561541552ebf124b74512fc5c1",
+    "id": "GBD-2026-10-06-026",
+    "description": "Privaten STRATO-Staging-Testzugang vorbereiten: serverseitig passwortgeschuetzten Owner-Gate-Installer als neue Staging-Hilfsdatei anlegen. Der Installer erzeugt den Browser-Token erst lokal auf STRATO und haertet staging/.htaccess dynamisch, sodass normale Besucher HTTP 404 erhalten. Keine Veroeffentlichung, kein Echtgeld, 0/3 unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-026/bundle.json",
+    "bundle_sha256": "642d3a08d4feb2249465fd758b459b34aae758fbdbfd4d73c670c96b72555a83",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "0436427ae39d9bd87300e091ab85a794a3f6405d28cb09f6fa69c4091085dc23"
+    "hmac_sha256": "ca31a75508e8ea30a50776eb5cbd6906878050ec9491442f4378d21db64bcc6a"
   }
 }
