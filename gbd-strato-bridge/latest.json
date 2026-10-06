@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T18:32:00Z",
+  "published_at": "2026-10-06T18:59:00Z",
   "work_order": {
     "id": "GBD-2026-10-06-039",
-    "description": "Privater Online-Test nach 3/3-Freigabe: geheimer Link schaltet nur den aufrufenden Browser fuer /staging/ frei; ohne privaten Cookie weiterhin HTTP 404 und noindex. Neuer Owner+MFA-Testbereich richtet STRATO-SMTP ein und testet reale Registrierungs-Mails ohne Google. PayPal bleibt Sandbox; LIVE/Echtgeld und produktive Registrierungsflags bleiben gesperrt.",
+    "description": "Privater Owner-Online-Test, keine Veroeffentlichungsfreigabe: nur der aufrufende Browser erhaelt Zugriff auf /staging/; alle anderen Aufrufe bleiben HTTP 404 und noindex. Owner+MFA-Testbereich fuer STRATO-SMTP und reale Registrierungs-Mails mit separater interner Test-Rechtstextfassung. Oeffentliche Registrierungsflags bleiben AUS, Freigabestand 0/3, PayPal bleibt Sandbox; kein LIVE/Echtgeld.",
     "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-039/bundle.json",
-    "bundle_sha256": "33c51c160613f5cb6eb46686404909f1bce7cd3bf6189d96f5ac2ebde40515cb",
+    "bundle_sha256": "07091f202123537cdb5473467c5961fedf9df8145fe10d2e9dcf97a01e12926e",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "f7fd03209bc3940fd7774c8d23114112b569ae1b613bd920befe2d66df697303"
+    "hmac_sha256": "a7b16f94f64cc278cfbb87ab6d4c3fdfb16183d47bf3c5d3b0e8fcf6fea5e717"
   }
 }
