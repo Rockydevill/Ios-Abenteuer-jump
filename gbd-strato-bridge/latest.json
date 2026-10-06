@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T11:54:30Z",
+  "published_at": "2026-10-06T12:06:00Z",
   "work_order": {
-    "id": "GBD-2026-10-06-032",
-    "description": "Owner-Testzugang ohne neue PHP-Datei erreichbar machen: statischer noindex Einstieg leitet auf die bereits freigegebene staging/gbd-storage-test.php weiter. Keine PHP-Allowlist-Erweiterung. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-032/bundle.json",
-    "bundle_sha256": "3f89a1dae46d6dd9b6213159fdb397eb6d2944c0c0fb1fc8bfa0157d95fb875f",
+    "id": "GBD-2026-10-06-033",
+    "description": "Temporären privaten Owner-Testzugang einrichten: Betreiber legt Test-Passwort selbst aus bestehender Maintenance-Sitzung fest; Passwort wird getrennt und nur gehasht gespeichert. Nach dem Test kann Test-Passwort plus Owner-Testzugang vollständig gelöscht werden. Keine normalen Benutzerkonten werden automatisch gelöscht. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-033/bundle.json",
+    "bundle_sha256": "49f5617a0c25b534e0e930aa098f8ebb525821794c4669f8c30a3705c0af530a",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "352fbabc3924b8cc31b8ec075e5319e411d2d3bb6d344e036220b6895738d132"
+    "hmac_sha256": "79d81bc77aa4cc741fc09b49a9775fbee5363daa71816e148acc7941f5d52432"
   }
 }
