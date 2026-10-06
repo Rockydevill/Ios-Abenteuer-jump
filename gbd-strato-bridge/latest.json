@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T12:06:00Z",
+  "published_at": "2026-10-06T13:23:41Z",
   "work_order": {
-    "id": "GBD-2026-10-06-033",
-    "description": "Temporären privaten Owner-Testzugang einrichten: Betreiber legt Test-Passwort selbst aus bestehender Maintenance-Sitzung fest; Passwort wird getrennt und nur gehasht gespeichert. Nach dem Test kann Test-Passwort plus Owner-Testzugang vollständig gelöscht werden. Keine normalen Benutzerkonten werden automatisch gelöscht. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-033/bundle.json",
-    "bundle_sha256": "49f5617a0c25b534e0e930aa098f8ebb525821794c4669f8c30a3705c0af530a",
+    "id": "GBD-2026-10-06-034",
+    "description": "Owner-only internen Testbereich anlegen: Test-Admin, Test-Entwickler, Test-Gast und Testspiel können aus der bestehenden Owner+2FA-Sitzung angelegt, geprüft und wieder gelöscht werden. Keine Veröffentlichung, keine normale Registrierung, kein Echtgeld; 0/3 bleibt unverändert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-034/bundle.json",
+    "bundle_sha256": "ed784df7e6ec74f4951d1c5c07a5893e9eda69ac5095a85a0670ac1f6b7006b5",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "79d81bc77aa4cc741fc09b49a9775fbee5363daa71816e148acc7941f5d52432"
+    "hmac_sha256": "733579a949f8a3cad189e5fc017d0e08fa04ad7416c9134d6b58112dd9d5768d"
   }
 }

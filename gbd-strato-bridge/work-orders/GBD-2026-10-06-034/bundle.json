@@ -1,0 +1,41 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-06-034",
+    "created_at": "2026-10-06T13:23:41Z",
+    "description": "Owner-only internen Testbereich anlegen: Test-Admin, Test-Entwickler, Test-Gast und Testspiel können aus der bestehenden Owner+2FA-Sitzung angelegt, geprüft und wieder gelöscht werden. Keine Veröffentlichung, keine normale Registrierung, kein Echtgeld; 0/3 bleibt unverändert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/admin/internal-tests/index.html",
+        "source": "payload/admin/internal-tests/index.html",
+        "sha256": "cff456124eae18e8726d8ef77695d162112a67e67585f85ab1481b94a2140cc8",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "staging/admin/internal-tests/test-fixtures.js",
+        "source": "payload/admin/internal-tests/test-fixtures.js",
+        "sha256": "b96b6e43001fe94b35aefe9e8580d84bd62fb66bf154faf9455c819a30332160",
+        "create_only": true
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/admin/internal-tests/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-034/payload/admin/internal-tests/index.html",
+      "encoding": "raw",
+      "size": 5631,
+      "sha256": "cff456124eae18e8726d8ef77695d162112a67e67585f85ab1481b94a2140cc8"
+    },
+    {
+      "source": "payload/admin/internal-tests/test-fixtures.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-034/payload/admin/internal-tests/test-fixtures.js",
+      "encoding": "raw",
+      "size": 5599,
+      "sha256": "b96b6e43001fe94b35aefe9e8580d84bd62fb66bf154faf9455c819a30332160"
+    }
+  ]
+}

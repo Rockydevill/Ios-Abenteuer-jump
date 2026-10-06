@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#06141b">
+  <title>GBD – Interne Testkonten</title>
+  <style>
+    :root{color-scheme:dark;--bg:#06141b;--panel:#0b202a;--line:#24414d;--text:#eef7fa;--muted:#a9bec6;--ok:#153d28;--bad:#482126;--accent:#7ad7ff}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+    main{max-width:920px;margin:auto;padding:22px}a{color:var(--accent)}h1,h2{line-height:1.2}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0}
+    .warning{border-color:#a07020;background:#2d2412}.ok{background:var(--ok)}.bad{background:var(--bad)}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{border:1px solid var(--line);border-radius:12px;padding:14px;background:#081b23}.card strong,.card code{display:block;margin-top:4px;overflow-wrap:anywhere}
+    label{display:block;margin:12px 0}input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#041016;color:var(--text);font:inherit}
+    button,.button{display:inline-block;border:0;border-radius:10px;padding:11px 15px;margin:5px 6px 5px 0;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;background:#d7f2ff;color:#06141b}
+    button.secondary,.button.secondary{background:#17323e;color:var(--text);border:1px solid var(--line)}button.danger{background:#ffb8b8;color:#3b0808}button:disabled{opacity:.55;cursor:not-allowed}
+    pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#041016;border:1px solid var(--line);padding:14px;border-radius:10px;max-height:420px;overflow:auto}
+    .status{padding:12px;border-radius:10px;margin-top:12px}.hidden{display:none!important}
+  </style>
+</head>
+<body>
+<main>
+  <h1>Interne Testkonten</h1>
+  <section class="panel warning">
+    <strong>INTERNER TEST • NICHT VERÖFFENTLICHEN</strong>
+    <p>Diese Seite arbeitet nur mit den fest definierten GBD-Testkonten. Sie kann weder die Plattform veröffentlichen noch Echtgeld, IAP oder Abos aktivieren.</p>
+    <p class="muted">Owner-Login + bestätigte 2FA sind serverseitig Pflicht. Passwörter werden hier nicht gespeichert.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Owner-Sitzung</h2>
+    <p id="ownerState">Wird geprüft…</p>
+    <a class="button secondary" href="/staging/admin/">Zum Adminbereich</a>
+    <button class="secondary" id="refreshStatus" type="button">Status neu laden</button>
+  </section>
+
+  <section class="panel">
+    <h2>Feste Test-IDs</h2>
+    <div class="grid">
+      <div class="card"><span>Test-Admin</span><strong>ADM-TST-0001</strong><code>admin-test@gbd.invalid</code></div>
+      <div class="card"><span>Test-Entwickler</span><strong>SEL-TST-0001</strong><code>seller-test@gbd.invalid</code></div>
+      <div class="card"><span>Test-Gast</span><strong>GST-TST-0001</strong><code>gast-test@gbd.invalid</code></div>
+      <div class="card"><span>Testspiel</span><strong>GBD-TEST-5H78</strong><code>GBD Testspiel</code></div>
+    </div>
+  </section>
+
+  <section class="panel" id="provisionPanel">
+    <h2>Testdaten anlegen / aktualisieren</h2>
+    <p class="muted">Lege drei Testpasswörter mit mindestens 12 Zeichen fest. Sie bleiben nur in den Passwortfeldern bis zum Absenden und werden danach geleert.</p>
+    <form id="provisionForm">
+      <label>Passwort Test-Admin
+        <input id="adminPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+      </label>
+      <label>Passwort Test-Entwickler
+        <input id="sellerPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+      </label>
+      <label>Passwort Test-Gast
+        <input id="guestPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+      </label>
+      <button id="provisionButton" type="submit">Testkonten + Testspiel anlegen/aktualisieren</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>Rollen testen</h2>
+    <p>Nach dem Anlegen kannst du die Rollen getrennt anmelden. Für den Test-Admin wird beim ersten Admin-Login zusätzlich 2FA eingerichtet.</p>
+    <a class="button secondary" href="/staging/admin/" target="_blank" rel="noopener">Test-Admin</a>
+    <a class="button secondary" href="/staging/developers/login/" target="_blank" rel="noopener">Test-Entwickler</a>
+    <a class="button secondary" href="/staging/account/" target="_blank" rel="noopener">Test-Gast</a>
+    <p class="muted">Hinweis: Supabase nutzt pro Browser dieselbe Sitzung. Für parallele Rollen nimm Inkognito, einen zweiten Browser oder dein zweites Gerät, sonst überschreibt ein Login den vorherigen.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Aktueller Teststatus</h2>
+    <div id="message" class="status hidden"></div>
+    <pre id="statusOutput">Noch nicht geladen.</pre>
+  </section>
+
+  <section class="panel warning">
+    <h2>Testdaten wieder löschen</h2>
+    <p>Entfernt nur die fest definierten internen Testkonten und das Testspiel. Dein echtes Owner-Konto und normale Nutzerkonten bleiben unberührt.</p>
+    <button class="danger" id="cleanupButton" type="button">Interne Testdaten löschen</button>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./test-fixtures.js"></script>
+</body>
+</html>
