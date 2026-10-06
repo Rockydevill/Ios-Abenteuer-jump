@@ -3,8 +3,8 @@
   "work_order_manifest": {
     "format": "gbd-maintenance-work-order/v1",
     "id": "GBD-2026-10-06-039",
-    "created_at": "2026-10-06T18:31:00Z",
-    "description": "Privater Online-Test nach 3/3-Freigabe: geheimer Link schaltet nur den aufrufenden Browser fuer /staging/ frei; ohne privaten Cookie weiterhin HTTP 404 und noindex. Neuer Owner+MFA-Testbereich richtet STRATO-SMTP ein und testet reale Registrierungs-Mails ohne Google. PayPal bleibt Sandbox; LIVE/Echtgeld und produktive Registrierungsflags bleiben gesperrt.",
+    "created_at": "2026-10-06T18:58:00Z",
+    "description": "Privater Owner-Online-Test, keine Veroeffentlichungsfreigabe: nur der aufrufende Browser erhaelt Zugriff auf /staging/; alle anderen Aufrufe bleiben HTTP 404 und noindex. Owner+MFA-Testbereich fuer STRATO-SMTP und reale Registrierungs-Mails mit separater interner Test-Rechtstextfassung. Oeffentliche Registrierungsflags bleiben AUS, Freigabestand 0/3, PayPal bleibt Sandbox; kein LIVE/Echtgeld.",
     "operations": [
       {
         "op": "write",
@@ -17,14 +17,14 @@
         "op": "write",
         "path": "staging/admin/private-online-test-20261006/index.html",
         "source": "payload/admin/private-online-test-20261006/index.html",
-        "sha256": "f14a888c0260b67ab9adbc30705eb9e702381951c62dd2a799fe89e815dd90e1",
+        "sha256": "2ae377b41c09d4db670e8dc2c2b2ae538b3315d981307c9ec58d2783bcdb1e84",
         "create_only": true
       },
       {
         "op": "write",
         "path": "staging/admin/private-online-test-20261006/control.js",
         "source": "payload/admin/private-online-test-20261006/control.js",
-        "sha256": "c9d21e2ed037f53d7d3d5c2334637461050213a97bd30e5e880cafa7152e752d",
+        "sha256": "8d5fa87f8d81813c51c8dadd8996bb570f29ead0d9a352c147a365ead68f6857",
         "create_only": true
       }
     ]
@@ -41,15 +41,15 @@
       "source": "payload/admin/private-online-test-20261006/index.html",
       "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-039/payload/admin/private-online-test-20261006/index.html",
       "encoding": "raw",
-      "size": 4961,
-      "sha256": "f14a888c0260b67ab9adbc30705eb9e702381951c62dd2a799fe89e815dd90e1"
+      "size": 6965,
+      "sha256": "2ae377b41c09d4db670e8dc2c2b2ae538b3315d981307c9ec58d2783bcdb1e84"
     },
     {
       "source": "payload/admin/private-online-test-20261006/control.js",
       "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-039/payload/admin/private-online-test-20261006/control.js",
       "encoding": "raw",
-      "size": 6099,
-      "sha256": "c9d21e2ed037f53d7d3d5c2334637461050213a97bd30e5e880cafa7152e752d"
+      "size": 7036,
+      "sha256": "8d5fa87f8d81813c51c8dadd8996bb570f29ead0d9a352c147a365ead68f6857"
     }
   ]
 }
