@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#06141b">
+  <title>GBD – STRATO Mail</title>
+  <style>
+    :root{color-scheme:dark;--bg:#06141b;--panel:#0b202a;--line:#24414d;--text:#eef7fa;--muted:#a9bec6;--ok:#153d28;--bad:#482126;--accent:#7ad7ff}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+    main{max-width:760px;margin:auto;padding:22px}a{color:var(--accent)}h1,h2{line-height:1.2}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0}
+    .warning{border-color:#a07020;background:#2d2412}.ok{background:var(--ok)}.bad{background:var(--bad)}.muted{color:var(--muted)}
+    label{display:block;margin:12px 0}input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#041016;color:var(--text);font:inherit}
+    button,.button{display:inline-block;border:0;border-radius:10px;padding:11px 15px;margin:5px 6px 5px 0;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;background:#d7f2ff;color:#06141b}
+    button.secondary,.button.secondary{background:#17323e;color:var(--text);border:1px solid var(--line)}button.danger{background:#ffb8b8;color:#3b0808}button:disabled{opacity:.55;cursor:not-allowed}
+    .status{padding:12px;border-radius:10px;margin-top:12px}.hidden{display:none!important}code{overflow-wrap:anywhere}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  </style>
+</head>
+<body>
+<main>
+  <h1>STRATO-Mail für Games Behind Doors</h1>
+  <section class="panel warning">
+    <strong>PRIVATER OWNER-BEREICH</strong>
+    <p>Hier wird ausschließlich eine vorhandene STRATO-Mailbox für Systemmails hinterlegt. Das STRATO-Kundenkonto-Passwort gehört hier ausdrücklich NICHT hinein.</p>
+    <p class="muted">Mailbox-Passwort wird verschlüsselt gespeichert und weder in GitHub noch im Browser zurückgegeben. Owner-Login und bestätigte 2FA sind serverseitig Pflicht.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Owner-Sitzung</h2>
+    <p id="ownerState">Wird geprüft…</p>
+    <div class="row">
+      <a class="button secondary" href="/staging/admin/">Zum Adminbereich</a>
+      <button class="secondary" id="refreshStatus" type="button">Status neu laden</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>SMTP einrichten / ändern</h2>
+    <p>Verwendet fest <code>smtp.strato.de</code> über TLS/Port 465. Benutzername ist die vollständige Mailadresse deiner STRATO-Mailbox.</p>
+    <form id="smtpForm" autocomplete="off">
+      <label>STRATO-Mailbox
+        <input id="smtpUsername" type="email" autocomplete="username" placeholder="z. B. noreply@gamesbehinddoors.de" required maxlength="254">
+      </label>
+      <label>Mailbox-Passwort
+        <input id="smtpPassword" type="password" autocomplete="new-password" required maxlength="512">
+      </label>
+      <label>Absendername
+        <input id="fromName" type="text" value="Games Behind Doors" maxlength="100" required>
+      </label>
+      <button id="saveButton" type="submit">STRATO-MAIL SPEICHERN</button>
+    </form>
+    <p class="muted">Das Passwort wird nach dem Absenden sofort aus dem Eingabefeld gelöscht. Bei einer Änderung muss es erneut eingegeben werden.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Versand testen</h2>
+    <form id="testForm">
+      <label>Testmail senden an
+        <input id="testRecipient" type="email" autocomplete="email" required maxlength="254">
+      </label>
+      <button id="testButton" type="submit">TESTMAIL SENDEN</button>
+    </form>
+    <p class="muted">Eine erfolgreiche Testmail bestätigt SMTP-Anmeldung und tatsächlichen Versand. Erst danach verwenden Registrierung und Passwort-Mail diesen Weg.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Aktueller Status</h2>
+    <div id="message" class="status hidden"></div>
+    <p id="smtpState">Noch nicht geladen.</p>
+  </section>
+
+  <section class="panel warning">
+    <h2>SMTP-Zugang entfernen</h2>
+    <p>Entfernt nur die gespeicherten Mailbox-Zugangsdaten. Owner-Konto, Testkonten, Website und andere Einstellungen bleiben unberührt.</p>
+    <button class="danger" id="deleteButton" type="button">GESPEICHERTEN SMTP-ZUGANG LÖSCHEN</button>
+  </section>
+
+  <p class="muted">0/3, PayPal LIVE, Echtgeld und öffentliche Freigaben werden hier nicht verändert.</p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./mail.js"></script>
+</body>
+</html>
