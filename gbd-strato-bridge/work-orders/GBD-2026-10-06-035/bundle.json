@@ -1,0 +1,35 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-06-035",
+    "created_at": "2026-10-06T16:10:00Z",
+    "description": "Staging-Reparaturblock: Impressum, Datenschutz und Nutzungsbedingungen bleiben sicher unter /staging/ und erhalten robuste DE/EN-Routen. Zusätzlich wird ein owner-sicherer Google-Admin-Testzugang bereitgestellt. Keine öffentliche Registrierung, keine Veröffentlichung, kein Echtgeld; 0/3 unverändert.",
+    "operations": [
+      {"op":"write","path":"staging/admin/google-login/google-login.js","source":"payload/admin/google-login/google-login.js","sha256":"926587a681e59fcb8369b570680e831395d75ba7647fb0a3a8a843d4ec6f7457","create_only":true},
+      {"op":"write","path":"staging/admin/google-login/index.html","source":"payload/admin/google-login/index.html","sha256":"1a177f51daa09e235b2da131e8de42d36a2933985874376bf53719de7f81a95a","create_only":true},
+      {"op":"write","path":"staging/app.js","source":"payload/app.js","sha256":"b78881e48068b88f59e8f97f2bdeb371f1f2877a6365c3f5bcbaec46bd762ffa","expected_sha256":"fc80316c266bb1738e7bf84816a242e4576dae3593e0fdd03ff019d6e5a2ed01"},
+      {"op":"write","path":"staging/en/legal/imprint/index.html","source":"payload/en/legal/imprint/index.html","sha256":"5a394f5e066ac945ec3e73eab6841278f5a5994ec1b778a66fe58e785b15e921","create_only":true},
+      {"op":"write","path":"staging/en/legal/imprint.html","source":"payload/en/legal/imprint.html","sha256":"5a4057ab984b0f2a5fd88c8ae6d9faa4645549c57445895978cfb27f57049aed","create_only":true},
+      {"op":"write","path":"staging/en/legal/privacy/index.html","source":"payload/en/legal/privacy/index.html","sha256":"d67e2864cf0f3ffa60473ad59219d021dc2a303f4bbf3b1bbe8df692e8a9f9e6","create_only":true},
+      {"op":"write","path":"staging/en/legal/terms/index.html","source":"payload/en/legal/terms/index.html","sha256":"4d3df770085f308a4c489fd440853f98876c72bd8b2d4e14f8644fdeb4196ed4","create_only":true},
+      {"op":"write","path":"staging/legal/imprint/index.html","source":"payload/legal/imprint/index.html","sha256":"40bacf64ee8adb93976eb2b144c0c1ef5825f91bd3338c08e260af83ff294797","create_only":true},
+      {"op":"write","path":"staging/legal/imprint.html","source":"payload/legal/imprint.html","sha256":"0c811151c15e2432a43de27bc9cedce2d9a7005c3688c1dc1ad58c65be9f4815","create_only":true},
+      {"op":"write","path":"staging/legal/privacy/index.html","source":"payload/legal/privacy/index.html","sha256":"7e5b3dbbce4cc3cd947eeb892e66ad9ae7cb3273e8a49a6093d13e901a3b1963","create_only":true},
+      {"op":"write","path":"staging/legal/terms/index.html","source":"payload/legal/terms/index.html","sha256":"7d5938cb99c442f40859aad9ed52eff2e360e04e40dc42c23d79075a1d58fb1e","create_only":true}
+    ]
+  },
+  "payloads": [
+    {"source":"payload/admin/google-login/google-login.js","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/admin/google-login/google-login.js","encoding":"raw","size":955,"sha256":"926587a681e59fcb8369b570680e831395d75ba7647fb0a3a8a843d4ec6f7457"},
+    {"source":"payload/admin/google-login/index.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/admin/google-login/index.html","encoding":"raw","size":1136,"sha256":"1a177f51daa09e235b2da131e8de42d36a2933985874376bf53719de7f81a95a"},
+    {"source":"payload/app.js","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/app.js","encoding":"raw","size":4030,"sha256":"b78881e48068b88f59e8f97f2bdeb371f1f2877a6365c3f5bcbaec46bd762ffa"},
+    {"source":"payload/en/legal/imprint/index.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/en/legal/imprint/index.html","encoding":"raw","size":308,"sha256":"5a394f5e066ac945ec3e73eab6841278f5a5994ec1b778a66fe58e785b15e921"},
+    {"source":"payload/en/legal/imprint.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/en/legal/imprint.html","encoding":"raw","size":2356,"sha256":"5a4057ab984b0f2a5fd88c8ae6d9faa4645549c57445895978cfb27f57049aed"},
+    {"source":"payload/en/legal/privacy/index.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/en/legal/privacy/index.html","encoding":"raw","size":312,"sha256":"d67e2864cf0f3ffa60473ad59219d021dc2a303f4bbf3b1bbe8df692e8a9f9e6"},
+    {"source":"payload/en/legal/terms/index.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/en/legal/terms/index.html","encoding":"raw","size":304,"sha256":"4d3df770085f308a4c489fd440853f98876c72bd8b2d4e14f8644fdeb4196ed4"},
+    {"source":"payload/legal/imprint/index.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/legal/imprint/index.html","encoding":"raw","size":296,"sha256":"40bacf64ee8adb93976eb2b144c0c1ef5825f91bd3338c08e260af83ff294797"},
+    {"source":"payload/legal/imprint.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/legal/imprint.html","encoding":"raw","size":2365,"sha256":"0c811151c15e2432a43de27bc9cedce2d9a7005c3688c1dc1ad58c65be9f4815"},
+    {"source":"payload/legal/privacy/index.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/legal/privacy/index.html","encoding":"raw","size":300,"sha256":"7e5b3dbbce4cc3cd947eeb892e66ad9ae7cb3273e8a49a6093d13e901a3b1963"},
+    {"source":"payload/legal/terms/index.html","repo_path":"gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/legal/terms/index.html","encoding":"raw","size":312,"sha256":"7d5938cb99c442f40859aad9ed52eff2e360e04e40dc42c23d79075a1d58fb1e"}
+  ]
+}
