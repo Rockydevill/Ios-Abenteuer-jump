@@ -1,0 +1,27 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-06-032",
+    "created_at": "2026-10-06T11:54:00Z",
+    "description": "Owner-Testzugang ohne neue PHP-Datei erreichbar machen: statischer noindex Einstieg leitet auf die bereits freigegebene staging/gbd-storage-test.php weiter. Keine PHP-Allowlist-Erweiterung. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/gbd-owner-login.html",
+        "source": "payload/gbd-owner-login.html",
+        "sha256": "aea60339a74fe2dd94a0be4aff8ee098858542c6a71f19024868a0f915961b84",
+        "create_only": true
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/gbd-owner-login.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-032/payload/gbd-owner-login.html",
+      "encoding": "raw",
+      "size": 424,
+      "sha256": "aea60339a74fe2dd94a0be4aff8ee098858542c6a71f19024868a0f915961b84"
+    }
+  ]
+}
