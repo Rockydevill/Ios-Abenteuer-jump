@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T07:15:30Z",
+  "published_at": "2026-10-06T09:45:30Z",
   "work_order": {
-    "id": "GBD-2026-10-06-026",
-    "description": "Privaten STRATO-Staging-Testzugang vorbereiten: serverseitig passwortgeschuetzten Owner-Gate-Installer als neue Staging-Hilfsdatei anlegen. Der Installer erzeugt den Browser-Token erst lokal auf STRATO und haertet staging/.htaccess dynamisch, sodass normale Besucher HTTP 404 erhalten. Keine Veroeffentlichung, kein Echtgeld, 0/3 unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-026/bundle.json",
-    "bundle_sha256": "642d3a08d4feb2249465fd758b459b34aae758fbdbfd4d73c670c96b72555a83",
+    "id": "GBD-2026-10-06-027",
+    "description": "Owner-Testzugang korrigieren: künstliche Mindestlänge beim bestehenden Wartungs-Passwort entfernen und Passwort-anzeigen-Umschalter ergänzen. Nur staging/gbd-storage-test.php. 0/3, PayPal-LIVE, Veröffentlichung und Echtgeld bleiben unverändert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-027/bundle.json",
+    "bundle_sha256": "71acd525c777f5d37d94d269006b28591d0d816b5b3a66e60bbe0a93f558c673",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "ca31a75508e8ea30a50776eb5cbd6906878050ec9491442f4378d21db64bcc6a"
+    "hmac_sha256": "6f1a8bd67cd4fe7d31f9ba1c51e84496f7798b48339965817e27f4fbf3ae2fb8"
   }
 }
