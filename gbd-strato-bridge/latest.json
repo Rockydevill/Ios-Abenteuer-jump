@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T19:29:00Z",
+  "published_at": "2026-10-06T22:19:00Z",
   "work_order": {
-    "id": "GBD-2026-10-06-040",
-    "description": "Privater Staging-Auth-Fix: Entwickler-Anmeldung und Registrierung funktionieren auf der normalen Staging-Loginseite hinter dem privaten 404-Gate. E-Mail-Registrierung, Passwort-Reset und Bestaetigungsmail laufen ueber den signierten STRATO-Staging-Proxy und STRATO-SMTP. Google-Login/-Registrierung wird mit kurzlebiger privater Vorabfreigabe aktiviert. Oeffentliche Registrierungsflags bleiben AUS, 0/3 bleibt unveraendert, PayPal bleibt Sandbox; kein LIVE/Echtgeld.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-040/bundle.json",
-    "bundle_sha256": "46e589c30b75ee9a7a015e47c591737c777729a0035a5acb13ec0ebea392532f",
+    "id": "GBD-2026-10-07-041",
+    "description": "Korrigierter privater Staging-Auth-Fix: behält den aktuellen STRATO-Proxy vollständig bei und ergänzt nur die private Auth-Route; Entwickler-Anmeldung/Registrierung und Google-Login werden auf der normalen Staging-Loginseite repariert. Öffentliche Registrierung bleibt AUS, 0/3 bleibt unverändert, PayPal bleibt Sandbox; kein LIVE/Echtgeld.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-041/bundle.json",
+    "bundle_sha256": "54f241c6fcb4c1980e219302c5876e1563b409c0d8f4d2abc3273142bb7e9731",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "3e6724667cda572c61973ea3da699e3ce90799bbfd5639f4f4f87bf111f88bba"
+    "hmac_sha256": "53c8e202545ea840f62c0744e7e492b31fea56ba17ccfe2bac3fd70a93c1f28c"
   }
 }
