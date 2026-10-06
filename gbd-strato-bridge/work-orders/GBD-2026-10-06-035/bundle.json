@@ -29,13 +29,6 @@
       },
       {
         "op": "write",
-        "path": "staging/en/legal/imprint.html",
-        "source": "payload/en/legal/imprint.html",
-        "sha256": "5a4057ab984b0f2a5fd88c8ae6d9faa4645549c57445895978cfb27f57049aed",
-        "create_only": true
-      },
-      {
-        "op": "write",
         "path": "staging/en/legal/privacy/index.html",
         "source": "payload/en/legal/privacy/index.html",
         "sha256": "d67e2864cf0f3ffa60473ad59219d021dc2a303f4bbf3b1bbe8df692e8a9f9e6",
@@ -53,13 +46,6 @@
         "path": "staging/legal/imprint/index.html",
         "source": "payload/legal/imprint/index.html",
         "sha256": "40bacf64ee8adb93976eb2b144c0c1ef5825f91bd3338c08e260af83ff294797",
-        "create_only": true
-      },
-      {
-        "op": "write",
-        "path": "staging/legal/imprint.html",
-        "source": "payload/legal/imprint.html",
-        "sha256": "0c811151c15e2432a43de27bc9cedce2d9a7005c3688c1dc1ad58c65be9f4815",
         "create_only": true
       },
       {
@@ -115,13 +101,6 @@
       "sha256": "5a394f5e066ac945ec3e73eab6841278f5a5994ec1b778a66fe58e785b15e921"
     },
     {
-      "source": "payload/en/legal/imprint.html",
-      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/en/legal/imprint.html",
-      "encoding": "raw",
-      "size": 2356,
-      "sha256": "5a4057ab984b0f2a5fd88c8ae6d9faa4645549c57445895978cfb27f57049aed"
-    },
-    {
       "source": "payload/en/legal/privacy/index.html",
       "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/en/legal/privacy/index.html",
       "encoding": "raw",
@@ -141,13 +120,6 @@
       "encoding": "raw",
       "size": 296,
       "sha256": "40bacf64ee8adb93976eb2b144c0c1ef5825f91bd3338c08e260af83ff294797"
-    },
-    {
-      "source": "payload/legal/imprint.html",
-      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-035/payload/legal/imprint.html",
-      "encoding": "raw",
-      "size": 2365,
-      "sha256": "0c811151c15e2432a43de27bc9cedce2d9a7005c3688c1dc1ad58c65be9f4815"
     },
     {
       "source": "payload/legal/privacy/index.html",
