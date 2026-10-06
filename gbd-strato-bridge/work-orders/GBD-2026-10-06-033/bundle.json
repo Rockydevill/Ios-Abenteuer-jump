@@ -1,0 +1,27 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-06-033",
+    "created_at": "2026-10-06T12:05:00Z",
+    "description": "Temporären privaten Owner-Testzugang einrichten: Betreiber legt Test-Passwort selbst aus bestehender Maintenance-Sitzung fest; Passwort wird getrennt und nur gehasht gespeichert. Nach dem Test kann Test-Passwort plus Owner-Testzugang vollständig gelöscht werden. Keine normalen Benutzerkonten werden automatisch gelöscht. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/gbd-storage-test.php",
+        "source": "payload/gbd-storage-test.php",
+        "sha256": "77d573ff890392405850fb14f4707eadb671a3780d07000916f49d40f3714a71",
+        "expected_sha256": "cb2fdcde61d310f958e322221a67fc7921c6471dd1127b5468c80794162b9fc1"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/gbd-storage-test.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-033/payload/gbd-storage-test.php",
+      "encoding": "raw",
+      "size": 18223,
+      "sha256": "77d573ff890392405850fb14f4707eadb671a3780d07000916f49d40f3714a71"
+    }
+  ]
+}
