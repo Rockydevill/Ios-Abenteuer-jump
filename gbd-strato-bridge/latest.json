@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T17:36:00Z",
+  "published_at": "2026-10-06T18:21:00Z",
   "work_order": {
-    "id": "GBD-2026-10-06-037",
-    "description": "Privater STRATO-Mail-Einstellbereich fuer den Owner: vorhandene gamesbehinddoors.de-Mailbox verschluesselt hinterlegen, Status pruefen und echte SMTP-Testmail ausloesen. Keine Google-Anmeldung, keine Veroeffentlichung, kein Echtgeld; 0/3 unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-037/bundle.json",
-    "bundle_sha256": "cdeaaa07ff93e57842cf3bfbef41eee8bec46e8b45b1ce556976caed226ff338",
+    "id": "GBD-2026-10-06-038",
+    "description": "Privater Online-Test nach ausdruecklicher 3/3-Freigabe: ein hochentropischer Link schaltet nur den aufrufenden Browser fuer /staging/ frei; alle Aufrufe ohne privaten Zugang bleiben HTTP 404. Staging bleibt noindex/nofollow/noarchive. PayPal bleibt ausschliesslich Sandbox; kein PayPal LIVE und kein Echtgeld.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-038/bundle.json",
+    "bundle_sha256": "b1a0c56cc5fce5009aedfd0bec0d7f864e47ca725961186253a929cc22e6e6c5",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "38a6a2ca0219e22b0d14a664d689e52f9f7af9b2e786f5238551b1e9830650a5"
+    "hmac_sha256": "057fdce4e767fef55c3927d08e91478cbd0dc95a89a01812908f7b734b6600ba"
   }
 }
