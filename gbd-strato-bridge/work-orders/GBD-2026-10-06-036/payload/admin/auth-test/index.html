@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#06141b">
+  <title>Interner Auth-Test | Games Behind Doors</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../developer-redesign.css">
+</head>
+<body class="developer-page login-only-page">
+<header class="site-header login-only-header">
+  <a class="brand" href="../"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>Interner Auth-Test</small></span></a>
+</header>
+<main>
+<section class="developer-access"><div class="developer-access-card">
+  <span class="eyebrow">NUR OWNER / STAGING</span>
+  <h1>Registrierung, E-Mail & Google testen</h1>
+  <div class="notice"><strong>Interner Testbetrieb.</strong><br>Öffentliche Registrierung bleibt gesperrt. Für diese Seite sind Owner-Login und 2FA erforderlich. Testkonten werden markiert und können hier wieder gelöscht werden.</div>
+
+  <div id="authState" class="form-message" hidden></div>
+
+  <section style="margin-top:24px">
+    <h2>Google-Anmeldung</h2>
+    <p class="field-hint">Verwende dein bereits freigegebenes Owner-Google-Konto. Eine fremde Google-Adresse wird vom Backend blockiert.</p>
+    <div class="developer-access-actions">
+      <button class="button secondary" id="googleTest" type="button" disabled>Mit Google anmelden</button>
+      <button class="button secondary" id="refreshStatus" type="button">Status aktualisieren</button>
+    </div>
+    <p id="googleState" class="field-hint"></p>
+  </section>
+
+  <section style="margin-top:28px">
+    <h2>Echte Test-Registrierung</h2>
+    <p class="field-hint">Hier eine reale E-Mail-Adresse verwenden, auf die du zugreifen kannst. Das Passwort wird direkt an Supabase Auth gesendet und nicht auf dieser Seite gespeichert.</p>
+    <form id="registrationTestForm">
+      <label><span>Kontotyp *</span><select id="testKind" required><option value="player">Nutzerkonto</option><option value="developer">Entwicklerkonto</option></select></label>
+      <label><span>Anzeigename / Entwicklername</span><input id="testDisplayName" type="text" maxlength="80" autocomplete="off"></label>
+      <label><span>Reale Test-E-Mail *</span><input id="testEmail" type="email" maxlength="254" autocomplete="email" required></label>
+      <label><span>Test-Passwort *</span><input id="testPassword" type="password" minlength="12" maxlength="128" autocomplete="new-password" required></label>
+      <label><span>EU-Land *</span><select id="testCountry" required><option value="">Bitte wählen</option></select></label>
+      <label class="check-row"><input id="testCountryConfirm" type="checkbox" required><span>Ich bestätige die Länderangabe für diesen internen Test.</span></label>
+      <label class="check-row"><input id="testAge" type="checkbox" required><span>Ich bestätige, mindestens 18 Jahre alt zu sein.</span></label>
+      <label class="check-row"><input id="testTerms" type="checkbox" required><span>Ich akzeptiere für den Test die <a id="termsLink" href="../../legal/terms.html" target="_blank" rel="noopener">Nutzungsbedingungen</a>.</span></label>
+      <button class="button primary" id="registerTest" type="submit" disabled>Testkonto registrieren + Bestätigungs-Mail senden</button>
+    </form>
+    <div id="registrationState" class="form-message" hidden></div>
+  </section>
+
+  <section style="margin-top:28px">
+    <h2>Markierte Testkonten</h2>
+    <p class="field-hint">Nur über diese interne Testfunktion angelegte reale Konten erscheinen hier. Dein echtes Owner-Konto wird nicht gelöscht.</p>
+    <div id="testAccounts" class="notice">Noch nicht geladen.</div>
+    <div class="developer-access-actions" style="margin-top:14px">
+      <button class="button secondary" id="cleanupTests" type="button" disabled>Reale Auth-Testkonten löschen</button>
+      <a class="button secondary" href="../">Zurück zum Adminbereich</a>
+    </div>
+  </section>
+</div></section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./auth-test.js"></script>
+</body>
+</html>
