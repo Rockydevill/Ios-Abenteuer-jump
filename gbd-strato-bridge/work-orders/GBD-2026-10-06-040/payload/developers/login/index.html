@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="theme-color" content="#07151d">
+  <title>Entwickler anmelden / registrieren – Games Behind Doors</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07151d;--panel:#0d202a;--line:#294651;--text:#eff8fb;--muted:#adc1c8;--accent:#c9f1ff;--danger:#ffd1d1;--dangerbg:#431f24;--okbg:#153827;--warn:#3c3119}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:820px;margin:auto;padding:20px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}.warning{background:var(--warn)}h1,h2{line-height:1.2}.muted{color:var(--muted)}label{display:block;margin:11px 0}input,select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#041016;color:var(--text);font:inherit}input[type=checkbox]{width:auto;margin-right:8px}.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.tabs{display:flex;gap:8px;margin:16px 0}.tabs button,button,.button{border:0;border-radius:10px;padding:11px 14px;font:inherit;font-weight:750;cursor:pointer;background:var(--accent);color:#06141b;text-decoration:none;display:inline-block}.tabs button.secondary,button.secondary,.button.secondary{background:#173540;color:var(--text);border:1px solid var(--line)}.tabs button.active{outline:2px solid var(--accent)}button.google{background:#fff;color:#161616}button:disabled{opacity:.55;cursor:not-allowed}.hidden{display:none!important}.msg{padding:11px;border-radius:9px;margin:12px 0;white-space:pre-wrap}.msg.ok{background:var(--okbg)}.msg.bad{background:var(--dangerbg);color:var(--danger)}a{color:#9ee7ff}code{overflow-wrap:anywhere}.split{border:0;border-top:1px solid var(--line);margin:20px 0}.tiny{font-size:.92rem}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  </style>
+</head>
+<body>
+<main>
+  <h1>Entwickler anmelden / registrieren</h1>
+  <section class="card warning">
+    <strong>Privater Staging-Test</strong>
+    <p>Diese Funktionen sind nur hinter dem geheimen Testzugang erreichbar. Öffentliche Entwicklerregistrierung bleibt gesperrt. PayPal bleibt ausschließlich Sandbox, kein PayPal LIVE und kein Echtgeld.</p>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Anmelden oder registrieren">
+    <button id="tabLogin" type="button" class="active">Anmelden</button>
+    <button id="tabRegister" type="button" class="secondary">Registrieren</button>
+  </div>
+
+  <div id="pageMessage" class="msg hidden" aria-live="polite"></div>
+
+  <section id="loginCard" class="card">
+    <h2>Anmelden</h2>
+    <form id="loginForm">
+      <label>E-Mail
+        <input id="loginEmail" type="email" maxlength="254" autocomplete="email" required>
+      </label>
+      <label>Passwort
+        <input id="loginPassword" type="password" maxlength="128" autocomplete="current-password" required>
+      </label>
+      <div class="actions">
+        <button id="loginSubmit" type="submit">Anmelden</button>
+        <button id="googleLogin" type="button" class="google">Mit Google anmelden</button>
+      </div>
+    </form>
+    <p class="muted tiny">Für Google muss oben zuerst die E-Mail-Adresse stehen. Bei einem noch nicht registrierten Google-Konto wechselst du danach automatisch zur Registrierung.</p>
+
+    <hr class="split">
+    <h2>Passwort vergessen</h2>
+    <form id="resetForm">
+      <label>E-Mail
+        <input id="resetEmail" type="email" maxlength="254" autocomplete="email" required>
+      </label>
+      <button id="resetSubmit" type="submit" class="secondary">Passwort-E-Mail senden</button>
+    </form>
+
+    <hr class="split">
+    <h2>Bestätigungs-Mail erneut senden</h2>
+    <form id="resendForm">
+      <label>E-Mail
+        <input id="resendEmail" type="email" maxlength="254" autocomplete="email" required>
+      </label>
+      <button id="resendSubmit" type="submit" class="secondary">Bestätigungs-Mail erneut senden</button>
+    </form>
+  </section>
+
+  <section id="registerCard" class="card hidden">
+    <h2>Entwickler registrieren</h2>
+    <p><strong>Interne Testbedingungen:</strong> <code>private-test-2026-10-06-v1</code>. Diese Fassung gilt nur für den privaten Funktionstest und ist keine Freigabe der produktiven Entwicklerbedingungen.</p>
+    <form id="registerForm">
+      <div class="row">
+        <label>Benutzername
+          <input id="regUsername" type="text" minlength="3" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" autocomplete="username" required>
+        </label>
+        <label>E-Mail
+          <input id="regEmail" type="email" maxlength="254" autocomplete="email" required>
+        </label>
+        <label>Passwort
+          <input id="regPassword" type="password" minlength="12" maxlength="128" autocomplete="new-password" required>
+        </label>
+        <label>EU-Land
+          <select id="regCountry" required></select>
+        </label>
+      </div>
+      <label><input id="regAge" type="checkbox" required>Ich bestätige, dass ich für diesen Test mindestens 18 Jahre alt bin.</label>
+      <label><input id="regCountryConfirm" type="checkbox" required>Ich bestätige, dass das ausgewählte EU-Land für diesen Test richtig ist.</label>
+      <label><input id="regTerms" type="checkbox" required>Ich akzeptiere für dieses Testkonto die interne Entwickler-Testfassung <code>private-test-2026-10-06-v1</code>.</label>
+      <div class="actions">
+        <button id="registerSubmit" type="submit">Mit E-Mail registrieren</button>
+        <button id="googleRegister" type="button" class="google">Mit Google registrieren</button>
+      </div>
+    </form>
+    <p class="muted tiny">E-Mail-Registrierung verschickt die Bestätigung über die eingerichtete STRATO-Mailbox. Google-Anmeldung verwendet zusätzlich eine kurzlebige private Vorabfreigabe und bleibt außerhalb dieses Staging-Zugangs gesperrt.</p>
+  </section>
+
+  <section class="card">
+    <a class="button secondary" href="/staging/">Zur Staging-Startseite</a>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../login.js"></script>
+</body>
+</html>
