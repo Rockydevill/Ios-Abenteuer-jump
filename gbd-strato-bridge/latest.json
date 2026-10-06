@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T10:20:30Z",
+  "published_at": "2026-10-06T11:05:00Z",
   "work_order": {
-    "id": "GBD-2026-10-06-028",
-    "description": "Owner-Testzugang Browser-Herkunftspruefung robust machen: Android-/Chrome-POSTs mit fehlendem oder null Origin sowie Host mit Port korrekt akzeptieren, solange der Request-Host gamesbehinddoors.de oder www.gamesbehinddoors.de ist. Passwort-Hashpruefung, Rate-Limit, 404-Owner-Gate, 0/3, PayPal-LIVE und Echtgeld bleiben unveraendert.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-028/bundle.json",
-    "bundle_sha256": "d9af0ecabecfed58f5f6a46c23698e3de278dc885955b3f1e84464c29aa770a4",
+    "id": "GBD-2026-10-06-029",
+    "description": "Bridge-Metadaten fuer Owner-Testzugang korrigieren: tatsaechliche GitHub-Payload-Groesse fuer gbd-storage-test.php verwenden. PHP-Inhalt und Sicherheitslogik bleiben unveraendert. 0/3, PayPal-LIVE, Veroeffentlichung und Echtgeld bleiben unveraendert.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-06-029/bundle.json",
+    "bundle_sha256": "f89f924486a4826ffbb30243a9c9df4cb031c87bf88eb41a92aa9726dfe1c57a",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "5d0934a834df4aef7850de40fbeaa9cf0ca4714673a7d5444b235243f6ab5c55"
+    "hmac_sha256": "\u0062\u0064\u0064\u0036\u0036\u0030\u0032\u0062\u0038\u0038\u0038\u0035\u0036\u0039\u0066\u0065\u0032\u0037\u0038\u0064\u0036\u0063\u0036\u0065\u0033\u0039\u0033\u0066\u0036\u0031\u0064\u0032\u0033\u0037\u0032\u0062\u0062\u0039\u0035\u0037\u0030\u0034\u0033\u0030\u0061\u0064\u0063\u0065\u0031\u0032\u0062\u0063\u0038\u0066\u0031\u0039\u0035\u0034\u0037\u0066\u0066\u0064\u0061\u0065"
   }
 }
