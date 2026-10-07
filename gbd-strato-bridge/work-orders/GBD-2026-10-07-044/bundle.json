@@ -3,18 +3,18 @@
   "work_order_manifest": {
     "format": "gbd-maintenance-work-order/v1",
     "id": "GBD-2026-10-07-044",
-    "created_at": "2026-10-07T19:20:00Z",
-    "description": "Staging-CDN-Haertung: Supabase JS auf allen acht bekannten browserseitigen Auth/Admin/Test-Seiten von schwimmend @2 auf exakt 2.117.2 pinnen. Nur replace_text mit SHA-Guard; keine Feature-Flags, keine Root-Freigabe, keine Registrierungsoeffnung und keine PayPal-LIVE/Echtgeld-Aktivierung.",
+    "created_at": "2026-10-07T19:32:31Z",
+    "description": "Staging Supply-Chain-Härtung: Supabase Browser-SDK auf 2.117.2 und tus-js-client im Entwicklerportal auf 4.3.1 fest pinnen und beide mit SHA-384-SRI plus crossorigin absichern. Ausschließlich replace_text auf hashbestätigten Staging-HTML-Dateien; keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.",
     "operations": [
       {
         "op": "replace_text",
         "path": "staging/developers/login/index.html",
         "expected_sha256": "458c28c787f584da7553f09920fee4034fe839bd8b54de73cfe16413f90c3c44",
-        "result_sha256": "af73e317c0b15bd5079f5120f250c72f21fcbaf5c8a7ff94f33e8d5d74b3ffb7",
+        "result_sha256": "967864304a93a31795d5984f90363edfe045100943af443358d2351bbcdcd3b9",
         "replacements": [
           {
-            "search": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-            "replace": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
           }
         ]
       },
@@ -22,11 +22,11 @@
         "op": "replace_text",
         "path": "staging/account/index.html",
         "expected_sha256": "67cb72fef7e8f3dd84efe85c5ee970321e9b48c62c617917adf781c2fb506fdb",
-        "result_sha256": "9573912d78be49409504e6679842591c9b861874490aec60b623bc8c6258e5c8",
+        "result_sha256": "83975e7c23e236c62b4fa681fe062057c2b4b5ad1c675eef083ac6f34d23b0fe",
         "replacements": [
           {
-            "search": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-            "replace": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
           }
         ]
       },
@@ -34,11 +34,11 @@
         "op": "replace_text",
         "path": "staging/en/account/index.html",
         "expected_sha256": "0479838428bf500a21aad6cb5d36b681b1b4f69f0a6dd8e6e845b7bb5e94c210",
-        "result_sha256": "3c7d03e6201d5d79ff5f755d42b2fcdabc4732f587f35cb7a01ce09ccc2434e4",
+        "result_sha256": "c000d91cd3dff7cdfc5c0a857063abcecd938af8cf0ebbe7e39c2ed6661d02c6",
         "replacements": [
           {
-            "search": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-            "replace": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
           }
         ]
       },
@@ -46,11 +46,11 @@
         "op": "replace_text",
         "path": "staging/admin/index.html",
         "expected_sha256": "79e4dc226a9fce890660402d9ee94846dc4afeda303b7c56ddbf5e4131109f4a",
-        "result_sha256": "bbdb8be2af80a4d4e6c04c199a5b96235c5f0c7920b08abdd3bafd707fd04fef",
+        "result_sha256": "4b8c061b13018a596dd818a46bc312ff3820390a7ef9dc7f88c40af95891b50b",
         "replacements": [
           {
-            "search": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-            "replace": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
           }
         ]
       },
@@ -58,11 +58,11 @@
         "op": "replace_text",
         "path": "staging/admin/internal-tests/index.html",
         "expected_sha256": "cff456124eae18e8726d8ef77695d162112a67e67585f85ab1481b94a2140cc8",
-        "result_sha256": "4cfb3d5582dbde9b9cf863a1c416e21938adb83f1e6d1d4e53c60073fdd3a6db",
+        "result_sha256": "e172786f5e3758b327d60336be980dd0219fd64214dc22e88b8df41866d907b2",
         "replacements": [
           {
-            "search": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-            "replace": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
           }
         ]
       },
@@ -70,11 +70,11 @@
         "op": "replace_text",
         "path": "staging/admin/auth-test/index.html",
         "expected_sha256": "9c9b43888a671d49f2cc0627f5f3a719aeb2943e882d1b20cc55e7a75e32c1ec",
-        "result_sha256": "c25a401fe0495daa94f196593ad85a583d7f5dac56dff704be95298d30353dc9",
+        "result_sha256": "01eceb30200da37b9dbb8aa99d6f924c25606cb7c8680c2b9d3bc031cfd7af2f",
         "replacements": [
           {
-            "search": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-            "replace": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
           }
         ]
       },
@@ -82,11 +82,11 @@
         "op": "replace_text",
         "path": "staging/admin/mail/index.html",
         "expected_sha256": "de9e29e92ac11041b87ee234b247326c32e27033bdc0cf099325688d2771195b",
-        "result_sha256": "4c5bd501363d95c72c52bfc9d1f87ba0925a87cd676c75c7ba0db4deb9f10b9d",
+        "result_sha256": "4604ce3e96cc5c142c8919b3fa17c71122f05c5c419e50b86a86015af56a7d0f",
         "replacements": [
           {
-            "search": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-            "replace": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
           }
         ]
       },
@@ -94,11 +94,27 @@
         "op": "replace_text",
         "path": "staging/admin/private-online-test-20261006/index.html",
         "expected_sha256": "2ae377b41c09d4db670e8dc2c2b2ae538b3315d981307c9ec58d2783bcdb1e84",
-        "result_sha256": "c4a6490d20f9bb61239d1a449d72a64788db194933dba3efc647013f7df4c87a",
+        "result_sha256": "943239c283e3685beafd6887553deb3a42f79312a520737b81cc62751321ce1a",
         "replacements": [
           {
-            "search": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-            "replace": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
+          }
+        ]
+      },
+      {
+        "op": "replace_text",
+        "path": "staging/developers/portal/index.html",
+        "expected_sha256": "7df984c616f3cda5b49670522dc435a55f1fe113147f768c4ca402f9890ab98f",
+        "result_sha256": "02efe9d24f78f77e48c46f4aee0855b6c6a821b814ce9bec49143abefd3d5a41",
+        "replacements": [
+          {
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js\" integrity=\"sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok\" crossorigin=\"anonymous\"></script>"
+          },
+          {
+            "search": "<script src=\"https://cdn.jsdelivr.net/npm/tus-js-client@4/dist/tus.min.js\"></script>",
+            "replace": "<script src=\"https://cdn.jsdelivr.net/npm/tus-js-client@4.3.1/dist/tus.min.js\" integrity=\"sha384-UlHjK3F7TCQCEUpnoa1ohMbP2oaWB3Aypv4gMo511vaZ86uUZ0Zv7UzZ0J1zRUT1\" crossorigin=\"anonymous\"></script>"
           }
         ]
       }
