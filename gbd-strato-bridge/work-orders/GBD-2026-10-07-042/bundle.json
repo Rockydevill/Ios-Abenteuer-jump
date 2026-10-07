@@ -1,1 +1,27 @@
-{}
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-07-042",
+    "created_at": "2026-10-07T13:15:00Z",
+    "description": "Private Staging access bootstrap rotation. Public access remains blocked. PayPal stays Sandbox; no LIVE payments.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/gbd-storage-test.php",
+        "source": "payload/gbd-storage-test.php",
+        "sha256": "4a8dc1f7b171c747bec559b7d392e640442dde45b13fb3cb2b26b416e80155df",
+        "expected_sha256": "10bfb52a8b5d1aef4593a801b69aa260b9d90ce0c37459fe83d3a994fc99b69f"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/gbd-storage-test.php",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-042/payload/gbd-storage-test.php",
+      "encoding": "raw",
+      "size": 7751,
+      "sha256": "4a8dc1f7b171c747bec559b7d392e640442dde45b13fb3cb2b26b416e80155df"
+    }
+  ]
+}
