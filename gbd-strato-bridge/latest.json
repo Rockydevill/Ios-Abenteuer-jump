@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-07T15:13:00Z",
+  "published_at": "2026-10-07T19:35:00Z",
   "work_order": {
-    "id": "GBD-2026-10-07-043",
-    "description": "Privater Staging-Funktionsfix: Supportanfragen funktionieren im privaten Owner-Test trotz geschlossener Plattform, Support zeigt die echte Ticketreferenz, und die Entwickler-Anmelde-/Registrierungsseite erhält die vollständige Footer-Navigation sowie einen direkten sicheren STRATO-Mail-Setup-Link. Öffentliche Registrierung bleibt AUS, PayPal bleibt Sandbox, kein LIVE/Echtgeld.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-043/bundle.json",
-    "bundle_sha256": "648437ffebd5c734ceb16b3e5d62eaf7e7aa32f2bb979e20a8bb5011ca654b7e",
+    "id": "GBD-2026-10-07-044",
+    "description": "Staging Supply-Chain-Härtung: Supabase Browser-SDK auf 2.117.2 und tus-js-client im Entwicklerportal auf 4.3.1 fest pinnen und beide mit SHA-384-SRI plus crossorigin absichern. Ausschließlich replace_text auf hashbestätigten Staging-HTML-Dateien; keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-044/bundle.json",
+    "bundle_sha256": "367030662ec52d68576121e7d9770567a5b428f365b1a90c4e938cc473e83589",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "533b28a04978c96dbe061ddaa6b952a2a400a70e4a1b1bb7e46b825359fa9d0f"
+    "hmac_sha256": "4aa2f6dc523c3dd66495c81bc61959813a36ddd174c7318bd7f42b4ed6e49513"
   }
 }
