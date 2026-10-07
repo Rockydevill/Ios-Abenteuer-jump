@@ -1,0 +1,97 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-07-050",
+    "created_at": "2026-10-07T22:40:00Z",
+    "description": "Öffentliche Testphase technisch vorbereiten: DE/EN-Test-Landing, Testkonto- und Passwort-Reset-Dateien ausschließlich als neue Assets hinter dem bestehenden harten Pre-Launch-Lock bereitstellen. Keine .htaccess-Aenderung, keine Entfernung von .maintenance-on, keine Suchmaschinenfreigabe, keine Spieleveroeffentlichung und kein Echtgeld; aktive Betreiberfreigaben bleiben unveraendert.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "assets/public-test-home.html",
+        "source": "payload/public-test-home.html",
+        "sha256": "a57b5dfd133e425fc5ec42faa0b7dee8cb27d3cc6fe3601e13ddbe3b47dfe837",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "assets/public-test-home-en.html",
+        "source": "payload/public-test-home-en.html",
+        "sha256": "7474516c4fe5092e020f64896150ee59e3cc66037a9717e7bd6a96feaf110c42",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "assets/public-test-account.html",
+        "source": "payload/public-test-account.html",
+        "sha256": "9f719465c3826393cf1164df359c17cef119c43f5ee18d5156064bf72c305086",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "assets/public-test-account.js",
+        "source": "payload/public-test-account.js",
+        "sha256": "d5caf49aa097f29bf3697690c2d259542dd087d0935cdf5c7d3aae52eed77a82",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "assets/public-test-reset-password.html",
+        "source": "payload/public-test-reset-password.html",
+        "sha256": "84edba8c30ae36506842c2a803aeed630491f9ecdb18afe92e29f824a096df85",
+        "create_only": true
+      },
+      {
+        "op": "write",
+        "path": "assets/public-test-reset-password.js",
+        "source": "payload/public-test-reset-password.js",
+        "sha256": "8478e6f459d5f84bf9b91d6bd997a547c8c28949a748c0986c3f5bf42d9a7e41",
+        "create_only": true
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/public-test-home.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-050/payload/public-test-home.html",
+      "encoding": "raw",
+      "size": 3610,
+      "sha256": "a57b5dfd133e425fc5ec42faa0b7dee8cb27d3cc6fe3601e13ddbe3b47dfe837"
+    },
+    {
+      "source": "payload/public-test-home-en.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-050/payload/public-test-home-en.html",
+      "encoding": "raw",
+      "size": 3416,
+      "sha256": "7474516c4fe5092e020f64896150ee59e3cc66037a9717e7bd6a96feaf110c42"
+    },
+    {
+      "source": "payload/public-test-account.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-050/payload/public-test-account.html",
+      "encoding": "raw",
+      "size": 4403,
+      "sha256": "9f719465c3826393cf1164df359c17cef119c43f5ee18d5156064bf72c305086"
+    },
+    {
+      "source": "payload/public-test-account.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-050/payload/public-test-account.js",
+      "encoding": "raw",
+      "size": 9781,
+      "sha256": "d5caf49aa097f29bf3697690c2d259542dd087d0935cdf5c7d3aae52eed77a82"
+    },
+    {
+      "source": "payload/public-test-reset-password.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-050/payload/public-test-reset-password.html",
+      "encoding": "raw",
+      "size": 2420,
+      "sha256": "84edba8c30ae36506842c2a803aeed630491f9ecdb18afe92e29f824a096df85"
+    },
+    {
+      "source": "payload/public-test-reset-password.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-050/payload/public-test-reset-password.js",
+      "encoding": "raw",
+      "size": 5113,
+      "sha256": "8478e6f459d5f84bf9b91d6bd997a547c8c28949a748c0986c3f5bf42d9a7e41"
+    }
+  ]
+}
