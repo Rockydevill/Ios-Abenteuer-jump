@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-07T19:44:00Z",
+  "published_at": "2026-10-07T19:42:30Z",
   "work_order": {
-    "id": "GBD-2026-10-07-045",
-    "description": "Staging-Reconciliation: den auf STRATO noch fehlenden Funktionsstand aus WO043 nachholen. Entwickler-Anmeldung/Registrierung erhält vollständige Footer-Navigation und STRATO-Mail-Setup-Link; Support erhält den privaten Testmodus und echte Ticketreferenz. Keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-045/bundle.json",
-    "bundle_sha256": "1746d5fca4c293dfbdfb0b0f7a2abcfd1da4fea8f212989887318558735459b6",
+    "id": "GBD-2026-10-07-046",
+    "description": "Staging Supply-Chain-Härtung nach WO045-Reconciliation: Supabase Browser-SDK auf 2.117.2 und tus-js-client im Entwicklerportal auf 4.3.1 fest pinnen und beide mit SHA-384-SRI plus crossorigin absichern. Ausschließlich replace_text auf hashbestätigten Staging-HTML-Dateien; keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-046/bundle.json",
+    "bundle_sha256": "d2c56725530235281cadb4d63616a624288f94339cded0d3d6baaa652916e10a",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "87ec225cf6507ac8f9bf65d14ac80b30cd7344627fb0e3683cfd5502b288eda9"
+    "hmac_sha256": "0ce32e8ff060884a638fde3c7d3639fba7e989308b1c5bb6e0690671fafda9d7"
   }
 }
