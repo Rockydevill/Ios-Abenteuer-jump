@@ -3,25 +3,22 @@
   "work_order_manifest": {
     "format": "gbd-maintenance-work-order/v1",
     "id": "GBD-2026-10-07-042",
-    "created_at": "2026-10-07T13:15:00Z",
-    "description": "Private Staging access bootstrap rotation. Public access remains blocked. PayPal stays Sandbox; no LIVE payments.",
+    "created_at": "2026-10-07T14:20:00Z",
+    "description": "Privater Staging-Einstieg über die bereits authentifizierte STRATO-Maintenance-Session. Kein Geheimschlüssel wird auf GitHub gespeichert. Nur der angemeldete Maintenance-Browser erhält den 12-Stunden-Owner-Test-Cookie; alle anderen bleiben HTTP 404/noindex. PayPal bleibt Sandbox, keine öffentliche Freigabe.",
     "operations": [
       {
-        "op": "write",
+        "op": "replace_text",
         "path": "staging/gbd-storage-test.php",
-        "source": "payload/gbd-storage-test.php",
-        "sha256": "4a8dc1f7b171c747bec559b7d392e640442dde45b13fb3cb2b26b416e80155df",
-        "expected_sha256": "10bfb52a8b5d1aef4593a801b69aa260b9d90ce0c37459fe83d3a994fc99b69f"
+        "expected_sha256": "10bfb52a8b5d1aef4593a801b69aa260b9d90ce0c37459fe83d3a994fc99b69f",
+        "result_sha256": "ffec3b39fe9f8bf923560c77e5e3e2e03e9e513f60297b8651e1d20ef100178a",
+        "replacements": [
+          {
+            "search": "sec();if(!host_ok())nf();$method=strtoupper((string)($_SERVER['REQUEST_METHOD']??'GET'));",
+            "replace": "$maintenanceAuth=false;\nif(isset($_COOKIE[session_name()])&&session_status()!==PHP_SESSION_ACTIVE){@session_start();}\nif(session_status()===PHP_SESSION_ACTIVE){$authAt=(int)($_SESSION['gbd_auth_at']??0);$maintenanceAuth=!empty($_SESSION['gbd_auth'])&&$authAt>0&&(time()-$authAt)<=7200;}\nsec();if(!host_ok())nf();$method=strtoupper((string)($_SERVER['REQUEST_METHOD']??'GET'));\nif($method==='GET'&&$maintenanceAuth){\n try{$gateToken=bin2hex(random_bytes(32));gate_install($gateToken);setcookie(GBD_OWNER_COOKIE,$gateToken,['expires'=>time()+43200,'path'=>'/staging/','secure'=>true,'httponly'=>true,'samesite'=>'Strict']);if(session_status()===PHP_SESSION_ACTIVE)session_write_close();header('Location: /staging/admin/private-online-test-20261006/',true,302);exit;}\n catch(Throwable $e){error_log('GBD maintenance-auth bootstrap failed: '.$e->getMessage());http_response_code(503);header('Content-Type: text/plain; charset=utf-8');echo 'Private access unavailable';exit;}\n}"
+          }
+        ]
       }
     ]
   },
-  "payloads": [
-    {
-      "source": "payload/gbd-storage-test.php",
-      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-042/payload/gbd-storage-test.php",
-      "encoding": "raw",
-      "size": 7751,
-      "sha256": "4a8dc1f7b171c747bec559b7d392e640442dde45b13fb3cb2b26b416e80155df"
-    }
-  ]
+  "payloads": []
 }
