@@ -1,12 +1,1 @@
-{
-  "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-07T19:47:11Z",
-  "work_order": {
-    "id": "GBD-2026-10-07-046",
-    "description": "Staging Supply-Chain-Härtung nach WO045-Reconciliation: Supabase Browser-SDK auf 2.117.2 und tus-js-client im Entwicklerportal auf 4.3.1 fest pinnen und beide mit SHA-384-SRI plus crossorigin absichern. Ausschließlich replace_text auf hashbestätigten Staging-HTML-Dateien; keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-046/bundle.json",
-    "bundle_sha256": "d2c56725530235281cadb4d63616a624288f94339cded0d3d6baaa652916e10a",
-    "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "1092ec55f72b56c762810fceae78c5c6feeece4fdbe38f0ad23f5107c85a5819"
-  }
-}
+{"format":"gbd-maintenance-public-bridge/v1","published_at":"2026-10-07T20:12:00Z","work_order":{"id":"GBD-2026-10-07-047","description":"Korrektur zu WO046: die auf STRATO nicht vorhandene Datei staging/admin/auth-test/index.html wird nicht rekonstruiert und aus der Supply-Chain-Härtung entfernt. Die acht vorhandenen, hashbestätigten Staging-Zieldateien werden weiterhin ausschließlich per replace_text auf Supabase Browser-SDK 2.117.2 und im Entwicklerportal tus-js-client 4.3.1 mit SHA-384-SRI plus crossorigin gehärtet. Keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.","bundle_path":"gbd-strato-bridge/work-orders/GBD-2026-10-07-047/bundle.json","bundle_sha256":"a1212168791540df5478241690eb09bce1c9df6414e99c147ea9a6fe5b331be0","maintenance_min_version":"1.2.0","hmac_sha256":"d27dce7891531c92b4badc3c92e2f079d7e8abf2071591fe1253b15219717739"}}
