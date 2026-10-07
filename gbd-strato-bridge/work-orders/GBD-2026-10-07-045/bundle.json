@@ -1,0 +1,41 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-07-045",
+    "created_at": "2026-10-07T19:43:00Z",
+    "description": "Staging-Reconciliation: den auf STRATO noch fehlenden Funktionsstand aus WO043 nachholen. Entwickler-Anmeldung/Registrierung erhält vollständige Footer-Navigation und STRATO-Mail-Setup-Link; Support erhält den privaten Testmodus und echte Ticketreferenz. Keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "staging/developers/login/index.html",
+        "source": "payload/developers/login/index.html",
+        "sha256": "458c28c787f584da7553f09920fee4034fe839bd8b54de73cfe16413f90c3c44",
+        "expected_sha256": "6c13c6f34ab9cae5eaef727c677095b4305dca926d8c6956bfb074374437be20"
+      },
+      {
+        "op": "write",
+        "path": "staging/support/support.js",
+        "source": "payload/support/support.js",
+        "sha256": "ff2c4413c7bacb06a2834e0115e058cea717b726e6a298ba0e98c8f37c90603b",
+        "expected_sha256": "6f86c50bfb179e5d3e755bcb0098a5a779ef9ab40e3363e42a2ac6c5b4ba72c5"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/developers/login/index.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-043/payload/developers/login/index.html",
+      "encoding": "raw",
+      "size": 7688,
+      "sha256": "458c28c787f584da7553f09920fee4034fe839bd8b54de73cfe16413f90c3c44"
+    },
+    {
+      "source": "payload/support/support.js",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-043/payload/support/support.js",
+      "encoding": "raw",
+      "size": 3729,
+      "sha256": "ff2c4413c7bacb06a2834e0115e058cea717b726e6a298ba0e98c8f37c90603b"
+    }
+  ]
+}
