@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-06T22:19:00Z",
+  "published_at": "2026-10-07T14:11:30Z",
   "work_order": {
-    "id": "GBD-2026-10-07-041",
-    "description": "Korrigierter privater Staging-Auth-Fix: behält den aktuellen STRATO-Proxy vollständig bei und ergänzt nur die private Auth-Route; Entwickler-Anmeldung/Registrierung und Google-Login werden auf der normalen Staging-Loginseite repariert. Öffentliche Registrierung bleibt AUS, 0/3 bleibt unverändert, PayPal bleibt Sandbox; kein LIVE/Echtgeld.",
-    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-041/bundle.json",
-    "bundle_sha256": "54f241c6fcb4c1980e219302c5876e1563b409c0d8f4d2abc3273142bb7e9731",
+    "id": "GBD-2026-10-07-042",
+    "description": "Privater Staging-Einstieg über die bereits authentifizierte STRATO-Maintenance-Session. Kein Geheimschlüssel wird auf GitHub gespeichert. Nur der angemeldete Maintenance-Browser erhält den 12-Stunden-Owner-Test-Cookie; alle anderen bleiben HTTP 404/noindex. PayPal bleibt Sandbox, keine öffentliche Freigabe.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-042/bundle.json",
+    "bundle_sha256": "f82d5bff201733483bba89be8e8b53f74df00e769172112ad04789d8757bbc1f",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "53c8e202545ea840f62c0744e7e492b31fea56ba17ccfe2bac3fd70a93c1f28c"
+    "hmac_sha256": "7ea2cf36319e9093c8f16e155ce79021f2d45993530a1468499712e557a27a24"
   }
 }
