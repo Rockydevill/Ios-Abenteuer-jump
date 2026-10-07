@@ -1,12 +1,12 @@
 {
   "format": "gbd-maintenance-public-bridge/v1",
-  "published_at": "2026-10-07T19:35:00Z",
+  "published_at": "2026-10-07T19:37:56Z",
   "work_order": {
     "id": "GBD-2026-10-07-044",
-    "description": "Staging Supply-Chain-Härtung: Supabase Browser-SDK auf 2.117.2 und tus-js-client im Entwicklerportal auf 4.3.1 fest pinnen und beide mit SHA-384-SRI plus crossorigin absichern. Ausschließlich replace_text auf hashbestätigten Staging-HTML-Dateien; keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.",
+    "description": "Staging Supply-Chain-Härtung: Supabase Browser-SDK auf 2.117.2 und tus-js-client im Entwicklerportal auf 4.3.1 fest pinnen und beide mit SHA-384-SRI plus crossorigin absichern. Ausschließlich replace_text auf den bestätigten Staging-HTML-Dateien; keine Veröffentlichung, keine Freigabegates, PayPal bleibt Sandbox/kein LIVE-Echtgeld.",
     "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-07-044/bundle.json",
-    "bundle_sha256": "367030662ec52d68576121e7d9770567a5b428f365b1a90c4e938cc473e83589",
+    "bundle_sha256": "bb8314a3593c04256b9fd91053160e447a13d4ce83b71e621dbd5dcaa3a8c848",
     "maintenance_min_version": "1.2.0",
-    "hmac_sha256": "4aa2f6dc523c3dd66495c81bc61959813a36ddd174c7318bd7f42b4ed6e49513"
+    "hmac_sha256": "cb3a18c99620f32ba56507b126c60293a9aa1126e920908bcc2a4b76b68a7843"
   }
 }
