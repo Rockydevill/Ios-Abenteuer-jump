@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#06141b">
+  <title>Testkonto | Games Behind Doors</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/developer-redesign.css">
+  <link rel="stylesheet" href="/accessibility.css">
+</head>
+<body class="developer-page login-only-page">
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+<header class="site-header login-only-header"><a class="brand" href="/"><span class="brand-mark">GBD</span><span class="brand-copy"><strong>Games Behind Doors</strong><small>Öffentliches Testkonto</small></span></a></header>
+<main id="main-content"><section class="developer-access"><div class="developer-access-card">
+  <span class="eyebrow">KONTROLLIERTER TEST</span>
+  <h1>Nutzerkonto testen</h1>
+  <div class="notice" role="status"><strong>Hinweis:</strong> Games Behind Doors befindet sich derzeit im Aufbau und in einer öffentlichen Testphase. Die Website kann bereits besucht werden, einzelne Funktionen werden jedoch noch getestet. Bitte registriere dich derzeit nicht für eine dauerhafte Nutzung. Konten, Profile und Testdaten, die während dieser Testphase erstellt werden, können vor dem offiziellen Start vollständig gelöscht werden. Wenn dieser Hinweis bei deinem nächsten Besuch nicht mehr angezeigt wird, ist die reguläre Registrierung freigegeben. Vielen Dank für dein Verständnis.</div>
+  <div id="countryGate" class="notice">Sichere Länderprüfung läuft…</div>
+  <div id="accountModeSwitch" class="developer-access-actions" hidden style="margin:20px 0">
+    <button class="button primary" id="showLogin" type="button" aria-pressed="true">Anmelden</button>
+    <button class="button secondary" id="showRegister" type="button" aria-pressed="false">Registrieren</button>
+  </div>
+  <form id="loginForm" hidden>
+    <h2>Anmelden</h2>
+    <label><span>E-Mail</span><input id="loginEmail" type="email" autocomplete="email" required></label>
+    <label><span>Passwort</span><input id="loginPassword" type="password" autocomplete="current-password" minlength="12" maxlength="128" required></label>
+    <div class="developer-access-actions"><button class="button primary" id="loginButton" type="submit">Anmelden</button><button class="button secondary" id="forgotButton" type="button">Passwort vergessen?</button></div>
+  </form>
+  <form id="registerForm" hidden>
+    <h2>Testkonto registrieren</h2>
+    <p>Für diesen kontrollierten Test ist die Registrierung nur bei bestätigtem Deutschland-Zugriff freigegeben.</p>
+    <label><span>Anzeigename</span><input id="registerDisplayName" type="text" maxlength="80" autocomplete="nickname"></label>
+    <label><span>E-Mail *</span><input id="registerEmail" type="email" autocomplete="email" required></label>
+    <label><span>Passwort *</span><input id="registerPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required placeholder="Mindestens 12 Zeichen"></label>
+    <label class="check-row"><input id="countryConfirm" type="checkbox" required><span>Ich bestätige, dass mein Wohnsitzland Deutschland ist.</span></label>
+    <label class="check-row"><input id="ageConfirm" type="checkbox" required><span>Ich bestätige, dass ich mindestens 18 Jahre alt bin.</span></label>
+    <label class="check-row"><input id="termsConfirm" type="checkbox" required><span>Ich akzeptiere die <a href="/legal/terms" target="_blank" rel="noopener">Nutzungsbedingungen</a>.</span></label>
+    <button class="button primary" id="registerButton" type="submit">Testkonto anlegen</button>
+  </form>
+  <section id="signedIn" hidden style="margin-top:24px">
+    <h2>Angemeldet</h2><p id="identity"></p><p id="accountStatus"></p>
+    <div class="developer-access-actions"><button class="button secondary" id="logoutButton" type="button">Abmelden</button><a class="button secondary" href="/account/reset-password/?mode=change">Passwort ändern</a></div>
+  </section>
+  <div id="message" class="form-message" hidden aria-live="polite"></div>
+</div></section></main>
+<footer class="store-footer"><strong>Games Behind Doors</strong><div class="footer-links"><a href="/legal/privacy">Datenschutz</a><a href="/legal/terms">Nutzungsbedingungen</a></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js" integrity="sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/assets/public-test-account.js"></script>
+</body>
+</html>
