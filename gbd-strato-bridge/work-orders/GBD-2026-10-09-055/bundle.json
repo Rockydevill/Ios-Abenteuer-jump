@@ -1,0 +1,41 @@
+{
+  "format": "gbd-maintenance-bridge-bundle/v1",
+  "work_order_manifest": {
+    "format": "gbd-maintenance-work-order/v1",
+    "id": "GBD-2026-10-09-055",
+    "created_at": "2026-10-09T05:10:00Z",
+    "description": "Öffentliche Testphase für Suchmaschinen freigeben: ausschließlich die deutsche und englische Public-Test-Startseite werden auf index,follow umgestellt und erhalten Canonical-, hreflang- und Description-Metadaten. Konto, Passwort-Reset, Admin, Entwicklerbereiche, Staging, Publishing, Echtgeld und PayPal LIVE bleiben unverändert gesperrt bzw. noindex; PayPal bleibt Sandbox.",
+    "operations": [
+      {
+        "op": "write",
+        "path": "assets/public-test-home.html",
+        "source": "payload/public-test-home.html",
+        "sha256": "9c4c6412a7f408dd5ed7944b5653e01a26c1f20cc219abb5868781a8430d9cdc",
+        "expected_sha256": "6971c9e4f3597066da01c3d306407c63e1c611b6a03785b2407eadbfa769a839"
+      },
+      {
+        "op": "write",
+        "path": "assets/public-test-home-en.html",
+        "source": "payload/public-test-home-en.html",
+        "sha256": "7de491a3d881646459714146792100d5df44b5cbaba96b2a8fa0f41ae7d949ae",
+        "expected_sha256": "81b53f68fb072b40afbf408bbb9260e8de7d007a2c417482f03e15b1df3eeb67"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "source": "payload/public-test-home.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-09-055/payload/public-test-home.html",
+      "encoding": "raw",
+      "size": 5476,
+      "sha256": "9c4c6412a7f408dd5ed7944b5653e01a26c1f20cc219abb5868781a8430d9cdc"
+    },
+    {
+      "source": "payload/public-test-home-en.html",
+      "repo_path": "gbd-strato-bridge/work-orders/GBD-2026-10-09-055/payload/public-test-home-en.html",
+      "encoding": "raw",
+      "size": 5445,
+      "sha256": "7de491a3d881646459714146792100d5df44b5cbaba96b2a8fa0f41ae7d949ae"
+    }
+  ]
+}
