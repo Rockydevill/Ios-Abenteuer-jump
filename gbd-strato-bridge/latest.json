@@ -1,1 +1,12 @@
-{"format":"gbd-maintenance-public-bridge/v1","published_at":"2026-10-09T04:59:00Z","work_order":{"id":"GBD-2026-10-09-054","description":"Public-Test Konto-Sicherheitsfix: Kontolöschung im UI passend zum deaktivierten Backend-Gate sichtbar sperren und E-Mail-Bestätigungsstatus direkt im angemeldeten Konto anzeigen; erneutes Senden nur für unbestätigte E-Mail. Player-Hub, Wishlist, Bibliothek, Support und Zahlungs-/Freigabegates bleiben unverändert.","bundle_path":"gbd-strato-bridge/work-orders/GBD-2026-10-09-054/bundle.json","bundle_sha256":"ffb96e248b0a0602dec4b02fe5de60b212905f867500a4e8714deac5f4a94e77","maintenance_min_version":"1.2.0","hmac_sha256":"98622b4955c678463205156e31d7a85f302169aa6e6351641c67f47a0672b85c"}}
+{
+  "format": "gbd-maintenance-public-bridge/v1",
+  "published_at": "2026-10-09T05:12:00Z",
+  "work_order": {
+    "id": "GBD-2026-10-09-055",
+    "description": "Öffentliche Testphase für Suchmaschinen freigeben: ausschließlich die deutsche und englische Public-Test-Startseite werden auf index,follow umgestellt und erhalten Canonical-, hreflang- und Description-Metadaten. Konto, Passwort-Reset, Admin, Entwicklerbereiche, Staging, Publishing, Echtgeld und PayPal LIVE bleiben unverändert gesperrt bzw. noindex; PayPal bleibt Sandbox.",
+    "bundle_path": "gbd-strato-bridge/work-orders/GBD-2026-10-09-055/bundle.json",
+    "bundle_sha256": "b4effde4ea240c4707300672054c6ed4a81b1118fbb76ea2846e532aedfeec5a",
+    "maintenance_min_version": "1.2.0",
+    "hmac_sha256": "4446d03a61df53d07154914012646f64ca7de8c3b4cca0a5eabc7e01c03757b3"
+  }
+}
